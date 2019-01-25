@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tables Worksheet</title>
+    <meta name="description" content="Tables">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+  	<h1>HTML Tables Worksheet</h1>
+
+  	<p class="question">
+		Create a table to hold the following data. Set the <b>border</b> attribute of the table tag to 1 so that you can see the borders of each cell. 
+    Make sure to use the proper tags for the first row, which displays the column headers. 
+    Be particularly careful to format your html (including the proper indentation) so that it's easy see the hierarchical structure of the tags when viewing the code.
+	</p>
+	<pre>
+            <b>Jan    Feb    Mar    Apr    May    Jun</b>
+Income      500    350    400    600    200    700
+Expenses    400    400    300    300    200    100 
+    </pre>
+	<div class="answer">
+			<table cellpadding="5" border="1">
+          <tr >
+              <th></th>
+              <th>Jan</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>Jun</th>
+          </tr>
+          <tr>
+              <td valign="right">Income</td>
+              <td valign="center">500</td>
+              <td valign="center">350</td>
+              <td valign="center">400</td>
+              <td valign="center">600</td>
+              <td valign="center">200</td>
+              <td valign="center">700</td>
+          </tr>
+          <tr>
+              <td valign="right">Expenses</td>
+              <td valign="center">400</td>
+              <td valign="center">400</td>
+              <td valign="center">300</td>
+              <td valign="center">300</td>
+              <td valign="center">200</td>
+              <td valign="center">100</td>
+          </tr>
+      </table>
+	</div>
+
+  <h3>Bonus Problem</h3>
+  <p>
+    <b>Earn 3 extra points by completing this problem...</b>
+  </p>
+	<p class="question">
+		Use the <b>colspan</b> and <b>rowspan</b> attributes to create a table that looks like this (set the border attribute of the table to a value of '1', width attribute to a value of '400' and the style attribute to a value of 'text-align:center'):
+		<br>
+		<img src="../images/table.png" alt="A table that has colspan and rowspan" />
+	</p>
+	<div class="answer">
+		<table border="1">
+        <tr>
+            <td style="text-align: center" colspan="8">x</td>
+        </tr>
+        <tr>
+            <td style="text-align: center" rowspan="3" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+        </tr>
+        <tr>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+        </tr>
+        <tr>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+            <td style="text-align: center" width="400">x</td>
+        </tr>
+    </table>
+	</div>
+  <footer>
+    &copy; 2018 Niall Kader
+   </footer>
+  </body>
+</html>
