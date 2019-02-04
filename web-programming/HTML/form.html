@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample Forms</title>
+	</head>
+	<body>
+		<h1>Sample Form</h1>
+		<form action="http://www.wtc-web.com/form-handler.php" method="POST">
+			<table border="1">
+				<tr>
+					<td align="right">Your Name:</td>
+					<td>
+						<input type="text" name="firstname">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Password:</td>
+					<td>
+						<input type="password" name="password" id="txtpassword">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Agree to our terms:</td>
+					<td>
+						<input type="checkbox" name="agreed" id="chkAgreed" value="yes" checked="true">
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Do you like pickles?</td>
+					<td>
+						<input type="radio" name="pickles" id="chkAgreed" value="yes"> Yes
+						<br>
+						<input type="radio" name="pickles" id="chkAgreed" value="yes"> No
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Comments:</td>
+					<td>
+						<textarea></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">FavoriteFood:</td>
+					<td>
+						<select name="Favorite Food">
+							<option value="l">Pizza</option>
+							<option value="2">Bread</option>
+							<option value="3">Ramen Noodles</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"></td>
+					<td>
+						<input type="submit" value="SUBMIT" name="">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

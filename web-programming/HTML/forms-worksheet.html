@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Forms</title>
+    <meta name="description" content="Forms">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+      <h1>Forms</h1>
+      <p class="question">
+        In the form tag near the bottom of the page, add an HTML table that has two columns and 6 rows.
+        The first column will contain a label and the second will contain an HTML form control.
+      </p>
+      <p>
+        <a href="http://www.wtc-web.com/html-form.png" target="_blank">Click here</a> to see what the finished form and table will look like.
+      </p>
+      <p>
+        Here are the details for each row in the table.
+      </p>
+       <pre>
+LABEL            HTML Form Control (in the second column of the table)
+----------------------------------------------------------------------------------------------------------------------
+First Name:      Create a text input that has a <b>name</b> attribute of 'txtFirstName'.
+                 The input should also have an <b>id</b> attribute of 'txtFirstName'.
+
+Favorite Color:  Create a select box that has a <b>name</b> attribute of 'selColor'.
+                 The select box should also have an <b>id</b> attribute of 'selColor'.
+                 The select box should contain the following options:
+                 - Red (the <b>value</b> attribute of this option should be set to 'red').
+                 - Yellow (the <b>value</b> attribute of this option should be set to 'yellow' ).
+                 - Blue (the <b>value</b> attribute of this option should be set to 'blue').
+                 - Other (the <b>value</b> attribute of this option should be set to 'other').
+                 
+                 For example: the first option inside the select tag should look like this:
+
+                 &lt;option value="red"&gt;Red&lt;/option&gt;
+
+Favorite Meal:   Create a group of radio buttons (put a label to the right of each radio button)
+                 - Breakfast (give it a <b>name</b> attribute of 'rgMeal', a <b>value</b> attribute of 'breakfast', and an <b>id</b> attribute of 'rbBreakfast'). 
+                 - Lunch (give it a <b>name</b> attribute of 'rgMeal', a <b>value</b> attribute of 'lunch', and an <b>id</b> attribute of 'rbLunch').
+                 - Dinner (give it a <b>name</b> attribute of 'rgMeal', a <b>value</b> attribute of 'dinner', and an <b>id</b> attribute of 'rbDinner').
+
+Places Visited:  Create 3 checkboxes with a label to the right of each one (put a line break after each label)
+                 - Europe (give it a <b>name</b> attribute of 'chkEurope', an <b>id</b> attribute of 'chkEurope', and a <b>value</b> attribute of 'Europe').
+                 - Africa (give it a <b>name</b> attribute of 'chkAfrica', an <b>id</b> attribute of 'chkAfrica', and a <b>value</b> attribute of 'Africa').
+                 - Asia (give it a <b>name</b> attribute of 'chkAsia', an <b>id</b> attribute of 'chkAsia', and a <b>value</b> attribute of 'Asia').
+
+Favorite Quote:  Create a textarea that has a <b>name</b> attribute of 'txtQuote' and an <b>id</b> attribute of 'txtQuote'.       
+
+Submit           Create a submit button (an input tag with a <b>type</b> attribute of 'submit' and a <b>value</b> of 'Submit').
+                 You can omit the label in the first column of this row in the table.
+       </pre>
+       <div class="answer">
+          <form id="frmSurvey" action="http://www.wtc-web.com/form-handler.php" method="POST">
+            <table border="1" >
+              <tr>
+                <td align="right">First name:</td>
+                <td>
+                  <input type="text" name="txtFirstName" id="txtFirstname">
+                </td>
+              </tr>
+              <tr>
+                <td align="right">Favorite Color:</td>
+                <td>
+                  <select id="selColor" name="selColor">
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                    <option value="other">Other</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">Favorite Meal:</td>
+                <td>
+                  <input type="radio" name="rgMeal" value="breakfast" id="rbBreakfast"> Breakfast
+                  <input type="radio" name="rgMeal" value="lunch" id="rbLunch"> Lunch
+                  <input type="radio" name="rgMeal" value="dinner" id="rbDinner"> Dinner
+                </td>
+              </tr>
+              <tr>
+                <td align="right">Place Visited:</td>
+                <td>
+                  <input type="checkbox" name="chkEurope" id="chkEurope" value="Europe" > Europe <br>
+                  <input type="checkbox" name="chkAfrica" id="chkAfrica" value="Africa" > Africa <br>
+                  <input type="checkbox" name="chkAsia" id="chkAsia" value="Asia" > Asia <br>
+                </td>
+              </tr>
+              <tr>
+                <td align="right">Favorite Quote:</td>
+                <td>
+                  <textarea name="txtQuote" id="txtQuote"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td align="right"></td>
+                <td>
+                  <input type="submit" name="" value="Submit">
+                </td>
+              </tr>
+
+            </table>
+          </form>
+       </div>
+       <footer>
+        &copy; 2018 Niall Kader
+       </footer>
+  </body>
+</html>
