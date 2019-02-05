@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript</title>
+    <meta name="description" content="3 ways to use JavaScript in a web page.">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+      alert('Hello World!');
+    </script>
+    <script type="text/javascript" src="test.js"></script>
+  </head>
+  <body>
+    <h1 onclick="alert('You clicked on the H1 tag!');">3 ways to use JavaScript in a web page.</h1>
+    <ol>
+      <li>You can put JavaScript code inside a <b>&lt;script&gt; &lt;/script&gt;</b> tag.</li>
+      <li>
+        You can use a <b>&lt;script&gt; &lt;/script&gt;</b> tag to 'link' to a .js file that has JavaScript code in it.
+        <br>
+        In order to do this, you must add a <b>src</b> attribute to the tag and set the value of the attribute to the .js file, for example:
+        <br>
+        <b>&lt;script src="path/to/somefile.js"&gt; &lt;/script&gt;</b>
+        <br>
+        This is the recommended method because:
+        <ul>
+          <li>It allows you to keep your JS code separate from your HTML code</li>
+          <li>It allows you to use the same JavaScript code in many web pages</li>
+        </ul>
+        Note that you usually put a script tag inside the head tag of a page, but you can put it in other places too.
+      </li>
+      <li>
+        You can put JavaScript commands in HTML tag attributes.
+        <br>
+        This is <b>NOT</b> recommended because:
+        <ul>
+          <li>Your code gets messy if it's sprinkled all over a web page in the attributes of tags.</li>
+          <li>It can become very difficult to maintain messy code.</li>
+        </ul>
+      </li>
+    </ol>
+    <h2>Activity</h2>
+
+    <h3>Putting JavaScript Code Inside a Script Tag</h3>
+    <ol>
+      <li>Add a 'script' tag inside the head tag of this page (make sure you have a start tag and an end tag).</li>
+      <li>
+        Copy this JavaScript code and paste inside the script tag:
+<pre>
+alert('Hello World!');
+</pre>
+      </li>
+      <li>Reload the page to run the JavaScript code. Note that the alert appears before you see any of the content on the page</li>
+      <li>
+        Copy the entire script tag (including the start tag, end tag, and the JavaScript code in between) and paste it at the bottom of this page (after the closing html tag)
+        Then reload the page and note that the second alert box appears after the content of the page is displayed. 
+      </li> 
+    </ol>
+
+    <h3>Putting JavaScript Code Inside a .js File</h3>
+    <ol>
+      <li>Create a file called <b>test.js</b> inside this folder (web-programming/JavaScript)</li>
+      <li>
+        Copy this JavaScript code and paste it inside of test.js (then save the file) :
+<pre>
+alert('Hello from test.js');
+</pre>
+      </li>
+      <li>
+        Add another script tag inside the head tag (include a start tag and end tag). 
+        Then add a <b>src</b> attribute to the script tag and set its value to <b>test.js</b>.
+      </li>
+      <li>Now reload this page to run the JavaScript code.</li>
+    </ol>
+
+    <h3>Putting JavaScript Code Inside a Tag</h3>
+    <ol>
+      <li>
+        Find the <b>h1</b> tag on this page and add an <b>onclick</b> attribute to it. 
+        Set the value of the attribute to this: 
+<pre>
+alert('You clicked on the H1 tag!');
+</pre>
+      </li>
+    </ol>
+
+
+
+  </body>
+</html>
