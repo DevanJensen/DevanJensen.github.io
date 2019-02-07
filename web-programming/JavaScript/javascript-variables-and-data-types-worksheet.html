@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript Variables and Data Types</title>
+    <meta name="description" content="An introduction to variables and data types in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex, nofollow" />
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <!--TODO: add that unitialized variables have a value of undefined-->
+    <h1>JavaScript Variables and Data Types</h1>
+    <h3>Variables</h3>
+    <p>
+        We use variables to store values. 
+        Then, instead of repeating the value in your code, you just use the variable.
+        This is handy because if you decide that you want to change the value, you can just update
+        the line of code that 'sets' the value. Then all the lines of code that use the variable will be updated 
+        to the new value. 
+    </p>
+    <p>
+        Variables must be <b>declared</b> before they can be <b>initialized</b>. 
+        Use the <b>var</b> keyword to declare a variable, and use the <b>assignment operator</b> 
+        to initialize a variable (the assignment operator is the equals sign).
+    </p>
+<pre>
+// declare a variable called age, and initialize it to a value of 10...
+var age = 10;
+</pre>
+    <p>
+    The code sample above is a <b>statement</b>. For now you can think of a statement
+    as a single command. Statements in JavaScript end with a semi colon.
+    </p>
+
+<p>
+    Let's assume your want to want show an alert that displays
+    the user's name in various places throughout your program.
+    You could write your program with this approach.
+    </p>
+    <pre>
+alert("Bob");
+
+// a bunch of code might go here
+
+alert("Bob");
+
+// maybe a bunch more code might be here
+
+alert("Bob");
+    </pre>
+    <p>
+    Note that in this example we have duplicated Bob's name 3 times.
+    A better approach is to use a variable. That way, if you decide you need
+    to change the variable, to maybe 'Shelly', then you only have to make a change 
+    in one place.
+    </p>
+    <pre>
+var userName = "Bob";
+alert(userName);
+
+// a bunch of code might go here
+
+alert(userName);
+
+// maybe a bunch more code might be here
+
+alert(userName);
+    </pre>
+
+    <h3>Data Types</h3>
+    <p>
+        Variables can hold different <b>data types</b>. 
+        Here are variables that store different data types. 
+    </p>
+    <pre>
+var someNumber = 7;         // as we've already seen, variables can store numbers
+var someBoolean = false;    // boolean variables are either true or false
+var someString = "Hello!";  // variables can hold 'strings' of characters
+var someObject = {};        // we'll talk about objects soon!
+var someArray = [];         // we'll talk about arrays soon too!
+    </pre>
+    <p>We'll discuss these data types more in the near future.</p>
+    <p>
+    Variables that hold <b>boolean</b> values can only be assigned either <b>true</b> or <b>false</b>.
+    Note that <b>true</b> and <b>false</b> are both special keywords in JavaScript.
+    </p>
+    <p>
+    'String' is a common term that you'll become familiar with as a programmer.
+    A string data type contains characters (letters, numbers, and other characters).
+    </p>
+    <p>
+    Note that we use quotes around string data types (more on strings soon).
+    Why do you think we have to do this?
+    If you don't use quotes, then JavaScript will think that you are referring to a variable,
+    not a value.
+    </p>
+    <pre>
+var day = wednesday;
+// JavaScript looks for a variable named wednesday,
+// which has not been declared, so this will cause an error
+
+
+// here is the proper way to do it...
+var day = "wednesday";
+    </pre>
+    <p>
+    Can you see the difference between these two variables?
+    </p>
+    <pre>
+var x = true;
+var y = "true";        
+    </pre>
+    
+    <p>
+    Sometimes you will declare a variable but you won't initialize it.
+    </p>
+    <pre>
+// you can declare a variable without initializing it to a value
+// (it may get a value assigned in another part of the program).
+var firstName;
+    </pre>
+    <p>
+    For example, you may let the user assign a value to a variable like this:
+    </p>
+    <pre>
+firstName = prompt("Please enter your first name.");
+alert("Hello " + firstName);
+    </pre>
+    <p>
+    In this example, we use the prompt() command to ask the user to enter his/her first name.
+    We then store the input in a variable called 'firstName'.
+    We'll learn more about this code sample soon.
+    </p>
+    <p>
+    Variables can be <b>re-assigned</b>, which is why they are called variables. They can vary.
+    In this example we set a variable to a value, and then we later re-assign a new value to it.
+    </p>
+    <pre>
+var day = "Wednesday";
+alert(day);
+day = "Thursday";
+alert(day);
+    </pre>
+    <p>
+    Note that we don't use the <b>var</b> keyword when we re-assign a variable that has already been declared.
+    </p>
+    <h3>Expressions</h3>
+    <p>
+    Expressions are 'equations' that can be solved, such as <b>5 + 3</b>. This expression <b>evaluates</b> to 8.
+    We can use expressions to assign values to variables.
+    </p>
+    <pre>
+var total = 200 + 100;
+//the variable 'total' holds a value of 300
+
+var celsius = 40;
+var fahrenheit = celsius * 9/5 + 32;
+    </pre>
+    <p>
+        You can actually use expressions with strings, not just numbers.
+        If you add two strings together you get a new string:
+    </p>
+<pre>
+var str1 = "Hello";
+var str2 = "World";
+
+var str3 = str1 + str2;
+</pre>
+    <p>
+        Adding strings together like this is known as <b>string concatenation</b>.
+    </p>
+    <p>
+        Working with strings is a huge part of programming, and we'll soon see that there are lots of ways to manipulate strings in JavaScript.
+    </p>
+
+    <p>
+    Weird things can happen if you combine variables of different data types
+    </p>
+    <pre>
+var someNumber = 3;  
+var someOtherNumber = "2";
+var result = someNumber + someOtherNumber;
+alert(result);
+    </pre>
+    <p>
+        You can use the <b>typeof</b> operator to find out the data type of a variable.
+        The typeof operator is a special keyword in JavaScript.
+    </p>
+    <p>
+        Let's recreate the previous example, but instead of alerting the
+        value of the 'result' variable, let's alert its data type:
+    </p>
+    <pre>
+var someNumber = 3;  
+var someOtherNumber = "2";
+var result = someNumber + someOtherNumber;
+alert(typeof result);
+    </pre>
+
+    <h3>Naming Variables</h3>
+    <p>
+        It's important to choose an appropiate name for a variable.
+        It wouldn't make sense to create a variable called 'age' and then store a last name in it.
+    </p>
+    <p>
+        There are some rules for the characters that can be used in variable names. For example, a variable name cannot begin with a number.
+        There are also other rules, but you'll be asked to explore them on your own in an upcoming assignment.
+    </p>
+    <pre>
+// This will cause an error, because variable names are not allowed to start with numbers
+var 1stName = "Betty";
+    </pre>
+    <p>
+        Good programmers use <b>camel case</b> when they name variables in JavaScript. You'll also be asked to explain what camel case is in an assignment.
+    </p>
+
+    <h3>Logging Variables</h3>
+    <p>
+        When you are writing programs, it's often helpful to print out the value of a variable.
+        You can do this by using the <b>console.log()</b> command. For example:
+    </p>
+    <pre>
+var lastName = "Jones";
+console.log(lastName);
+    </pre>
+    <p>
+    Notice that you put the variable name inside of the parenthesis of the command.
+    </p>
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+
+    </script>
+
+    <h1>Questions - JavaScript Variables and Data Types</h1>
+    
+    <h4>Question 1</h4>
+    <p class="question">
+        There are some rules for how you can name variables. What are they? Also, include the link to the page that you found to help you answer this question.
+    </p>
+    <div class="answer">
+        <ul>
+            <li>A variable name can only begin with a letter or underscore.</li>
+            <li>A variable name can only have any number, letter, or underscores after the first character.</li>
+            <li>A variable name has no limit.</li>
+            <li>A variable name can not be a word that Java has reserved for itself.</li>
+            <li><a href="http://www.informit.com/articles/article.aspx?p=131025&seqNum=3" target="_blank">Source Page</a></li>
+        </ul>
+    </div>
+
+    <h4>Question 2</h4>
+    <p class="question">
+        What is 'camelCase'?
+    </p>
+    <div class="answer">
+        The first letter of a phrase or word is lowercase while the second word is upper case with no spaces or other characters inbetween, a notable example is Ebay.
+    </div>      
+    
+    <h4>Question 3</h4>
+    <p class="question">
+        What are ALL the different DATA TYPES in JavaScript (note that there are some that we did not discuss in class)? 
+    </p>
+    <div class="answer">
+        There are 7 total datatypes, they are Boolan, Null, Undefined, Number, String, Symbol, and Object.
+    </div>
+    
+    <h4>Question 4</h4>
+    <p class="question">
+        What is the <b>assignment operator</b> and why do they call it 'assignment'?
+    </p>
+    <div class="answer">
+        They assign values to Variables.
+        They call it assignment due to how it's meant to assign values.
+    </div>
+    
+    <h4>Question 5</h4>
+    <p class="question">
+        What is a <b>boolean</b> data type?
+    </p>
+    <div class="answer">
+        Boolean is a yes or no data type, it's meant to confirm if information is true or not.
+    </div>
+    
+    <h4>Question 6</h4>
+    <p class="question">
+        What happens if you forget to put quotes around a string when you initialize a variable to a string?
+        How does JavaScript try to interperet this?
+        <br>
+        For example: var lastName = Jones;
+    </p>
+    <div class="answer">
+        Javascript fails to interperet it, and produces an error when it does.
+    </div>
+
+    <h4>Question 7</h4>
+    <p class="question">
+        What character is used to end a <b>statement</b> in JavaScript?
+    </p>
+    <div class="answer">
+        The semicolon is used to end a statement.
+    </div>
+
+    <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>Here are some tips to help you with the coding problems:</p>
+    <ul>
+        <li>To do this assignment, you'll need to know how to open the brower's developer tools (press F12) and look at the logging console.</li>
+        <li>Pay extremely close attention to syntax! One little syntax error can mess up your entire program.</li>
+        <li>After you complete each problem, refresh the page in the browser and look in the console your log message and for errors.</li>
+        <li>If you have an error in the console, check the line number of the error then look for syntax errors on that line (and the line before and the line after that line).</li>
+        <li>
+            If you get stuck for more than an hour on this assignment, then stop working on it and ask for help.
+            Dealing with syntax errors can be extremely frustrating for beginners. It takes a lot
+            of help to start to get comfortable with the syntax of a language. Don't be afraid to ask for help, your success
+            in this class will depend on your willingnes to ask for help!
+        </li>
+    </ul>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    // NOTE: RUN EARLY RUN OFTEN!
+    // This means that you should save your code often and run it in the browser
+    // to make sure it's working properly.
+
+    
+
+
+    // Problem 1:
+    // Declare a variable with the name of myAge and initialize it to your current age.
+    // Then log myAge. To 'log' the variable enter this code:
+    //      console.log(myAge);
+    // Now save this page in Sublime Text, and then open it in FireFox.
+    // Press F12 to open the developer tools, and click on the 'console' tab.
+    // You should see the value of myAge written to the console log.
+    var myAge = 19;
+    console.log(myAge);
+
+
+    // Problem 2:
+    // Declare a variable named myVar but do not initialize it.
+    // Then 'log' myVar to the console.
+    // Save your code, then run it in the browser, with the console open and note what 
+    // the value of a variable that has never been initialized.
+    var myVar;
+    console.log(myVar);
+
+
+    // Problem 3:
+    // Declare a variable with the name of myName and initialize it to your first name.
+    // Hint: Make sure to put quotes around your name.
+    // Then log myName.
+    var myName = "Devan";
+    console.log(myName);
+
+
+    // Problem 4:
+    // Declare a variable with the name of myBool and initialize it to true.
+    // Then log myBool.
+    var myBool = true;
+    console.log(myBool);
+
+
+    // Problem 5:
+    // Use the typeof keyword to log the data type of each variable you declared and initialized in problems 1-4
+    // For example: console.log(typeof someVar);
+    console.log(typeof myAge);
+    console.log(typeof myVar);
+    console.log(typeof myName);
+    console.log(typeof myBool);
+
+
+    // Problem 6:
+    // Declare a variable with the name of myResult and intialize it to 
+    // a mathematical expression that adds two numbers.
+    var myResult = 2+5;
+    console.log(myResult);
+
+    // Problem 7:
+    // Declare a variable with the name of myTestVar and assign an expression to it that adds myName and myAge.
+    // Note that you have already declared and initialized myName and myAge in a previous step.
+    // Then log myTestVar 
+    // Then log its data type (by using the typeof operator).
+    var myTestVar = myName+myAge;
+    console.log(myTestVar);
+    console.log(typeof myTestVar)
+
+
+    </script>
+    <footer>
+        &copy; 2018 Niall Kader
+    </footer>
+  </body>
+
+</html>
