@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript variables that hold HTML elements</title>
+    <meta name="description" content="JavaScript variables that hold HTML elements">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <!--Notice that the H1 tag on line 14 has an 'id' attribute set to 'mainH1'-->
+    <h1 id="mainH1">JavaScript variables that hold HTML elements</h1>
+    <p>
+        We previously talked about variables and data types in JavaScript.
+        So you should know what a variable is, and you should know that variables can 'hold'
+        different data types, such as numbers, strings, booleans, etc.. 
+        You should also know what it means to <b>declare</b> and <b>initialize</b> a variable. 
+    </p>
+    <p>
+        You can also use variables to hold HTML elements that are on your page (remember that 'element' and 'tag' are interchangeable terms).
+        This is one of the most useful things you can do in JavaScript, and it allows you to manipulate
+        the HTML tags/elements on your page.
+        When you have a variable that holds an HTML element, we often say that you have a 'handle' on the element.
+        The variable itself is the handle, and we can use it to manipulate the HTML element.
+    </p>
+    <p>
+        There are various ways in JavaScript to 'get a handle' on an element, but a common approach is to use the <b>id</b> attribute of the element.
+        If you look at the HTML code for this page, you'll see that on line 14 the H1 tag has an <b>id</b> attribute set to 'mainH1'.
+    </p>
+    <p>    
+        Here is one way to get a handle on that H1 tag by referring to the value of its id attribute:
+    </p>
+    <pre>
+var myElement = document.getElementById("mainH1");        
+    </pre>
+    <p>
+        At this point, don't worry about the details of he code on the right side of the equals sign, just understand that it initializes the variable <b>myElement</b> to hold the H1 tag in this page.
+        And understand that we are able to get a handle on that specific H1 tag by referring to the value of its id attribute (which is 'mainH1').
+        When you have a variable that holds an HTML element, you can start to manipulate that element with your JavaScript code.
+    </p>
+    <h3>Activity</h3>
+    <p>
+        For this activity you are going to copy a snippet of JavaScript code that declares and initializes a variable to hold the H1 tag on this page.
+        The variable (myElement) will be our 'handle' on the H1 tag.
+        Then we'll use the variable to manipulate the H1 tag.
+    </p>
+    <p>
+        Look at the code for this page, and notice that under the image below, there is an empty <b>script</b> tag.
+        Copy the code you see in the image by typing it in between the opening and closing script tags.
+        The code will change the text inside the H1 tag, then it will change some of the colors in the H1 tag.
+        If you run your code and it doesn't do these things, then take another look at the image and see if you can find any errors in your code.
+    </p>
+    <p>
+        Here is an image of the code that you are going to type...
+    </p>
+    <img src="../images/js-html-element-code.png" alt="Code sample for getting a handle on an element and then manipulating the element with JavaScript.">
+    <script>
+    var myElement = document.getElementById("mainH1");
+    myElement.innerHTML = "I love JavaScript!";
+    myElement.style.color = "red";
+    myElement.style.backgroundColor = "orange";
+    </script>
+    <footer>
+        &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+
+

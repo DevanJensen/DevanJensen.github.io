@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript - Functions</title>
+    <meta name="description" content="An introduction to functions in JavaScript">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>JavaScript Functions</h1>
+    <p><b>Functions</b> are reusable groups of commands. You can think of them as mini programs within your program.</p>
+    <p>Let's say we had to convert 10 numbers from celsius to fahrenheit, we could do this...</p>
+    <pre>
+// convert a bunch of degrees celsius to farhenheit
+var f1 = 10 * 9/5 + 32;
+var f2 = 50 * 9/5 + 32;
+var f3 = 75 * 9/5 + 32;
+var f4 = 100 * 9/5 + 32;
+//....and so on
+    </pre>
+    <p>But notice how much duplicate code we have written above (repeating code can lead to bugs!).</p>
+    <p>Let's create a function that converts celsius to farhenheit...</p>
+    <pre>
+function convertToFarhenheit(tempCelsius){
+  var tempFarhenheit = tempCelsius * 9/5 + 32;
+  return tempFarhenheit;
+}
+    </pre>
+    <p>Note that we start the function definition with 'function', which is a keyword in JavaScript.</p>
+    <p>Then comes the function name, we can pick any name for the function, but there are some guidelines, for example function names cannot begin with a number.</p> 
+    <p>
+        After the name we put parenthesis.
+        Inside the parenthesis is the <b>parameter</b>, you can use parameters to feed input into your function.
+        Note that the name of the parameter in this example is 'tempCelsius'.
+    </p>
+    <p>
+        The <b>body</b> of the function goes in between the curly braces.
+        The code that we write in the body of the function will run whenever we use the function.
+    </p>
+    <p>
+        In the body of the function, we take the parameter and use it in the expression to convert celsius to fahrenheit.
+        Then we <b>return</b> the result. So, parameters allow us to convert any temperature to fahrenheit, which
+        makes this function very flexible. We can pass in any value as a parameter and the function will convert it to degress fahrenheit.
+    </p>
+    <p>
+        We have <b>defined/declared</b>, a function, but we have not yet used it, let's use it now...
+    </p>
+    <pre>
+var f1 = convertToFarhenheit(10);
+var f2 = convertToFarhenheit(50);
+var f3 = convertToFarhenheit(75);
+
+// lets show the results in the log
+console.log(f1);
+console.log(f2);
+console.log(f3);
+    </pre>
+    <p>
+        Using a function is called <b>invoking</b>, or <b>calling</b> it.
+        In the code sample above, we invoked convertToFahrenheit() three times.
+    </p>
+    <p>
+        Again, notice how we can pass in any value as the parameter, 
+        and in the body of the function we refer to this value by the name of the parameter (in this case, the parameter is named 'tmpCelsius').
+    </p>
+    <p>
+    Also note that the <b>return value</b> of the function gets assigned as the value of a variable.
+    The third line in the code sample above calls/invokes the convertToFarhenheit() function by passing in 75 and assigning the result (the return value) to the variable f3.
+    When a function returns a value, that value is often assigned to a variable.<br>For example: <b> var result = someFunction();</b>.
+    </p>
+    <p>
+    We created the function convertToFarhenheit(), but JavaScript has many functions built into it that we can use, for example <b>alert()</b>, <b>console.log()</b>, and <b>prompt()</b>.
+    </p>
+    <p>
+    Note that you can pass a variable into a function as a parameter: 
+    </p>
+    <pre>
+var celsiusToday = prompt("What's the temp today (in celsius)?");
+
+var fahrenheitToday = convertToFarhenheit(celsiusToday);
+
+alert("Today's temp in farhenheit is: " + fahrenheitToday);
+    </pre>
+    <p>
+        In the above code sample, we prompt the user to enter today's temperature in celsius,
+        then we store his/her answer in a variable named celsiusToday. Then we feed the variable into the function as a parameter.
+    </p>
+
+    <p>Functions can take more than one parameter:</p>
+    <pre>
+// first we define a function...
+
+function someUselessFunction(param1, param2){
+  alert("You passed in the following params:\n" + param1 + "\n" + param2);
+}
+
+
+// then we use it (by <b>calling</b> or <b>invoking</b> it)...
+
+someUselessFunction("sugar", "spice"); 
+    </pre>
+    <p>
+    Note that functions do not have to have parameters.
+    Also note that functions do not always return something.
+    </p>
+    <pre>
+// here we define a function that has no parameters. 
+// it also does not return a value...
+
+function doSomething(){
+  alert("I'm doing something....(maybe).");
+}
+
+
+// lets call/invoke the function here...
+doSomething();
+    </pre>
+    <p>
+    Note that even if a function doesn't have any parameters, you must still include the ()
+    when you invoke/call it.
+    </p>
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+
+    // first we define a function...
+
+    </script>
+
+    <h1>Questions - JavaScript Functions</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What is a function, and why would you ever want to use one in your code?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 2</h4>
+    <p class="question">
+        What do you call the 'inputs' that get passed into a function?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 3</h4>
+    <p class="question">
+        Do all functions have return values?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 4</h4>
+    <p class="question">
+    What is the 'body' of a function, and what are the characters that enclose the body of a function?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 5</h4>
+    <p class="question">
+        What does it mean to 'invoke' a function?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 6</h4>
+    <p class="question">
+        What does it mean to 'call' a function?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 7</h4>
+    <p class="question">
+        If a function has more than one parameter, what character do you use to separate those parameters?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 8</h4>
+    <p class="question">
+        What is the problem with this code (explain the syntax error)?
+        <pre>
+function convertKilometersToMiles(km)
+    return km * 0.6217;
+}
+        </pre>
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    /*
+    // Problem 1 - A simple function
+    Declare a function called sayHello.
+    In the body of the function, write code that makes an alert
+    box appear that simply says "Hello!"
+
+    After you declare the function, invoke it.
+    */
+    function sayHello(){
+        alert("Hello!");
+    }
+
+    sayHello();
+
+    /*
+    // Problem 2 - A function that takes a parameter
+    Declare a function called greetUser.
+    The function should have one parameter called userName.
+    In the body of the function, write a line of code shows
+    an alert box that says "Greetings" concatenated to the userName.
+    For example, if the userName parameter is set to "Bob",
+    then the alert box should say "Greetings Bob".
+
+    Invoke the function after the declaration.
+    */
+    function greetUser(userName){
+        alert("Greetings " + (userName));
+    }
+    var userName = "Bob";
+    greetUser(userName);
+    /*
+    // Problem 3 - A function that has a return value
+    Declare a function called addNumbers.
+    It should have two parameters, called n1 and n2.
+    In the body of the function, write an expression that
+    adds n1 and n2 and returns the sum.
+
+    After the declaration, invoke the function and assign the 
+    return value to a variable called 'total'.
+    Then log the total.
+    For example: 
+        var total = addNumbers(3,5);
+        console.log(total);
+    */
+    function addNumbers(n1, n2){
+        return n1 + n2;
+    }
+    var total = addNumbers(3,5);
+    console.log(total);
+
+
+    /*
+    // Problem 4 - A function that alerts the current date
+    Declare a function named showToday.
+    In the body of the function, paste these TWO lines of code:
+
+    var today = new Date();
+    alert("Today is " + today.toDateString());
+
+    After the function definition, invoke the function.
+    */
+    function showToday(){
+        var today = new Date();
+        alert("Today is " + today.toDateString());
+    }
+
+    showToday();
+
+    /*
+    // Problem 5 - A function that RETURNS the current date
+    Define a function named getToday, and in the body paste in these 2 lines of code:
+
+        var today = new Date();
+        return today.toDateString();
+
+    Note that this function returns a value, so when you invoke it, you should
+    assign the return value to a variable.
+
+    After the function definition, call/invoke the getToday function and ASSIGN it's RETURN VALUE to a variable named dateToday.
+    Then log dateToday.
+    */
+    function getToday(){
+        var today = new Date();
+        return today.toDateString();
+    }
+    var dateToday = getToday();
+    console.log(dateToday);
+
+
+    /*
+    // Problem 6 - A function that determines if the sum of 2 numbers is odd or even
+    Define a function named sumAnalyzer that takes two parameters. 
+    The first param should be named num1 and the second should be named num2.
+    Then paste into the body the following code (5 lines of code all together).
+
+        if((num1 + num2) % 2 == 0){
+            console.log("The sum of " + num1 + " and " + num2 + " is an EVEN number!");
+        }else{
+            console.log("The sum of " + num1 + " and " + num2 + " is an ODD number!");
+        }
+
+    After the function definition, invoke the sumAnalyzer function and pass in two numbers as parameters.
+    Check to console in the browser to make sure the function works.
+    */
+    function sumAnalyzer(num1,num2){
+        if((num1 + num2) % 2 == 0){
+            console.log("The sum of " + num1 + " and " + num2 + " is an EVEN number!");
+        }else{
+            console.log("The sum of " + num1 + " and " + num2 + " is an ODD number!");
+        }
+    }
+    sumAnalyzer(2,5);
+
+
+    /*
+    // BONUS Problem:
+    Define a function called convertMilesToKilometers.
+    The function should have one parameter named 'miles'.
+    In the body of the function write code that will convert the miles
+    to kilometers.
+    Make sure that the function returns the kilometers.
+    After the function definition, test the function by invoking it
+    and passing in 10 as the parameter.
+    Assign the return value to a variable named 'distanceInKilometers'
+    */
+    function convertMilesToKilometers(miles){
+        return miles * 1.609;
+    }
+    var distanceInKilometers = convertMilesToKilometers(10);
+    console.log(distanceInKilometers);
+
+
+   </script>
+   <footer>
+        &copy; 2018 Niall Kader
+   </footer>
+  </body>
+</html>
