@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Operators in JavaScript</title>
+    <meta name="description" content="This is a very breif overview of operators in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex, nofollow" />
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <!--
+    <p>Note to instructor: it would be a good idea to have a matching quiz that maps operator names to operators.
+    <p>Also note that we are skipping the negation operator and tricky compound boolean expression.</p>
+    -->
+    <h1>Operators</h1>
+    <p>
+        We have already discussed the <b>assignment operator</b> and the <b>equality operator</b>, but there are many others in JavaScript.
+        They can be grouped into the following categories:
+    </p>
+    <table border="1">
+      <tr>
+        <td><b>Arithmetic Opertators</b></td>
+        <td>
+            <br>
+            &nbsp;&nbsp;+ <br>
+            &nbsp;&nbsp;- <br>
+            &nbsp;&nbsp;* <br>
+            &nbsp;&nbsp;/ <br>
+            &nbsp;&nbsp;%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modulus operator<br><br>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Short-cut Arithmetic Opertators</b></td>
+        <td>
+            <br>
+            &nbsp;&nbsp;+= <br>
+            &nbsp;&nbsp;-= <br>
+            &nbsp;&nbsp;*= <br>
+            &nbsp;&nbsp;/= <br><br>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Increment and Decrement Opertators</b></td>
+        <td>
+            <br>
+            &nbsp;&nbsp;++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;increment operator<br>
+            &nbsp;&nbsp;--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrement operator<br><br>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Comparison Operators</b></td>
+        <td>
+            <br>
+            &nbsp;&nbsp;&lt; <br>  
+            &nbsp;&nbsp;&gt; <br>
+            &nbsp;&nbsp;&lt;= <br> 
+            &nbsp;&nbsp;&gt;= <br> 
+            &nbsp;&nbsp;==&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equality operator<br>
+            &nbsp;&nbsp;!=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inequality operator<br> 
+            &nbsp;&nbsp;===&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strict equality operator<br><br>
+        </td>
+      </tr>
+      <tr>
+        <td><b>Logical Opertators</b></td>
+        <td>
+            <br>
+            &nbsp;&nbsp;&amp;&amp;&nbsp;&nbsp;&nbsp;&nbsp;(AND)<br>
+            &nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(OR)<br><br>
+        </td>
+      </tr>
+    </table>
+    <h1>Arithmetic Operators</h1>
+    <p>
+      You already know how arithmetic operators work in math, so we don't need to talk much about the arthmetic operators.
+      Although, there is one that may need some explanation, the 'modulus' operator!
+    <p>
+    <h3>The Modulus Operator</h3>
+    <p>The modulus operator is used to determine the remainder from dividing the first number by the second number.</p>
+    <pre>
+// The Modulus Operator (finds the remainder)
+var someRemainder = 7 % 2;
+alert(someRemainder); // the alert will show 1
+    </pre>
+    <h3>Short-cut Arithmetic Operators</h3>
+    <p>
+        The short-cut operators just save you from doing a little extra typing.
+        As a beginner, these operators may just confuse you at first, but as you get more experience
+        you'll get to be more comfortable with them. These operators allow you to write more concise code
+        but you could just as easily use the long-hand version and your program will run exactly the same.
+    </p>
+    <pre>
+var x = 3;
+
+x += 2;     //same as x = x + 2
+x -= 2;     //same as x = x - 2
+x /= 2;     //same as x = x / 2
+x *= 2;     //same as x = x * 2
+    </pre>
+    <h3>Concatenating Strings</h3>
+    <p>
+        The addition operator has another purpose in JavaScript. 
+        Not only can it be used for adding numbers, it can also be used for joining strings together.
+        In programming, joining strings together is known as <b>concatenating</b>.
+        You will be hearing this term a lot in your programming career.
+    </p>
+    <pre>
+var str1 = "Hi";
+var str2 = "there";
+alert(str1 + " " + str2);
+    </pre>
+    <p>
+    You can also use the the short-cut addition operator when concatenating strings.
+    Here's an example that creates a string that represents an HTML table:
+    </p>
+    <pre>
+var html =    "&lt;table&gt;";
+html +=           "&lt;tr&gt;&lt;td&gt;x&lt;/td&gt;&lt;/tr&gt;";
+html +=           "&lt;tr&gt;&lt;td&gt;x&lt;/td&gt;&lt;/tr&gt;";
+html +=           "&lt;tr&gt;&lt;td&gt;x&lt;/td&gt;&lt;/tr&gt;";
+html +=       "&lt;/table&gt;";
+
+alert("Here's some HTML:\n" + html);
+    </pre>
+    <h3>The Increment and Decrement Operators</h3>
+    <p>
+    The increment and decrement operators are also another type of short-cut operator.
+    They simply increase a value by 1, or decrease a value by one.
+    </p>
+    <pre>
+var x = 7;
+
+x++; 
+console.log("The value of x is " + x);
+
+x--;
+console.log("The value of x is " + x);
+    </pre>
+    <p>
+    Note that you could easily use the long-hand version to add or subtract 1 from a number.
+    But you'll soon find out when we learn about loops, that it's such a common task to add or remove 1 from a number
+    that the short-cuts come in handy.
+    </p>
+
+    <h1>Comparison Operators</h1>
+    <p>
+        We use comparison operators in <b>boolean expressions</b>.
+        You have probably have already seen many of these operators in math.
+    </p>
+    <p>
+        Here is an IF statement in which the boolean expression check to see if the value of x is greater than or equal to 5:
+    </p>
+    <pre>
+if(x >= 5){
+  alert("x is greater than or equal to 5!");
+}
+    </pre>
+    <h3>The Equality Operator</h3>
+    <p>
+        Remember that a single equals sign is the 'assignment' operator, it is used to assign a value to a variable.
+        To see if two values are the same we use the 'equality' operator, which is two equals signs next to each other:&nbsp; <b>==</b>.
+    </p>
+    <pre>
+if(x == 5){
+  alert("Yes it's true, x is equal to 5!");
+}else{
+   alert("x is NOT equal to 5!"); 
+}
+    </pre>
+    <p>You can use the equality operator to compare strings as well as numbers, but remember that JavaScript is case-sensitive.</p>
+    <pre>   
+var guess = prompt("Guess what word I'm thinking of.");
+
+if(guess == "operators"){
+  alert("Good guess!");
+}
+    </pre>
+    <h3>Comparing for Inequality</h3>
+    <p>
+    Sometimes we want to compare values to see it they are NOT equal.
+    </p>
+    <pre>
+var myName = "Bob";
+var yourName = prompt("What is your first name?");
+
+if(myName != yourName){
+  alert("We have different names!");
+}
+    </pre>
+    <h3>The Strict Equality Operator (===)</h3>
+    <p>
+        We know that variables can store different types of data (number, string, boolean, etc.).
+        Consider what happens if we store the number 7 in a variable, and if we store the string "7" in another variable.
+        The <b>value</b> of each variable is the same (they both store the value 7), but one is a string
+        and the other is a number. We can use the <b>strict equality operator</b> to compare both the value and the type of two variables.
+    </p>
+    <pre>
+var someNumber = 7;
+var someString = "7";
+
+if(someNumber == someString){
+    alert("They have the same VALUE...");
+}
+
+if(someNumber === someString){
+    alert("They have the same VALUE...and they are the same DATA TYPE");
+}
+    </pre>
+    <p>
+        Here's a good example that demonstrates that in programming languages, 0 and false are considered to be the same (even though they have different data types).
+    </p>
+    <pre>
+var a = 0;
+var b = false;
+
+if(a == b){
+    alert("They have the same value");
+}
+
+if(a === b){
+    alert("They have the same value and they are the same data type");
+}
+    </pre>
+    <h1>Logical Operators</h1>
+    <h3>The AND operator <b>&amp;&amp;</b></h3>
+    <p>
+    We use logical operators to combine two or more boolean expressions.
+    For example, if we wanted to see if a number was between two other numbers, we could use the 'AND' opertator, which is two ampersands next to each other.
+    </p>
+    <pre>
+var x = parseInt(prompt("Enter a number:"));
+var min = 1;
+var max = 10;
+
+if(x >= min && x <= max){
+  alert( x + " is within " + min + " and " + max);
+}
+
+// Note: things that get entered into a prompt window are assumed to be strings
+// so we can use the built-in parseInt() function to TRY to convert it to a number data type
+    </pre>
+    <p>When you combine two boolean expressions by using the AND operator, then result will be true only if both expressions are true.</p>
+    <h3>The OR operator <b>||</b></h3>
+    <p>
+        If you use the OR operator to combine two boolean expressions in an IF statement, the 
+        statement will evaluate to true if either of the boolean expressions is true. 
+    </p>
+    <pre>
+var temperature = 75;
+var rain = true;
+var whatToDo;
+
+if(temperature < 60 || rain){
+    whatToDo = "stay home";    
+}else{
+    whatToDo = "play golf";
+}
+
+alert("Let's " + whatToDo);
+    </pre>
+    <p>
+    It might look a little funny that the second boolean expression in the above if statement is simply the variable 'rain'.
+    But note that 'rain' evaluates to true because it was initialized to true before the IF statement.
+    </p>
+    <p>Here's another example...</p>
+    <pre>
+var joeLikesProgramming = true;
+var bettyLikesProgramming = false;
+var sallyLikesProgramming = true;
+
+if(joeLikesProgramming && sallyLikesProgramming){
+  alert("Joe AND Sally like programming!");
+}
+
+if(bettyLikesProgramming || sallyLikesProgramming){
+  alert("Betty OR Sally likes programming!");
+}
+    </pre>
+       
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+ 
+    </script>
+
+    <h1>Questions - JavaScript Operators</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What are the comparison operators used for?
+    </p>
+    <div class="answer">
+        Replace this text with your answer to the above problem.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        What is the difference between the equality operator and the strict equality operator?
+    </p>
+    <div class="answer">
+        Replace this text with your answer to the above problem.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        Which operator would you use to find the remainder from dividing 2 numbers.
+    </p>
+    <div class="answer">
+        Replace this text with your answer to the above problem.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+        Which operator would you use if you wanted to find out if two values were NOT equal?
+    </p>
+    <div class="answer">
+        Replace this text with your answer to the above problem.
+    </div>
+
+
+	  <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    //Problem 1
+    //Declare a variable named 'score' and assign it a value of 21.
+    //Then use a short-cut arithmetic operator to add 7 to it.
+    var score = 21;
+    score += 7;
+    console.log(score);
+
+    //Problem 2
+    //Use the decrement operator to reduce the value of 'score' by 1.
+    score--;
+    console.log(score);
+
+
+    //Problem 3
+    //Declare a variable named 'todaysHighScore' and initialize it to a value of 20.
+    //Then write an IF statement that checks to see if score is greater than todaysHighScore
+    //If it's true then alert("You beat the high score for the day!")
+    var todaysHighScore = 20;
+    if (score > todaysHighScore) {
+        alert("You beat the high score for the day!");
+    }
+
+
+    //Problem 4
+    //Use your imagination to declare and initialize a few variables and then demonstrate the logical AND operator in an IF statement
+    var probFour = prompt("Enter a number:");
+    var maxNum = 20;
+    var minNum =10;
+    if (probFour >= minNum && probFour <= maxNum) {
+        alert(probFour + " is within " + minNum + " and " + maxNum + ".");
+    }if(probFour < minNum) {
+        alert(probFour + " is lesser than " + minNum + ".")
+    }if(probFour > maxNum) {
+        alert(probFour + " is greater than " + maxNum + ".")
+    }
+    
+
+    //Problem 5
+    //Use your imagination to declare and initialize a few variables and then demonstrate the logical OR operator in an IF statement
+
+    var darkBook = prompt("Do you want to pick up a dark themed book?(input 'yes' or 'no')");
+    var fantasyBook = prompt("Do you want to pick up a fantasy book?(input 'yes' or 'no')");
+    var pickUpBook;
+
+    if (darkBook == 'yes' || fantasyBook == 'yes') {
+        var pickUpBook = "You should pick up a dark themed book OR a fantasy book!"
+    }else {
+        var pickUpBook = "You will not pick up any books!"
+    }
+
+    alert(pickUpBook);
+    
+    </script>
+    <footer>
+        &copy; 2018 Niall Kader
+     </footer>
+  </body>
+</html>
+
+

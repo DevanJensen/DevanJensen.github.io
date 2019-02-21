@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IF Statements in Java Script</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="An Introduction to IF statements in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>If Statements in JavaScript</h1>
+    <h3>CONTROL STRUCTURES - IF STATEMENTS</h3>
+    <p>
+        We use <b>if statements</b> to <b>control the flow of code execution</b> in JavaScript. 
+        For example, if a certain condition is true, then we may want some code to run. 
+        But if it is false, then we may want some other code to run.
+    </p>
+    <p>
+        An <b>if statement</b> is known as a <b>control structure</b>. There are other control structures in JavaScript, we'll learn more about them soon.
+    </p>
+    <p>Here is the syntax for writing an IF statement:</p>
+    <pre>
+if(boolean expression goes here){
+
+  // the code inside these curly braces
+  // will run if the boolean expression
+  // evaluates to true
+
+}
+    </pre>
+    <p>
+    Before we continue, please take a moment to notice the syntax (remember that mastering the syntax of a language is one of the biggest hurdles to a beginning programmer). 
+    We have the keyword 'if' followed by a boolean expression that is enclosed within parenthesis (we'll discuss boolean expressions next).
+    Also notice that directly after the closing parenthesis, we have an opening curly brace. 
+    The matching closing curly brace marks the end of this IF statement. 
+    You will put code in between the opening and closing curly braces.
+    This code will be executed if the boolean expression evaluates to true. 
+    </p>
+    <p>
+    Beginning programmers must pay extremely close attention to parenthesis and curly braces.
+    They always come in pairs (for example, every opening curly brace will have a corresponding closing curly brace).
+    It's a common mistake for beginning programmers to forget an opening or closing curly brace, which can lead to bugs and frustration.
+    </p>
+    <p>
+      If it helps you to keep track of the curly braces, it may be helpful for you to put the opening curly brace
+      on a new line so that it is vertically aligned with its matching closing curly brace.
+    </p>
+    <pre>
+if(boolean expression goes here)
+{
+
+  // the code inside these curly braces
+  // will run if the boolean expression
+  // evaluates to true
+
+}
+    </pre>
+    <h3>Boolean Expressions</h3>
+    <p>
+        You might be wondering what a <b>boolean expression</b> is. Remember we talked about expressions in a previoius class. An expression can be evaluated to a result. For example the expression 6 + 5 can be 
+        evaluated to a result of 11. A boolean expression evaluates to TRUE or FALSE. Here is a boolean expression:
+        <br><br> 
+        5 > (3+1)
+        <br><br>
+        Does this boolean expression evaluate to TRUE, or FALSE? Let's try it out!
+    </p>
+    <pre>
+if( 5 > (3+1) ){
+  alert("Yup! The boolean expression evaluates to true, which is why this alert code is running right now!");
+}
+    </pre>
+    <h3>IF/ELSE Statements</h3>
+    <p>
+        In the example above, we only ran code (showing an alert) if the boolean expression evaluated to true. 
+        But we often want to run different code if the boolean expression evaluates to false.
+        In that case we can use a slightly different form of an if statement, known as an <b>IF/ELSE statement</b>.
+        Here's the syntax for an IF/ELSE statement:
+    </p>
+    <pre>
+if(boolean expression goes here){
+
+  // the code inside these curly braces
+  // will run if the boolean expression
+  // evaluates to TRUE
+
+}else{
+  
+  // the code inside these curly braces
+  // will run if the boolean expression
+  // evaluates to FALSE
+
+}
+    </pre>
+    <p>
+        Let's make a little game program that uses an if/else control structure:
+    </p>
+    <pre>
+var guess = prompt("Who was the first president of the U.S.?");
+
+if( guess == "George Washington" ){
+  alert("Correct! You win!");
+}else{
+  alert("Sorry, you lose!");
+}
+    </pre>
+    <p>
+    <h3>VERY IMPORTANT...</h3>
+    Note that the boolean expression uses two equal signs. 
+    Remember that a single equal sign is known as the <b>assignment operator</b>, and is used to assign a value to a variable.
+    So we can't use the assignment operator in our boolean expression because JavaScript would get confused (are we assiging a value to 'guess' or are we comparing the value of 'guess' to see if it is equal to 'George Washington'?).
+    To avoid this confusion, we use two equal signs. 
+    These two equals signs together are known as the <b>equality operator</b>.
+    We'll be talking more about various other operators in JavaScript soon.
+    </p>
+    <h3>Formatting IF Statments by Indenting</h3>
+    <p>Let's review the proper syntax for defining your own function in JavaScript:</p>
+    <pre>
+function someFunctionName(){
+  // code that runs when you use the function
+  // goes here, in the body of the function (inside the curly braces)
+}
+    </pre>
+    <p>
+    Notice how the code inside the body of the function is indented. This makes our code easy to read
+    and it makes it easy to see where the code for the function begins and ends. If we did not
+    indent this code, it could be easy to scroll right past the entire function without clearly seeing where it ends
+    and where the code after the function begins.
+    </p>
+    <p>
+    We need to follow the same formatting for If statements. The code inside the curly braces
+    of an if statement should be indented, to make it easy to see which code is 'nested' inside the if statement.
+    This makes it much easier to understand what lines of code will run for each boolean expression in the IF statement.
+    Take a moment to look at all the IF statements that are presented on the page and notice how the code is indented for each one of them.
+    </p>
+    <h3>IF/Else-If Statements</h3>
+    <p>With IF and IF/ELSE statements you are only evaluating one boolean expression 
+    (another way to say this is that 'you are only evaluating one true/false condition').
+    In a previous code snippet we ask a user to enter the name of the first U.S. president. 
+    Our IF statement checks only one condition; whether or not the answer entered is true or false.
+    </p>
+    <p> 
+    We can use another variation of IF statements to deal with more than one possible condition.
+    Let's say we ask the user to enter a color. If the color they enter is red, then our program does one thing.
+    If the color they enter is blue, then our program does something else. And if the color they enter is yellow, our
+    program does yet another thing. Finally, if they enter any other color (something other than red, blue, or yellow), our program does yet another thing.
+    </p>
+    <p>Here's what that code might look like:</p>
+    <pre>
+var color = prompt("Enter a color (use all lower case letters please - JS is case sensitive.");
+
+if(color == "red"){
+  alert("Ah yes, the color of roses!");
+}else if(color == "blue"){
+  alert("What's the matter? Not feeling well today?");
+}else if(color == "yellow"){
+  alert("That's hot!");
+}else{
+  alert("Not sure what to tell you, but you didn't enter 'red', 'blue', or 'yellow'.");
+}
+    </pre>
+    <p>Notice the the final 'else' does not include 'if', and it does not include a boolean expression.
+    The code inside the curly braces following this last 'else' will run if none of the prevsious boolean expressions are true.
+    <p>
+      Here is the syntax for an if/else-if control structure:
+    <pre>
+if(first boolean expression goes here){
+  
+  // this code runs if the first boolean expression is true
+  // and then code execution will go directly to the alert() below;
+
+}else if(second boolean expression goes here){
+
+  // this code runs if the second boolean expression is true
+  // and then code execution will go directly to the alert() below;
+
+}else{
+
+  // this code runs if neither of the first nor the second 
+  // boolean expressions are true
+  // and then code execution will go directly to the alert() below;
+
+}
+
+alert("The IF statement has completed!");
+    </pre>
+    <p>
+      A very important concept to understand about IF statements is that only one 'branch' of code will execute.
+      Each pair of curly braces encloses a 'code branch'.
+      Consider this strange example: 
+    </p>
+    <pre>
+var age = 9;
+
+if(age < 10){
+  alert("age is less than 10");
+}else if(age < 20){
+  alert("age is less than 20");
+}
+    </pre>
+    <p>
+    In this example, both boolean expressions evaluate to true. 
+    If statements will execute the code branch for the first boolean expression that evaluates to true.
+    So in this case an alert message will display "age is less than 10".
+    As long as the value of age is 9, the second code branch will never execute.
+    </p>
+    <p>
+      It's absolutely mandatory for a programmer to understand how these variations of IF statements work.
+      It takes some practice get a feel for the nuances between them. 
+    <p>
+    Notice again how the code is indented within each part of the entire IF statement.
+    It's extremely important to follow good formatting rules when writing code so that you, 
+    and other programmers can easily read it.
+    </p>
+    <h3>Nested If Statements</h3>
+    <p>
+        These variations of the if statement can be nested as well. Consider this algorithm:
+    </p>
+     <ul>
+      <li>
+          If the user likes books, ask them if they like Sci Fi books:
+          <ul>
+              <li>If the user likes Sci Fi books, then recommend Frankenstein.</li>
+              <li>If the user does NOT like Sci Fi books, then recommend Gone With the Wind.</li>
+          </ul>
+      </li>
+      <li>
+          If the user does NOT like books, then ask them if they like movies.
+          <ul>
+              <li>If the user likes movies, then recommend the movie Social Networking.</li>
+              <li>If the user does NOT like movies, then recommend that they take up knitting.</li>
+          </ul>
+      </li>
+    </ul>
+    <p>Here's how we can write code for the algorithm:</p>
+    <pre>
+var likesBooks = prompt("Do you like books (enter 'yes' or 'no')?");
+
+if(likesBooks == "yes"){
+  // the user likes books...
+
+  var likesSciFi = prompt("Do you like Sci Fi books [enter 'yes' or 'no']?");
+  
+  if(likesSciFi == "yes"){
+    alert("I recommend Frankenstein!");
+  }else{
+    alert("I recommend Gone With the Wind!");
+  }
+
+}else if(likesBooks == "no"){
+  // the user does NOT like books...
+
+  var likesMovies = prompt("Do you like movies (enter 'yes' or 'no')?");
+  
+  if(likesMovies == "yes"){
+    alert("I recommend Social Networking!");
+  }else{
+    alert("I recommend knitting!");
+  }
+
+}else{
+
+  alert("It was a yes/no question! And remember that JS is case sensitive!");
+
+}
+    </pre>
+    
+    <h3>Controlling the Flow</h3>
+    <p>
+      You can use variations of the IF statement to control the flow of your program.
+      This will determine what lines of code run and which lines will not run when your program is used.
+    </p>
+    <p>
+      Understanding how to control the flow of a program is hugely important.
+      But in order to know how to control the flow, you must understand the problem that you are 
+      trying to solve with your program. So make sure to take the time to understand the problem before you dive into writing the code.
+    </p>
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+
+
+    </script>
+
+    <h1>Questions - IF Statements</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+      Why is an IF statement known as a <b>control structure</b>?
+    </p>
+    <div class="answer">
+      an IF statement can control if commands happen by the use of booleans.
+    </div> 
+    <h4>Question 2</h4>
+    <p class="question">
+      There are other control structures in JavaScript that we'll be learning about soon. Use your google skills to look up the other control structures in JavaScript and list them below.
+    </p>
+    <div class="answer">
+      <ul>
+        <li>while</li>
+        <li>do....while</li>
+        <li>for</li>
+        <li>switch</li>
+        <li>with</li>
+      </ul>
+    </div>      
+    <h4>Question 3</h4>
+    <p class="question">
+      What is a <b>boolean expression</b>?
+    </p>
+    <div class="answer">
+      a boolean expression confirms if something is true or false.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+      What is the 'equality operator', and what is it used for? How is it different from the assignment operator?
+    </p>
+    <div class="answer">
+      It's used to check if information inputted is correct and gives the okay if code is to be ran(==). It's used to confirm if two values are the same, rather than assigning a new value.
+    </div>
+    <h4>Question 5</h4>
+    <p class="question">
+      Why is it important to properly indent your code when writing IF statements?
+    </p>
+    <div class="answer">
+      It aids in being able to properly read the code.
+    </div>
+    <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    //Problem 1
+    // Declare a variable named averageGrade and initialize it to
+    // a value of 71.2.
+    // Declare another variable named willPass but do not initialize it.
+    // Then write an IF statement that checks to see if averageGrade
+    // is greater 70. 
+    // If this is true, then assign a value of true to willPass.
+    // If this is not true, then assign a value of false to willPass.
+    // Then log the value of willPass.
+    var averageGrade = 71.2;
+    var willPass;
+    if (averageGrade > 70) {
+      var willPass = true;
+    }
+    console.log(willPass);
+
+
+    // BEFORE STARTING ON THE NEXT PROBLEM...
+    // Uncomment the following line of code to get things started:
+    var myNumber = parseInt(prompt("Enter a whole number:"));
+
+    //Note that the line of code that you just uncommented will prompt the user to enter a number.
+    //We are storing the users input in the variable myNumber.
+    //We will use myNumber in some of the problems below. 
+
+    //Problem 2
+    // Write an IF statement that checks to see if myNumber is greater than 50.
+    // If myNumber is greater than 50 the IF statement should run code that logs: 'More than 50!'
+    if (myNumber > 50) {
+      console.log("More than 50!");
+    }
+
+
+
+
+    //Problem 3
+    // Write an IF/ELSE statement that checks to see if myNumber is greater than or equal to 75
+    // If the above condition is true, the IF statement should log: 'Equal to or more than 75!'.
+    // If the condition is false, the IF statement should log: 'Less than 75!'
+    if (myNumber >= 75) {
+      console.log("Equal to or more than 75!");
+    }else if (myNumber < 75) {
+      console.log("Less than 75!");
+    }
+
+
+
+
+    //Problem 4
+    // Write an IF/ELSE IF statement that does the following:
+    // If myNumber is less than 0, then log: "In the hole!"
+    // If myNumber is equal to 0, then log: "That's nothing!"
+    // If myNumber is less than 10, then log: "Not yet a double digit!"
+    // If myNumber is less than or equal to 99, then log: "Almost a big number"
+    // If myNumber is greater than 99, then log: "Triple digits!"
+    if (myNumber < 0) {
+      console.log("In the hole!");
+    }else if (myNumber == 0) {
+      console.log("That's nothing!");
+    }else if (myNumber < 10) {
+      console.log("Not yet a double digit!");
+    }else if (myNumber <= 99) {
+      console.log("Almost a big number!");
+    }else if (myNumber > 99) {
+      console.log("Triple Digits!");
+    }
+
+
+
+
+    //Problem 5
+    // Write a program that asks the user to answer 3 questions.
+    // If the user answers all 3 questions correctly, then show an alert that says: "You win!"
+    // If the user answers any of the questions incorrectly, they should see and alert
+    // that says "You lose!" and the game should end.
+    var answerOne = prompt("What programming langauge are we learning?(lowercase,no spaces)");
+
+    if (answerOne == "javascript") {
+      var answerTwo = prompt("What programming langauge did we learn in the last chapter?(Uppercase, no spaces)");
+    }
+    if (answerTwo == "HTML") {
+      var answerThree = prompt("What is 1+1?");
+    }
+    if (answerThree == 2) {
+      alert("You win!");
+    }
+    else{
+      alert("You lose!");
+    }
+
+
+    </script>
+    <footer>
+      &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
