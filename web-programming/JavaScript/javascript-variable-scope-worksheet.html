@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Variable Scope in JavaScript</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="An introduction to Variable Scope in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>Variable Scope</h1>
+    <p>
+    	When you declare a variable inside a function, it will be 'invisible' outside of the function.
+    	This means that only code that is inside the body of the function can use the variable.
+    	If you try to use the variable outside of the function, you'll find that the program will crash, and the error message in the console will mention that the variable has not been declared or defined.
+    </p>
+    <pre>
+function myFunction(){
+	var x = 10;
+	// there would probably be other code here that does something with x
+}
+
+alert(x);
+    </pre>
+    <p>
+    	The code sample above demonstrates that variables declared inside of functions are 'invisible' outside of the functions.
+    </p>
+    <p>
+    	Interestingly, variables that are declared outside of any function can be used, or 'seen', from inside a function.
+    	Consider this example:
+    </p>
+    <pre>
+var x = 7;
+
+function myFunction(){
+	alert(x);
+}
+    </pre>
+    <p>
+    	Variables that are declared inside of functions are known as <b>local variables</b>.
+    	Variables that are declared outside of any function are called <b>global variables</b>.
+    	I'm not sure how the terms 'local' and 'global' came to be used, but here's my best metaphor to explain their origins:
+    	If you think of a function as a community of JavaScript code, then all of the commands inside the body of the function may be thought of as 'locals' who cannot leave the community (unless they are 'returned' by functions).
+    	On the other hand, global variables are available throughout the entire world (your entire program), and they can be freely used anywhere in the entire world, which makes them 'global'.
+    </p>
+    <p>
+    	The visibility of a variable is known as its <b>scope</b>.
+    	A local variable is in scope only within it's enclosing function, and we often say that the variable is 'local' to that function.
+    	A global variable is in scope (visible) anywhere in your program. 
+    </p>
+    <p>
+    	You might be wondering why JavaScript is set up to work this way, for now don't worry about 'why'.
+    	At this point in your progress as a programmer, it's more important understand 'how' variable scope works because you'll avoid some mistakes 
+    	(for example, a common mistake for beginners is to try to use a variable that is 'out of scope' (not visible).
+    	When you begin to study Java next semester, you'll see that this is useful feature.
+    </p>
+    <p>
+    	Finally, it's important to know that global variables are truly global in your entire application. 
+    	For example, if you declare a global variable in a .js file, it will be visible in other .js files that are linked to your program.
+    </p>
+    <p>
+    	Let's create a few .js pages and link them to this page so that we can try it out!
+    </p>
+    
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+    </script>
+
+    <h1>Questions - JavaScript Variable Scope</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What is a 'local' variable?
+    </p>
+    <div class="answer">
+        A local variable is declared inside a function and can only be used inside the function which declared it.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        What is a 'global' variable?
+    </p>
+    <div class="answer">
+        A global variable is declared outside of a function and can be used by the entire code.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        If you try to alert a variable that is not visible (not in scope), what will happen to your program?
+    </p>
+    <div class="answer">
+        It will have a undefined variable error in the console.
+    </div>
+    <footer>
+        &copy; 2018 Niall Kader
+     </footer>
+  </body>
+</html>
+
+
