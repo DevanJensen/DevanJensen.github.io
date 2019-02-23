@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Organizing Code in Java Script</title>
+    <meta name="description" content="Organizing Code in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>Organizing Code in JavaScript</h1>
+    <p>
+      If it made your eyes soar to look that the nested if statement
+      in the previous page, then I have good news for you.
+    </p>
+    <p>
+      You could re-organize that code and use functions to potentially make is easier follow.
+    </p>
+    <p>
+      Here's the code that we worked with previously...
+    </p>
+    <pre>
+var likesBooks = prompt("Do you like books (enter 'yes' or 'no')?");
+
+if(likesBooks == "yes"){
+  // the user likes books...
+
+  var likesSciFi = prompt("Do you like Sci Fi books (enter 'yes' or 'no')?");
+  
+  if(likesSciFi == "yes"){
+    alert("I recommend Frankenstein!");
+  }else{
+    alert("I recommend Gone With the Wind!");
+  }
+
+}else if(likesBooks == "no"){
+  // the user does NOT like books...
+
+  var likesMovies = prompt("Do you like movies (enter 'yes' or 'no')?");
+  
+  if(likesMovies == "yes"){
+    alert("I recommend Social Networking!");
+  }else{
+    alert("I recommend knitting!");
+  }
+
+}else{
+
+  alert("It was a yes/no question! And remember that JS is case sensitive!");
+
+}
+    </pre>
+    <p>
+      Here's an alternative approach that you could use, which you may find easier to follow.
+      We could create functions that handle the nested if statements like this:
+    </p>
+    <pre>
+function checkSciFiBooks(){
+
+  var likesSciFi = prompt("Do you like Sci Fi books (enter 'yes' or 'no')?");
+  
+  if(likesSciFi == "yes"){
+    alert("I recommend Frankenstein!");
+  }else{
+    alert("I recommend Gone With the Wind!");
+  }
+
+}
+
+function checkMovies(){
+
+  var likesMovies = prompt("Do you like movies (enter 'yes' or 'no')?");
+  
+  if(likesMovies == "yes"){
+    alert("I recommend Social Networking!");
+  }else{
+    alert("I recommend knitting!");
+  }
+
+}
+    </pre>
+    <p>
+      Then our program might look like this: 
+    </p>
+    <pre>
+var likesBooks = prompt("Do you like books (enter 'yes' or 'no')?");
+
+if(likesBooks == "yes"){
+  checkSciFiBooks();
+}else if(likesBooks == "no"){
+  checkMovies();
+}else{
+  alert("It was a yes/no question! And remember that JS is case sensitive!");
+}
+
+    </pre>
+    <footer>
+        &copy; 2018 Niall Kader
+     </footer>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nested Function Calls in JavaScript</title>
+    <meta name="description" content="This is a very breif overview of nested function calls in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <script>
+    // Try out your code here!
+    function padWithDashes(str){
+    return "---" + str + "---";
+    }
+    
+    alert(padWithDashes(prompt("Enter something.")));
+    
+    </script>
+  </head>
+  <body>
+    <!--
+    <p>Note to instructor: it would be a good idea to have a matching quiz that maps operator names to operators.
+    <p>Also note that we are skipping the negation operator and tricky compound boolean expression.</p>
+    -->
+    <h1>Nested Function Calls</h1>
+    <p>In math, when we see lots of parenthesis used in expressions, we evaluate them from the inside out:</p>
+    <pre>
+x = (7 * (4 * (5 + 3) + 3))
+    </pre>
+    <p>
+    When functions return values, you might see them used inside of other function calls (nested function call).
+    In the previous page (JavaScript Operators) I may have surprised you with some strange code that looked like this:
+    </p>
+    <pre>
+var x = parseInt(prompt("Enter a number:"));
+    </pre>
+    <p>
+    If a function returns a value, it can be nested inside another function call when you invoke it.
+    The return value of the nested function call will become the parameter for the outer function call.
+    </p>
+    <pre>
+function padWithDashes(str){
+    return "---" + str + "---";
+}
+
+var someString = prompt("Enter something.");
+alert(padWithDashes(someString));
+    </pre>
+    <p>
+        First, we declare a function that takes a string parameter and concatenates dashes before and after the parameter.
+        It also returns the final concatenated string.
+        Then we prompt the user to enter a string and store the response in someString.
+    </p>
+    <p>
+        The final line is what we are interested in, here we see 'nested' function calls.
+        The return value of the call to padWithDashes() is passed as the parameter to alert().
+    </p>
+    <p>
+        There is a script on line 11 of this file, go ahead and try it out.
+    </p>
+    <p>
+        We could actually condense this code even more. See if you can wrap your mind around this code:
+    </p>
+    <pre>
+alert(padWithDashes(prompt("Enter something.")));
+    </pre>
+    <p>
+    Just remember that nested function calls are evaluated from the inside out.
+    That is, the inner most function call is executed first and it's return value
+    is passed as the parameter to the next function call.
+    </p>
+    <p>
+    Also remember that you when you nest function calls like this, they should be functions that return a value.    
+    </p>
+    <footer>
+        &copy; 2018 Niall Kader
+     </footer>
+  </body>
+</html>

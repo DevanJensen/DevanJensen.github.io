@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript Review</title>
+    <meta name="description" content="A review of functions, IF statments, and operators">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <style type="text/css">
+    
+    </style>
+  </head>
+  <body>
+  	<h1>JavaScript Review</h1>
+  	<img id="koala" src="../images/Koala.jpg" width="200" alt="This is a koala bear" />
+  	<div id="fireball"></div>
+  </body>
+</html>
+<script>
+////////////////////////////////////////////////////////////////
+// Problem 1 - Determine eligibility for the Axis Pension Plan
+// Refer to the Pension Deduction Flow Chart Key.xlsx spread sheet
+////////////////////////////////////////////////////////////////
+
+
+// set the tabbing to 4 in sublime text
+
+if(checkEligibility()){
+	alert("You are eligible!");
+}else{
+	alert("Sorry, you are not eligible!");
+}
+
+
+
+function checkEligibility(){
+	
+	var eligible = false;
+
+	// your code goes here
+	var weeksEmployed = prompt("How many weeks have you wroked here?");
+	if (weeksEmployed > 249) {
+		ageWhenHired = prompt("How old were you when you got hired?")
+		if (ageWhenHired < 55) {
+			eligible = true;
+		}
+	}
+
+	return eligible;
+}
+
+
+////////////////////////////////////////////////////////////////
+// Problem 2 - Resize the koala pic
+////////////////////////////////////////////////////////////////
+var width = prompt("How wide should the koala pic be?");
+//resizeKoalaPic(width);
+
+function resizeKoalaPic(newWidth){
+	alert("TODO: resize the picture of the koala bear");
+}
+
+
+
+
+////////////////////////////////////////////////////////////////
+// Problem 3 - Resize the fire ball, and change it's color
+////////////////////////////////////////////////////////////////
+
+//showFireBall();
+
+function showFireBall(){
+
+	var fireBallSize = parseInt(prompt("How big is the fire ball?"));
+	var color = "gray";
+
+	/*
+	Put an IF statement here the does the following:
+	- If the fireBallSize parameter is less than 10, set the color variable to "red"
+	- If the fireBallSize parameter is less than 50, set the color variable to "orange"
+	- In all other cases, the color should be yellow
+	*/
+
+	// 'get a handle' on the div with the id of 'fireball', and store it in the fireBall variable
+	var fireBall = document.getElementById("fireball");
+	// set the color of the fireBall (based on what's on the value of the 'color' variable)
+	fireball.style.backgroundColor = color;
+	// set the height and width of the fireBall (in pixels)
+	fireball.style.height = fireBallSize + "px";
+	fireball.style.width = fireBallSize + "px";
+	// set the 'borderRadius' of the fire ball to be half the fireBallSize (this will make it a circle instead of a square)
+	fireball.style.borderRadius = (fireBallSize/2) + "px" ;
+
+}
+
+
+</script>

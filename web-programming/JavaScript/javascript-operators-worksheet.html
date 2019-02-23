@@ -292,28 +292,28 @@ if(bettyLikesProgramming || sallyLikesProgramming){
         What are the comparison operators used for?
     </p>
     <div class="answer">
-        Replace this text with your answer to the above problem.
+        Comparsion operators are used to compare two values and can be used to see if values are the same, if a value is higher/lower than another value.
     </div>
     <h4>Question 2</h4>
     <p class="question">
         What is the difference between the equality operator and the strict equality operator?
     </p>
     <div class="answer">
-        Replace this text with your answer to the above problem.
+        A strict equality operator checks if the value AND the type is the same.
     </div>
     <h4>Question 3</h4>
     <p class="question">
         Which operator would you use to find the remainder from dividing 2 numbers.
     </p>
     <div class="answer">
-        Replace this text with your answer to the above problem.
+        You would use the Modulus Operator.
     </div>
     <h4>Question 4</h4>
     <p class="question">
         Which operator would you use if you wanted to find out if two values were NOT equal?
     </p>
     <div class="answer">
-        Replace this text with your answer to the above problem.
+        You would use the comparsion operator.
     </div>
 
 
@@ -369,16 +369,16 @@ if(bettyLikesProgramming || sallyLikesProgramming){
 
     var darkBook = prompt("Do you want to pick up a dark themed book?(input 'yes' or 'no')");
     var fantasyBook = prompt("Do you want to pick up a fantasy book?(input 'yes' or 'no')");
-    var pickUpBook;
-
+    if (darkBook == 'yes' && fantasyBook == 'yes') {
+        alert("You should pick up both types of books!");
+    }
     if (darkBook == 'yes' || fantasyBook == 'yes') {
-        var pickUpBook = "You should pick up a dark themed book OR a fantasy book!"
+        alert("You could pick up a dark themed book OR a fantasy book!");
     }else {
-        var pickUpBook = "You will not pick up any books!"
+        alert("You will not pick up any books!")
     }
 
-    alert(pickUpBook);
-    
+
     </script>
     <footer>
         &copy; 2018 Niall Kader
