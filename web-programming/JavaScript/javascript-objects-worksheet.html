@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>The Object Data Type in JavaScript</title>
+    <meta name="description" content="This is a very breif overview to the object data type in JavaScript">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>The Object Data Type in JavaScript</h1>
+    <p>
+      We previously talked about variables, and how they store different types of data. We discussed numbers, strings, and boolean data types.
+      Another data type that a variable can store in JavaScript is called the 'object' data type.
+    </p>
+    <p>
+      When writing programs, we often need to simulate real world objects. 
+      For example we may need to create a program that keeps track of dogs (we got hired to build a website for the Humane Society). 
+      So we might create 'dog' objects in our code. 
+      A dog object should contain all the information about a dog that we need for the purposes of our program. 
+      So if our program needs to keep track of a dog's name and its breed,
+      then each dog object that we create in our code should store that information.
+      So 'name' and 'breed' would be the properties of a dog that we are interested in keeping track of.
+    </p>
+    <p>An object is a collection of properties and their values.</p>
+    <p>
+        Consider the properties of a book? Size, publisher, number of pages, author, title, and many more.
+        What are the values that can be assigned to these properties? 
+        Note that the values of these properties may be different data types. 
+        If an object has an 'age' property, the value would be a number, a 'name' property would probably have a string value. 
+    </p>
+    <h3>Object-oriented programming is all about simulating real world objects in a program!</h3>
+    <p>
+      We can use objects in our programs to model, or simulate, things in the real world.
+      These 'virtual objects' can represent many things, for example if we are writing software for a library,
+      we would probably have many 'book' objects that represent the data we need to keep track of each real book in the library. 
+      Our program might even keep track of many libraries, so each library object may contain it's own collection of books.
+      The possibilties for the types of objects that you can create is endless!
+    </p>
+    <p>
+    Just like objects in the real world, objects in our programs can be extremely complicated, we'll see some complex objects when we discuss the DOM in a little while.
+    </p>
+    <p>
+      For now, all you need to know is that objects have properties (we'll learn a little more about objects later in the course).
+      Here is how we can create an object in JavaScript code:
+    </p>
+    <pre>
+var myDog = { name: "Lilo",  breed: "mut",  age: 3,  vaccinated: true };
+    </pre>
+    <p>
+    This object has 4 properties (name, breed, and age). Each one of these properties is set to a value (name = Lilo, breed = mut, age = 3).
+    </p>
+    <p>
+    Notice the <b>syntax</b>; there's a lot going on in this simple little object! 
+    </p>
+    <ul>
+        <li>We use curly braces to enclose the properties of the object</li>
+        <li>Each property is separated from its value by a colon. Each property and its value is called a <b>property/value pair</b> (some programmers say key/value pairs rather than property/value pairs</li> 
+        <li>Property/value pairs are separated by commas (but there is no comma after the last property/value pair)</li>
+        <li>Note that the 'age' property value (3) does not have quotes around it because its data type is a number, not a string.</li>
+        <li>Also note that the 'vaccinated' property value does not have quotes around it because it is a boolean data type (and that true is a special keyword in JavaScript)</li>
+    </ul>
+    <p>Sometimes you see objects written on multiple lines, which is common for objects that have lots of properties:
+    <pre>
+var myDog = {
+  name: "Lilo", 
+  breed: "mut", 
+  age: 3,
+  vaccinated: true
+};
+    </pre>
+    <p>The object above is assigned to a variable named myDog. We can access the value of a property by using the <b>dot operator</b>.
+    <pre>
+// Let's log each property of myDog...
+console.log( myDog.name );
+console.log( myDog.breed );
+console.log( myDog.age );
+    </pre>
+    <p>We can also change the values of properties by using the dot operator, like so:</p>
+    <pre>
+myDog.name = "Buster";
+myDog.breed = "Boxer";
+myDog.age = 7;
+myDog.vaccinated = false;
+    </pre>
+    <p>
+    In the code snippet above, we have changed each of the properties of the myDog object (we have changed the values of each property).
+    </p>
+    <p>
+        JavaScript allows you to create an empty object, and then add properties to it later:
+    </p>
+    <pre>
+// create an empty object
+var person = {};
+
+
+// then add a property to it
+person.firstName = "Ted";
+    </pre>
+    <p>
+    There is an alternative syntax for getting and setting the values of properties, by using square brackets like this (this is called <b>bracket notation</b> while using the dot operator is called <b>dot notation</b>).
+    </p>
+    <pre>
+myDog['age'] = 10;
+console.log( myDog['age'] );
+    </pre>
+    <p>
+    When working with objects, we usually use dot notation, but we'll be using bracket a lot when we start working with arrays soon.
+    </p>
+    <p>
+    Note that when using bracket notation, the property name inside the square brackets must be enclosed in quotes (either single quotes or double quotes).
+    If you do not use quotes inside the brackets, then whatever is inside the brackets will be evaluated as an expression, which can come in handy some times. For example:
+    </p>
+    <pre>
+var myDog = {
+  name: "Lilo", 
+  breed: "mut", 
+  age: 3,
+  vaccinated: true
+};
+
+var x = prompt("Which property of myDog would you like to look up?");
+console.log( myDog[x] );
+
+// I encourage you to run this code sample a few times
+// When the prompt appears enter a valid property name of the myDog object
+// Then run it again and enter something that is not a valid property name, see what happens.
+    </pre>
+
+    <p>Here's a common beginner mistake when using bracket notation (forgetting to use quotes):
+    <pre>
+console.log( myDog[breed] );
+
+// without the quotes inside the brackets, JS looks for a variable named 'breed'.
+// if you didn't declare a breed variable before this line of code, then it doesn't exist and you'll get an error. 
+    </pre>
+
+    <p>
+      Objects are a critical part of many programming languages. They allow us to make models that simulate
+      real-world objects in our programs. We'll soon find out that objects can do much more as well.
+    </p>
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    /*
+    var myDog = {
+        name: "Lilo", 
+        breed: "mut", 
+        age: 3,
+        vaccinated: true
+    };
+    // Let's log each property of myDog...
+    console.log( myDog.name );
+    console.log( myDog.breed );
+    console.log( myDog.age );
+    // the code below updates myDog
+    myDog.name = "Buster";
+    myDog.breed = "Boxer";
+    myDog.age = 7;
+    myDog.vaccinated = false;
+    */
+    /*
+    var myDog = {
+        name: "Lilo", 
+        breed: "mut", 
+        age: 3,
+        vaccinated: true
+    };
+
+    var x = prompt("Which property of myDog would you like to look up?");
+    console.log( myDog[x] );
+    */
+    </script>
+
+    <h1>Questions - JavaScript Objects</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What makes up an object (what does an object consist of)?
+    </p>
+    <div class="answer">
+        The object is intended to represented something, with everything within the {} meant to represent its characteristics.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        What are two different types of notations that you can use when  working with the properites of objects? For example, there are two types of syntax that you could use if you wanted to update a property of an object.
+    </p>
+    <div class="answer">
+        You can use dot notations, which are not used within the objects bracket, and bracket notation, where the properities are set within the brackets of a object.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        Why are objects an important data type in JavaScript?
+    </p>
+    <div class="answer">
+        It allows a web page to tell us the name of something and what it consist of, as web browsers do not know what things like hotels are.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+        What character is used to separate property names from their values?
+    </p>
+    <div class="answer">
+        A colon is used to seperate property names from their values.
+    </div>
+    <h4>Question 5</h4>
+    <p class="question">
+        What character is used to separate the property/value pairs in an object?
+    </p>
+    <div class="answer">
+        A comma is used to seperate pairs.
+    </div>
+
+	<h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <footer>
+        &copy; 2018 Niall Kader
+   </footer>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    /*
+	// Problem 1:
+	Declare a variable named myBook that stores an object.
+	The object should have two PROPERTIES named 'title' and 'author'.
+	Set the title property to 'The Sun Also Rises' and the author property to 'Ernest Hemmingway'.
+	*/
+    var myBook = {
+        title: "The Sun Also Rises",
+        author: "Ernest Hemmingway"
+    };
+
+	// Now log myBook.
+    console.log(myBook)
+
+	// Now log just the 'title' property of myBook.
+    console.log(myBook.title)
+
+	/*
+	// Problem 2
+	Declare a variable called 'student' and assign it an empty object.
+	Hint: 
+        var student = {};
+
+	Then use DOT NOTATION to add properties to it.
+    Hint: 
+        student.finalGrade = "A"; 
+
+    Add the following properties:
+	name            value          data type of value
+	--------------------------------------------------
+	firstName       Bob             string
+	lastName        Smith           string
+	age             22              number
+	undergrad       true            boolean
+	*/
+    var student = {};
+    student.firstName = "Bob";
+    student.lastName = "Smith";
+    student.age = 22;
+    student.undergrad = true;
+
+	// now log the student variable
+	// Hint: console.log(student);
+    console.log(student);
+
+
+
+	/*
+	// Problem 3
+	Declare a variable called 'car' and assign it an empty object.
+	Hint: var car = {};
+	Then use BRACKET NOTATION to add the following properties to it:
+
+	name            value          data type of value
+	--------------------------------------------------
+	make 			Pontiac 		string
+	model 			Torrent 		string
+	year 			2006 			number
+	used  			true 			boolean
+	*/
+    var car = {};
+    car['make'] = "Pontiac";
+    car['model'] = "Torrent";
+    car['year'] = 2006;
+    car['used'] = true;
+
+
+	// now log the car variable
+	// Hint: console.log(car);
+    console.log(car);
+
+    /*
+    // Problem 4
+    Think of 3 real-world objects that you might want to keep track of in a JavaScript program. 
+    Each object should have at least 3 properties.
+    Write JavaScript code that would create each one of these objects, and assign a value to each property.
+    For example:
+        var sandwich = {bread:"wheat", meat:"roast turkey", size:"large"};
+
+    Log each object after you create it.
+    */
+    var myLaptop = {
+        myBrand: "Dell",
+        mySeries: "Inspiron 15",
+        myUpgradable:true,
+        myCPUMaxClockSpeed:3.1,
+        myRamAmt:8,
+        myStorageHardDiscDrive:true,
+        myStorageSolidStateDrive:true
+    };
+    console.log(myLaptop);
+    
+    var myHotDog = {
+        bread:"wheat",
+        meat:"assorted",
+        toppingOne: "Ketchup",
+        toppingTwo: "Mustard"
+    };
+    console.log(myHotDog);
+
+    var myShoes = {
+        mainStreamBrand:false,
+        size:"14W",
+        tie:true
+    };
+    console.log(myShoes)
+
+	/*
+	// Problem 5 - Here's a tricky one (you can nest objects inside of objects!)....
+	Declare a variable called 'computer' and assign it an empty object.
+	
+	Then add the following properties to it:
+
+	name            value              			data type of value
+	--------------------------------------------------------------
+	brand			Dell 		       			string
+	hardDrive    {size: "100G", type:"sata"}    object
+	*/
+    var computer = {
+        brand:"Dell",
+        hardDrive: {size: "100GB", type:"SATA"}
+    };
+
+
+
+	// now log the computer variable
+	// Hint: console.log(computer);
+    console.log(computer);
+
+
+    </script>
+  </body>
+</html>
+
+

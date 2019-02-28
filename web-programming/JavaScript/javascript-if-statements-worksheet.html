@@ -411,21 +411,22 @@ if(likesBooks == "yes"){
     // If the user answers all 3 questions correctly, then show an alert that says: "You win!"
     // If the user answers any of the questions incorrectly, they should see and alert
     // that says "You lose!" and the game should end.
-    var answerOne = prompt("What programming langauge are we learning?(lowercase,no spaces)");
+    var answer = prompt("What is 2 + 2?");
 
-    if (answerOne == "javascript") {
-      var answerTwo = prompt("What programming langauge did we learn in the last chapter?(Uppercase, no spaces)");
+    if(answer == 4) {
+        answer = prompt("What is 4 +4?")
+            if(answer == 8) {
+                answer = prompt("What is 8+8?")
+                    if(answer == 16) {
+                        alert("You win!")
+                    }else {
+                        alert("You lose!")
+                    }
+            }else {
+            alert("You lose!")
+    }else {
+        alert("you lose!")
     }
-    if (answerTwo == "HTML") {
-      var answerThree = prompt("What is 1+1?");
-    }
-    if (answerThree == 2) {
-      alert("You win!");
-    }
-    else{
-      alert("You lose!");
-    }
-
 
     </script>
     <footer>
