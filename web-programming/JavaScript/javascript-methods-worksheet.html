@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Methods in JavaScript</title>
+    <meta name="description" content="An introduction to methods in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex, nofollow" />
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>JavaScript Methods</h1>
+    <p>
+      This program that you are enrolled in focuses heavily on creating data-driven programs.
+      These are programs that keep track of data and allow users to view data, add data, edit data, and in some cases delete data.
+      In a previous lesson we discussed how we can use objects to keep track of data.
+      We used the example of a 'dog' object that keeps track of the name and breed of each dog in our program.
+      So we can simulate dogs by creating objects that have 'name' and 'breed' properties.
+    </p>
+    <p>
+      Objects in our code can also be used to simulate the <b>behavior</b> of real-world objects.
+      What are the behaviors of a real dog?
+      They bark, walk, eat, sleep, etc.
+      In order to simulate these behaviors in our programs, we can add functions to our dog objects.
+    </p>
+    <p>
+    Let's consider what a dog object could look like if we start adding behaviors:
+    </p>
+    <pre>
+var dog = {
+  name:  "Lassie",
+  breed: "Border Collie",
+  bark: function(){
+    alert("Ruff!");
+  },
+  eat: function(amount){
+    console.log("Just ate this much: " + amount);
+  }
+};
+    </pre>
+    <p>
+      It takes a little bit of getting used to to sort through this syntax.
+      What we have done is added two new properties, bark, and eat.
+      The values of the new properties are functions that simulate the behavior of a dog.
+    </p>
+    <p>
+      If an object has properties that are functions, we can invoke the functions by using the 
+      dot operator, just as we do when access other properties of an object.
+      The difference is that we must add the parenthesis () in order to invoke the method.
+      Recal that when we invoke functions, we put () after the function name.
+    </p>
+    <pre>
+// to call/invoke a method of an object, you can do it like this:
+dog.bark();
+dog.eat(10);
+    </pre>
+    <p>
+      When properties of objects happen to be functions, then we call them <b>methods</b>.
+    </p>
+    <p>
+      Methods can access other properties inside the object, in order to do so, you have to use 'this', followed by the dot operator, followed by the name of the property that you wish to acess.
+      Consider this object that simulates an purchase order:
+    </p>
+    <pre>
+var purchaseOrder = {
+  customerName: "Bob Smith",
+  productName: "Bicycle",
+  productPrice: 199.95,
+  print: function(){
+    console.log(this.customerName);
+    console.log(this.productName);
+    console.log(this.productPrice);
+  }
+};
+
+// let's invoke the print() method of the purchase order
+purchaseOrder.print();
+    </pre>
+
+    <p>
+      In a previous worksheet we used a 'student' object as a prameter for functions what we wrote (calculateAverageGrade and calculateFinalGrade).
+      Since these functions were specifically created to work with student objects, we could turn them into methods of the student object.
+      Now our student object is a logical grouping of all the properties and methods for working with students.
+    </p>
+    <pre>
+var studentObj = {
+    
+    // properties
+    name:         "Bob",
+    midTermExam:  88,
+    finalExam:    92,
+
+    // methods
+    calculateAverageGrade: function(){
+      return (this.midTermExam + this.finalExam)/2;
+    },
+    
+    calculateFinalGrade: function(){
+      
+      var avg = this.calculateAverageGrade();
+    
+      var finalGrade;
+
+      if(avg >= 90){
+          finalGrade = "A";
+      }else if(avg >= 80){
+          finalGrade = "B";
+      }else if(avg >= 70){
+          finalGrade = "C";
+      }else if(avg >= 60){
+          finalGrade = "D";
+      }else{
+          finalGrade = "F";
+      }
+
+      return finalGrade;
+    
+    }
+};
+    </pre>
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+ 
+    </script>
+
+    <h1>Questions - JavaScript Methods</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        How is a method different from a regular function in JavaScript?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        Why would we want to add methods to an object?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        How can we access the property of an object from inside the body of a method of that object?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    /*
+    Problem 1
+    Create an object that simulates a letter (as in a letter that you send via US Mail)
+    Add the following properties and their values:
+
+      PROPERTY NAME         PROPERTY VALUE
+      --------------------------------------------
+      toName                Betty Johnson
+      toAddress             1224 Main Street
+      fromName              Charles Jones
+      fromAddress           212 N. Park Ave.
+      message               Hello Betty, Please call me when you can, Chuck
+    
+    Then add a property that is a method called 'print'.
+    The body of the print method can simply log the values of each property in the object.
+    Finally, invoke the print() method.
+    */
+  
+    var letter = {
+    toName: "Betty John",
+    toAddress: "1224 Main Street",
+    fromName: "Charles Jones",
+    fromAddress: "212 N. Park Ave.",
+    message: "Hello Betty, Please call me when you can, Chuck",
+    print: function() {
+      console.log("TO: " + this.toName);
+      console.log("FROM: " + this.fromName);
+      console.log("To Address: " + this.toAddress);
+      console.log("From Address:" + this.fromAddress)
+      console.log("MESSAGE: " + this.message)
+    }
+    };
+
+    letter.print();
+
+    /*
+    Problem 2
+    Use your imagination to create an object that you might simulate in a data-driven program.
+    Add at least two properties that are not methods.
+    Add at least one method, the method can simply log a simple message to the console that would describe what the method would do in a real program.
+    Make sure to invoke the method after you create the object.
+    */
+    
+    var conventionAttendenceOfStudents = {
+      numberofStudents: 2500,
+      numberofStudentsThatAttended: 1984,
+      print: function() {
+        var percentAttendence = this.numberofStudentsThatAttended / this.numberofStudents * 100;
+        console.log("Percentage of students who attended: " + percentAttendence)
+      }
+    };
+
+    conventionAttendenceOfStudents.print();
+
+    </script>
+     <footer>
+         &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>

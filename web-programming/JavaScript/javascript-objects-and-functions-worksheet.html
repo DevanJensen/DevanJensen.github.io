@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Objects and Functions in JavaScript</title>
+    <meta name="description" content="Just like other data types, objects can be used as parameters and return values">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>Objects and Functions</h1>
+    <h3>Objects as Parameters</h3>
+    <p>Just like other data types, objects can be used as parameters when invoking functions.</p>
+    <p>
+        In the following example we will create an object that represents a students record for a class
+        (suppose that we are writing a program to keep track of grades in a class, the final grade depends on only two exams, the mid term exam and the final exam).
+    </p>
+    <pre>
+var student1 = {name: "Sally", midTermExam:85, finalExam: 92};
+    </pre>
+    <p>
+    Next we create a function that can calculate a student's average grade:
+    </p>
+    <pre>
+function calculateStudentAverage(studentObj){
+    var avg = (studentObj.midTermExam + studentObj.finalExam)/2;
+    return avg;
+}
+    </pre>
+    <p>
+    Finally, we can invoke the function and pass in student1 as a paramter.
+    </p>
+    <pre>
+var student1Avg = calculateStudentAverage(student1);
+console.log(student1Avg);
+    </pre>
+    <p>
+        In this example, the function expects an object as a parameter, and it uses the midTermExam and the finalExam
+        properties of the object to calculate the student's average score for the class.
+        So the function not only expects an object as a parameter, it also expects that object to have properties named midTermExam and finalExam.
+        If we made a mistake, and used an object that doesn't have a midTermExam or finalExam property, we would find that our program will not work correctly.
+        We could address this by adding code that checks the object parameter, but we'll save that for later.
+    </p>
+    <p>
+        This example program is pretty crude, but it demonstrates a powerful pattern that is often used in programming.
+        Remember that most programs are written in order to work with data, and that we can create objects to represent the data we need to work with.
+        In this example we've seen how you can use objects and function to process data in your programs.
+    </p>
+    <h3>Objects as Return Values</h3>
+    <p>
+        We've already learned that functions may have return values. 
+        Those return values can be any data type, including objects.
+    </p>
+    <p>
+        Let's assume that we are creating a program that works with graphics, and we need to draw a bunch of rectangles.
+        Let's also assume that we need to change the size of rectangles, so we write a function that takes a rectangle object as parameter, and another parameter that indicates scale the new rectangle.
+        The function returns a new rectangle object whose size will be based on the parameters.
+    </p>
+    <pre>
+function makeResizedRect(rect, multiplier){
+
+    var resizedRect = {
+        width: rect.width * multiplier,
+        height: rect.height * multiplier
+    };
+
+    return resizedRect;
+}
+
+// create an object that represents a rectangle...
+var myRect = {width:20, height:50};
+
+// use myRect as a parameter to call makeResizedRect()
+var newRect = makeResizedRect(myRect, 2);
+console.log(newRect);
+    </pre>
+
+
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+
+    </script>
+
+    <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    /*
+    Problem:
+    Create a function that calculates the final grade for a student.
+    (We created a function that calculates the average score, but not the final grade).
+    The parameter that gets passed into this function should be an object that represents a student.
+    Assume the same structure for student objects that we used earlier - name, midTermExam, finalExam.
+    BE CAREFUL - property names in JavaScript are CASE SENSITIVE.
+    In the body of the function write code that determines the average score of the two exams,
+    then use an IF statement to determine the student's letter grade for the course.
+    Grades are determined like so:
+
+    A = 90 - 100
+    B = 80 - 89
+    C = 70 - 79
+    D = 60 - 69
+    F = 59 or lower
+    
+    Note that the function will return a string value (the letter grade based on the students average test score).
+    
+    After you define the function, then create a few student objects to use for testing your function.
+    */
+    
+    function calculateStudentGrade(studentObj){
+    var avg = (studentObj.midTermExam + studentObj.finalExam)/2;
+    var lettergrade = "F";
+    if(avg >= 90) {
+        letterGrade = "A";
+    }else if(avg >=80) {
+        letterGrade = "B";
+    }else if(avg >=70) {
+        letterGrade = "C";
+    }else if(avg >=60) {
+        letterGrade = "D";
+    }
+
+    return letterGrade;
+    }
+
+    var bob = {name:"bob", midTermExam:75, finalExam:100};
+    var finalGrade = calculateStudentGrade(bob);
+    console.log(finalGrade);
+
+    </script>
+     <footer>
+         &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+
+
