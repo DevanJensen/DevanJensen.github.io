@@ -65,7 +65,7 @@
         If you invoke the Date constructor without passing in any parameters, what date will be stored in the object that is returned?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        It uses the computer's current date at the time when it reads the line.
     </div>
 
     <h4>Question 2</h4>
@@ -73,7 +73,7 @@
         What is an 'epoch'?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        Number of milliseconds since midnight 1/1/1970.
     </div>
 
     <h4>Question 3</h4>
@@ -81,7 +81,7 @@
         What is a 'Unix timestamp' (also known as 'epoch time')?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        Number of milliseconds since midnight 1/1/1970.
     </div>
 
     <h4>Question 4</h4>
@@ -89,7 +89,7 @@
         What is the actual date of the epoch for Unix timestamps?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        Midnight 1/1/1970.
     </div>
 
     <h4>Question 5</h4>
@@ -97,7 +97,7 @@
         What does the getTime() method of a date object return (refer to the link that was mentioned above, or find another reference on the Date object in JavaScript)?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        it grabs the time that a function uses.
     </div>
 
     <h4>Question 6</h4>
@@ -105,7 +105,7 @@
         If you are working with 2 date objects, how could you use the getTime() method to determine if one date ss more recent than the other?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        console.log both dates with .toDateString().
     </div>
 
 	<h1>Coding Problems</h1>
@@ -181,10 +181,17 @@
     // If you do some research, you will find that getDay() returns a number.
     // So you will have to do some research to figure out exactly what getDay() returns (to figure out what the numbers represent).
     // Then you will have to write code that analyzes the number and return the appropriate day name ("Saturday", or "Sunday", etc.)
-
-
-
-
+    var getDayOfWeek = new Date();
+    var dayName = new Array(7);
+        dayName[0] = "Sunday";
+        dayName[1] = "Monday";
+        dayName[2] = "Tuesday";
+        dayName[3] = "Wednesday";
+        dayName[4] = "Thursday";
+        dayName[5] = "Friday";
+        dayName[6] = "Saturday";
+    var todayDate = dayName[getDayOfWeek.getDay()];
+    console.log(todayDate);
 
     //Problem 6
     // Write a function named checkVotingAge() that has one parameter.
@@ -198,7 +205,6 @@
         lastName: "Smith",
         birthday: new Date(923763146046)
     };
-
     
 
     </script>
