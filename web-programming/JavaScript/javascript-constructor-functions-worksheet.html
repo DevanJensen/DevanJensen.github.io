@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Constructing Objects in JavaScript</title>
+    <meta name="description" content="An introduction to constructing objects in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex, nofollow" />
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>Constructing Objects in JavaScript</h1>
+
+    <p>
+        We've already seen how you can create objects in JavaScript.
+        If you've ever worked with other programming languages, you might appreciate how easy it is create objects in JavaScript.
+        Because in some languages, you have to write a bunch of code that defines an object before you can actually create it (these are called 'classes' in Java and C#).
+        We have seen that in JavaScript we can create objects easily, and we don't have to follow any definition.
+        We can actually add properties to objects whenever we want.
+    </p>
+    <pre>
+var employee = {};
+employee.firstName = "Bob";
+employee.lastName = "Smith";
+
+//later we might decide that we need to add an employee id 
+employee.id = 101;
+    </pre>
+    <p>
+        Again, note than in other languages, such as Java and C#, you must define the properties of an object before you create it (the definition is known as a 'class').
+        And you cannot just add properties to an object that are not included in the definition.
+    </p>
+    <p>
+        So, although JavaScript makes it easy to create objects, and add properties to objects that have already been created, 
+        it can be a little dangerous because we are often working with lots of objects that should to be consistent in order for a program to work properly.
+    </p>
+    <p>
+    Let's say, for example, that we are creating a program for the Humane Society that keeps track of over 100 dog objects.
+    </p>
+    The code could look like this:
+    <pre>
+var dog1 = {
+    name: "Bruno",
+    breed: "Poodle",
+    vaccinated: true,
+    print: function(){
+        console.log(this.name);
+        console.log(this.breed);
+        console.log(this.vaccinated);
+    }
+};
+
+// we would have a bunch of code here to create all the other dogs
+
+var dog100 = {
+    namez: "Lassie",
+    breed: "Border Collie",
+    vaccinated: false,
+    print: function(){
+        console.log(this.name);
+        console.log(this.breed);
+        console.log(this.vaccinated);
+    }
+};
+
+    </pre>
+    <p>
+        First notice that we are repeating ourselves quite a bit, every time we need to create another dog object
+        we have to re-write all the property names and values, as well as the methods. Programmers usually don't want to repeat code.
+        Second, note that with all the repition, there is a greater chance of an error.
+        Can you spot the error in dog100?
+    </p>
+    <p>
+        We need a consistent way to create dog objects. The approach that we've been using so far is called <b>object literal notation</b>.
+        JavaScript has an alternative approach to creating objects known as <b>contructor notation</b>.
+        Constructor notation involves creating a special function, known as a <b>constructor</b>, whose sole job is to create objects.
+        Here's how we can create dog objects by using a constructor function:
+    </p>
+    <pre>
+function Dog(name, breed, vaccinated){
+    
+    this.name = name;
+    this.breed = breed;
+    this.vaccinated = vaccinated;
+
+    this.print = function(){
+        console.log(this.name);
+        console.log(this.breed);
+        console.log(this.vaccinated);
+    }
+
+}
+    </pre>
+    <p>
+        After we have defined the constructor function for creating dog objects, we can use it like this: 
+    </p>
+    <pre>
+var dog1 = new Dog("Bruno", "Poodle", true);
+var dog2 = new Dog("Lassie", "Border Collie", false);
+
+dog1.print();
+dog2.print();
+    </pre>
+    <p>
+        Here are some things to note about the syntax for creating and using constructor functions:
+    </p>
+    <ul>
+        <li>We usually use camelCase for function names, but note that constructor functions start with an uppercase letter.</li>
+        <li>The name of the constructor function should describe the object that it creates (Dog).</li>
+        <li>To set the properties of the object, we pass in parameters.</li>
+        <li>Notice how the parameters are used in the body of the constructor function to set properties of the object. And notice the use of <b>this</b>, which is a special keyword in JavaScript.</li>
+        <li>The constructor function does not have a return statement (it is implied that constructor functions return the object that they are design to create).</li>
+        <li>When you invoke the constructor function, you must use the <b>new</b> keyword.</li>
+    </ul>
+    <p>
+        Note that some JavaScript afficionados would argue that there are better ways to add methods to objects than to put them in the constructor function.
+        And this may be true, but for now it makes good sense to take this approach when you are learning about object-oriented programming.
+    </p>
+    <p>
+        Also note that you could change the parameter names if you wanted to avoid some ambiguity, but it's common for programmers to use parameter names that match the properties of the object. 
+        The 'this' keyword is used to make clear the difference between a parameter and a property of the object being constructed.
+    </p>
+    <pre>
+function Dog(param1, param2, param3){
+    
+    this.name = param1;
+    this.breed = param2;
+    this.vaccinated = param3;
+
+    this.print = function(){
+        console.log(this.name);
+        console.log(this.breed);
+        console.log(this.vaccinated);
+    }
+}
+    </pre>
+
+
+    <h3>Objects and Databases</h3>
+    <p>
+        The program that you are enrolled in has a strong focus on building applications that can work with large amounts of information that is stored in databases.
+        In the advanced classes, you will learn how to retreive rows of data with SQL queries (the database will be on the web server), the rows will be converted into objects in your programs. 
+        Then we'll use objects to display data to users, and allow them to edit objects (and create new objects ). 
+        The objects will then be sent back to the server to update (or add) rows in the database.
+    </p>
+
+    
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+    </script>
+
+    <h1>Questions</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        Assume that we are using the Dog() constructor function that we used on this page.
+        What is the problem with this code?
+    </p>
+    <pre>
+        var myDog = Dog("Brutus", "Boxer", false);
+    </pre>
+    <div class="answer">
+        There is nothing wrong with this code.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        Assume that we are using the Dog() constructor function that we used on this page.
+        What is the problem with this code?
+    </p>
+    <pre>
+        var myDog = new Dog("Brutus", false, "Boxer");
+    </pre>
+    <div class="answer">
+        False is the parem for breed while boxer is in the parem for vaccination.
+    </div>
+
+
+	  <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+
+    // Problem 1
+    // Declare a constructor function named Car which creates objects that have the following properties:
+    // make
+    // model
+    // year
+    // maxSpeed
+    // mpg  (mpg stands for 'miles per gallon')
+    function Car(make, model, year, maxSpeed, mpg) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.mpg = mpg;
+
+        this.currentSpeed = 0;
+
+        this.carData = function() {
+            console.log(this.make);
+            console.log(this.model);
+            console.log(this.year);
+            console.log(this.maxSpeed);
+            console.log(this.mpg);
+
+        this.accelerate = function() {
+            this.currentSpeed += 5;
+        }
+        }
+    }
+
+    // Then invoke the constructor 2 times in order to create 2 'car' objects 
+    // (you can make up the values to pass in as the parameters)
+    var car1 = new Car("Eskamo","Explorer",2014,100,150);
+    var car2 = new Car("Fortd","High Ranger",2018,60,200);
+
+    // Finally, log both the car objects that you created
+    car1.carData();
+    car2.carData();
+
+    car1.accelerate();
+    car1.accelerate();
+    console.log( car1.currentSpeed)
+
+    // Problem 2
+    // Declare a constructor function that creates some type of object that you might use in a program
+    // Use your imagination, but the object created by the constructor should have at least 3 properties
+    function Hotel(roomNumber, maxPeople, currentlyRented) {
+        this.roomNumber = roomNumber;
+        this.maxPeople = maxPeople;
+        this.currentlyRented = currentlyRented;
+        this.hotelPrint = function() {
+            console.log(this.roomNumber);
+            console.log(this.maxPeople);
+            console.log(this.currentlyRented);
+        }
+        }
+
+    // Use the constructor to create 2 objects, then log both of them.
+    var hotel1 = new Hotel(1, 4, false);
+    var hotel2 = new Hotel(2, 2, true);
+
+    hotel1.hotelPrint();
+    hotel2.hotelPrint();
+    
+
+    </script>
+    <footer>
+         &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+
+

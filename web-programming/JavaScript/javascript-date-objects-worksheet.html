@@ -1,0 +1,217 @@
+<script type="text/javascript">
+    // Let's see how long it takes for this page to load
+    // We'll check the time now, and then again after the page is done loading
+    var firstTime = new Date();
+</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>The Date Object in JavaScript</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Working with Dates in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>The Date Object in JavaScript</h1>
+    <p>
+        We have discussed how object-oriented programming is used to simulate real world objects in our programs.
+        Sometimes we create objects in our programs that represent 'virtual' objects. 
+        For example, we have already created an object that represents an email. But an email is not a real thing that you can touch and hold in your hand (unless maybe you consider the printout of an email).
+        Similarly, a date is not something that you can touch, or hold in your hand, but we often use objects in our programs to represent dates.
+        Keeping track of dates is common in programming, that many languages have a 'Date' object built-in.
+        In JavaScript you can create a date object by invoking the Date() constructor function, which is built into the language (you do not have to define the constructor function yourself).
+        You will soon find out that date objects in JavaScript have lots of methods that you can invoke to help you work with dates in your programs.
+    </p>
+    <p>
+        The Date object is just one of the many tools that you are learning about that can be used to solve problems in software development.
+        You need to know how to use a tool before you can actually use it to fix something. 
+        You also need to understand what the tool is capable of, what you can, and can't, do with it.
+        And in many cases, a tool has quirks, and it helps to understand them in order to use it effectively.
+    </p>
+    <h3>Look at the code on this page that calculates how long it takes load</h3>
+    <p> 
+        For this assignment you are going to do some research on the Date object in JavaScript.
+    <p>
+            <b>Check out this <a href="https://www.tutorialspoint.com/javascript/javascript_date_object.htm">web page</a> to see a lot of information about JavaScript's Date object.</b>
+    </p>
+    <p>   
+        Look the page over carefully, and answer the following questions. 
+        Then do the coding problems.
+        You may also want to look for other resources about the Date object in JavaScript, the are many references on the web.
+    </p>
+    <p>Here are some tips that may help you understand the article:</p>
+    <ul>
+        <li>Parameters are also often referred to as 'arguments'</li>
+        <li>You might find it confusing when you use the getDay() and getMonth() methods of a date object. For example, getMonth() will return 0 if the date object is representing a day in January (we'll see soon that computers often start counting at 0, whereas we humans start counting at 1).</li>
+    </ul>
+    <p>
+        I'm not sure if it would be better to do the questions first, and the coding problems later. 
+        Or if it would be better to jump back and forth between the questions and the coding problems.
+    </p>
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+    </script>
+
+    <h1>Questions</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        If you invoke the Date constructor without passing in any parameters, what date will be stored in the object that is returned?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 2</h4>
+    <p class="question">
+        What is an 'epoch'?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 3</h4>
+    <p class="question">
+        What is a 'Unix timestamp' (also known as 'epoch time')?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 4</h4>
+    <p class="question">
+        What is the actual date of the epoch for Unix timestamps?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 5</h4>
+    <p class="question">
+        What does the getTime() method of a date object return (refer to the link that was mentioned above, or find another reference on the Date object in JavaScript)?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+    <h4>Question 6</h4>
+    <p class="question">
+        If you are working with 2 date objects, how could you use the getTime() method to determine if one date ss more recent than the other?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+
+	<h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+    /////////////////////
+    // CODING PROBLEMS
+    /////////////////////
+
+    // NOTE: Your book has some information on the Date object in JavaScript (see page 136)
+    // It might help to solve some of these extremely difficult problems!
+
+
+    //Problem 1
+    //Create a date object by calling the Date constructor function, assign the object to a variable named 'today'.
+    var today = new Date();
+    //Invoke the getTime() method of 'today' and log the return value.
+    var t = today.getTime();
+    console.log(t);
+    //Invoke the toDateString() method of 'today' and log the return value.
+    console.log(today.toDateString());
+
+
+    //Problem 2
+    // Use the Date() constructor function to create a date object that represents your birthday.
+    // Pass in parameters to the constructor function to set the date object to your birthday.
+    // Assign the returned object in a variable called 'myBirthday'
+    // BE CAREFUL: Month numbers start with 0, not 1 - see the link mentioned above
+    // Then log the date so that it's easy to read your birthday (use the toDateString() method)
+    var myBirthday = new Date(1999, 10, 28);
+    console.log(myBirthday.toDateString());
+
+
+
+
+
+    //Problem 3
+    // Use the Date constructor function without any parameters to create a date object.
+    // You can store the return object in a variable called 'halloween'.
+    // Then use various methods of the object to set the date to October 31 of the current year.
+    // HINT: you will have to use the following methods: setFullYear(), setMonth(), setDate()
+    var halloween = new Date();
+    halloween.setFullYear(2019);
+    halloween.setMonth(9);
+    halloween.setDate(31);
+    console.log(halloween.toDateString());
+    // Next use the 'today' variable to calculate the number of days until Halloween (log the number of days).
+    var diffInMS = halloween.getTime() - today.getTime();
+    var seconds = diffInMS/1000;
+    var minutes = seconds/60;
+    var hours = minutes /60;
+    var days = hours/24;
+    console.log(days);
+
+    //Problem 4
+    // Use various methods of the Date object to determine the significance of the specialDay variable below
+    // Then log a message that explains what day it is
+    var specialDay = new Date(-6106004517529); 
+    console.log(specialDay.toDateString());
+
+
+
+    //Problem 5
+    // Write a function called getDayOfWeek(). 
+    // Include a parameter that represents a date object.
+    // The function should return the day of the of the date object parameter
+    // (for example: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday)
+    // To figure this out, you should use the getDay() of the date object parameter.
+    // Unfortunately, getDay() does not return exactly what we want in this case.
+    // If you do some research, you will find that getDay() returns a number.
+    // So you will have to do some research to figure out exactly what getDay() returns (to figure out what the numbers represent).
+    // Then you will have to write code that analyzes the number and return the appropriate day name ("Saturday", or "Sunday", etc.)
+
+
+
+
+
+    //Problem 6
+    // Write a function named checkVotingAge() that has one parameter.
+    // The parameter show be an object that represents a 'person', like the one shown below. 
+    // The function should look at the birthday property of the parameter, and return true if the person is old enough to vote, and false if the person is not old enough to vote.
+    // Then test the function by invoking it by passing in the 'person' variable that has been created for you below. 
+    // In other words, use the 'person' object below as a parameter for invoking the checkVotingAge() function. 
+    // HINT: You may want to start by figuring out the difference beteen the current time and the time the person was born
+    var person = {
+        firstName: "Jerry",
+        lastName: "Smith",
+        birthday: new Date(923763146046)
+    };
+
+    
+
+    </script>
+     <footer>
+         &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+<script type="text/javascript">
+    // This code sample uses the Date object to calculate how many milliseconds it takes for the page to load.
+    var secondTime = new Date();
+    var timeElapsed = secondTime.getTime() - firstTime.getTime();
+    console.log("Time elapsed between firstTime and secondTime (in milliseconds): " + timeElapsed);
+</script>
+
+
