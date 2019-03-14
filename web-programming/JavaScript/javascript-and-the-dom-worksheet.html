@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>The Document Object Model</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="The Document Object Model and JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+<h1>
+MIGHT NEED TO UPDATE THIS ONE....
+</h1>
+<p>The Node object represents a single node in the document tree. A node can be an element node, an attribute node, a text node, or any other of the node types explained in the Node Types chapter. The Element object represents an element in an XML document. Elements may contain attributes, other elements, or text.</p>
+
+
+    <h1 id="main-header">The DOM (Document Object Model)</h1>
+    <p id="intro-paragraph">
+      In this page, we'll cover the following topics:
+    </p>
+    <ul id="topics-list">
+      <li>The DOM</li>
+      <li>Nodes</li>
+      <li>document.getElementById()</li>
+    </ul>
+    <!--this image is HERE for a reason-->
+    <img id="imgDog" src="../images/happy-dog.jpg" alt="Picture of a happy dog" />
+    <h3>What is the DOM?</h3>
+    <p>
+      We've been spending a lot of time learning about objects in JavaScript.
+      In our previous examples we used objects to 'model' the data that we want to manage in our programs.
+      But objects can do so much more. 
+      In fact, a web page is full of objects, and each one has properties and methods that we can use to do all sorts of cool things.
+    </p>
+    <p>
+      When a web page is loaded by a browser, there is a tremendous amount of work being done under the hood.
+      The entire document is parsed, and all of the HTML elements in the page are analyzed. 
+      <b>The browser converts each and every HTML element into an object,
+      and all of these objects together are used to make a model that simulates the entire web page.</b> 
+      This model is stored in the memory of the computer. This is called the <b>Document Object Model</b>.
+      We can use use JavaScript code to manipulate the DOM.
+      So the DOM allows for JavaScript and HTML in a web page to work together.
+    </p>
+      We refer to these objects as <b>nodes</b>, so a node is an object that represents an HTML element on your page.
+      Each node object has a certain set of properties and methods that we can use in our JavaScript code.
+      <a href="https://www.w3schools.com/jsref/dom_obj_all.asp" target="_blank">Here is a page that shows the properties and methods of node objects.</a>
+      Have a look at this link and you'll quickly realize that a node is loaded with properties and methods that we can use in our JavaScript code.
+    </p>
+    <p>
+      In addition to the nodes that represent each tag in an HTML document, there are other nodes that get created when your page loads as well. 
+      For example there is an object that represents your browser window. 
+      This <b>window</b> object contains all the other objects in the DOM.
+      The DOM is a complex hierarchical structure of nodes; it starts with the window object all the other objects are nested within it.
+      The window object has a few properties, one of which is <b>document</b>.
+      While the window object represents the browser window, the document object represents the HTML document that is loaded into the browser window.
+      The document property is also a node object, so here is a one way to visualize these two objects in JavaScript code:
+      <pre>
+var window = {
+  document:{}
+};
+      </pre>
+      <p>
+        In reality the DOM is much more complicated than this, but this little sample will help us to begin to undertand it.
+        There is a variable named 'window' that represents an object. 
+        This object has a property named 'document', which also represents an object.
+        Unlike this code sample, the real document object is not empty, it actually contains many properties and methods.
+      </p>
+      <p>Let's add a little bit more of the real DOM to this code:</p>
+      <pre>
+var window = {
+  location: "http://some-page.html",
+  document:{
+    body:{
+      // the 'body' object actually has many objects nested inside of it.
+    },
+    getElementById: function(){
+      // code goes here for the getElementById() method
+    }
+  }
+};
+      </pre>
+      <p>
+        Our window object is starting to get complicated, but this is just the very tip of the ice berg.
+        One of he properties of the window object that we omitted from our first code sample
+        is named 'location'. This property stores the URL of the web page.
+      </p>
+      <p>  
+        We've also added a property and a method to the document object.
+        The 'body' object represents the body tag/element in the HTML document. 
+        Nested within the 'body' object are nodes that represent every HTML tag that was written inside the &lt;body&gt; tag.
+        When you think about all the tags that may be written in an HTML document, you can easily imagine how complex the DOM can be. 
+      </p>
+      <p>
+        We'll talk about the <b>getElementById()</b> method very soon. 
+        But first, take a look at the diagrams for other ways to visualize the DOM.
+      </p>
+      <h3>Visualizing the DOM as nested containers or a hierarchy</h3>
+      <img src="../images/DOM-2.png" alt="Two different ways to visualize the DOM" />
+      
+
+    <h3>document.getElementById()</h3>
+    <p>
+      The document object has one particular method that we will use a lot from now on. It's called <b>getElementById()</b> and we will use it
+      in our JavaScript code to 'get a handle' on an element in our page. 
+      To 'get a handle' means to get a node from the DOM and assign it to a variable: 
+    </p>
+    <pre>
+var mainHeader = document.getElementById("main-header");
+    </pre>
+    <p>
+        The 'mainHeader' variable is our 'handle' and it represents a specific h1 element on this page, we'll go over how to specify exactly which element to get a handle on in a minute.
+        Once you have a handle on an element, you can get its properties, you can change its properties, and you can call its methods.
+        This is very powerful, and it allows us to do some really cool things with our web page.
+    </p>
+    <pre>
+var mainHeader = document.getElementById("main-header");
+
+var content = mainHeader.textContent;
+var idAttribute = mainHeader.getAttribute("id");
+
+alert(content);
+alert(idAttribute);
+console.log(mainHeader);
+    </pre>
+    <p>
+        In order for document.getElementById() to work, the element that you want to 'get a handle on'
+        must have an 'id' attribute.
+        Notice in the code sample above that getElementById() takes a parameter.
+        This parameter must match the id attribute of the element that you want to get a handle on.
+        If you look at the HTML code for this page, you will see that the H1 tag at the top of the page has an 
+        id attribute set to 'main-header'.
+    </p>
+    <p>
+       So to sum up the code sample above, we are getting a handle an h1 tag and assigning to the variable called 'mainHeader'.
+       The mainHeader variable is a node object, and we can use the dot operator to access properties and invoke methods in the same way
+       that we did with the objects we created in previous lessons.
+       The final line will alert one of the properties of the object.
+    </p>
+    <p>
+       Also note that if you log a node object, you will see all of its properties and methods in the console.
+    </p>
+
+    <h3>Attributes of Elements Become Properties of Node Objects</h3>
+    <p>
+      When the page loads, and the browser converts HTML elements to node objects,
+      the attributes of an element become the properties of the node that is created.
+      For example, assume we have this HTML element in our docucment:
+    </p>
+    <pre>
+&lt;img id="imgDog" src="../images/happy-dog.jpg" alt="Picture of a happy dog" /&gt;
+    </pre>
+    <p>
+    The img element has three attributes, 'src' and 'alt'.
+    Let's get a handle on the node object that represents this img tag,
+    and then use 'dot notation' to look at some of the properties of the node.
+    </p>
+    <pre>
+var dogImg = document.getElementById("imgDog");
+console.log(dogImg.id);
+console.log(dogImg.src);
+console.log(dogImg.alt);
+    </pre>
+    <p>
+      We'll be using lots of node properties and methods in order to work with nodes in the DOM.
+      
+      We know that HTML documents have lots of elements that are nested within other elements.
+      If we have a node object that represents an element that contains other elements, we can use the
+      <b>innerHTML</b> property to get the nested HTML tags.
+    </p>
+    <p>
+      The next code sample gets a handle on the the unordered list that appears at the top of the page.
+      Then it uses dot notation to access the innerHTML property of the node object.
+      If you run this code, you'll see a few LI tags in the console. 
+    </p>
+<pre>
+var topicsList = document.getElementById("topics-list");
+console.log(topicsList.innerHTML);
+</pre>
+    <p>
+        In previous lessons we learned that we can re-assign new values to properties of objects.
+        We can also re-assign values to node objects.
+        Consider this example:
+    </p>
+    <pre>
+var introParagraph = document.getElementById("intro-paragraph");
+introParagraph.innerHTML = "Isn't &lt;b&gt;JavaScript&lt;/b&gt; cool!";
+    </pre>
+    <p>
+    If you run the above code sample in this page, you'll see 
+    that the first paragraph has been changed by the JavaScript code.
+    Also note that we didn't just add text content, we also added new tags
+    to the innerHTML (the 'b' tags);
+    </p>
+    <h3>What's the deal with the window object?</h3>
+    <p>
+      Remember when we first started to learn about objects in JavaScript, and we created an object that simulated a computer?
+      Here is the code we wrote:
+    </p>
+    <pre>
+var computer = {
+  make: "Dell",
+  model: "Inspiron 1170",
+  hardDrive: {
+    size: "100GB",
+    type: "sata"
+  }
+};
+    </pre>
+    <p>
+      This is a complex object, similar to the DOM. And to access a property of the hard drive in this computer we could use the dot operator to 'drill down' into the hard drive object like this:
+    </p>
+    <pre>
+console.log(computer.hardDrive.size);
+    </pre>
+    <p>
+      If we follow this approach when working with the DOM, you would think that if we wanted to select an element by it's id,
+      we would have to do this:
+    </p>
+    <pre>
+var mainHeader = window.document.getElementById("main-header");
+    </pre>
+    <p>
+    This code would work, but you don't have to include the <b>window.</b>. 
+    Remember that the window object is the root of the DOM (it contains all of the objects that make up the DOM).
+    Since everything in the DOM is within the window object, you do not have to explicitly mention the window object.
+    </p>
+    <p>
+    <b>This is a big moment in your web development career!</b>
+    We are beginning to use JavaScript to interact with the HTML in a page.
+    Note that HTML is the user interface in a web page, so we can use JavaScript to control a program's user interface.
+    We've spent a lot of time talking about storing data in objects,
+    as we move forward, soon we'll start to display data in HTML by using JavaScript to manipulate the DOM.
+    After that, we'll learn how to allow users to make changes to data by controlling the user interface with JavaScript.
+    </p>
+    <p>In the next lesson we'll explore some of the many properties and methods of node objects.
+    
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+
+    </script>
+
+    <h1>Questions - JavaScript and the DOM</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What is a node?
+    </p>
+    <div class="answer">
+        A node is an HTML element.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        In order to use the document.getElementById() method to 'get a handle' on an element,
+        what attribute must that element have?
+    </p>
+    <div class="answer">
+        The element must have an id attribute.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        What object is at the top of the DOM? In other words, what DOM object contains all other DOM objects?
+    </p>
+    <div class="answer">
+        The Table object is at the top of the DOM model.
+    </div>
+
+	<h1>Coding Problems</h1>
+  <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <div id="myDiv"></div>
+    <script>
+// Problem 1
+// Get a handle on the the img tag that displays the dog.
+// Then use dot notation to change the src and alt properties of the node.
+// Change the src property to "../images/angry-dog.jpg"
+// Change the alt property to "This dog is not so happy"
+    var img = document.getElementById("imgDog");
+    img.src = "../images/angry-dog.jpg";
+    img.alt = "This dog is not so happy";
+
+// Problem 2
+// There is a div tag on this page that that has an id attribute of 'myDiv'.
+// It is empty (has nothing between the opening and closing tags), so it current doesn't appear on the page.
+// Get a handle on the element and add some content, make sure that the content also includes some HTML tags.
+    var div = document.getElementById("myDiv");
+    div.innerHTML = "<h1>Secret Revealed</h1>";
+    
+
+
+    </script>
+    <footer>
+      &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+
+

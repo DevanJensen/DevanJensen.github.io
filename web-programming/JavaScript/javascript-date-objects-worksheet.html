@@ -181,6 +181,7 @@
     // If you do some research, you will find that getDay() returns a number.
     // So you will have to do some research to figure out exactly what getDay() returns (to figure out what the numbers represent).
     // Then you will have to write code that analyzes the number and return the appropriate day name ("Saturday", or "Sunday", etc.)
+    
     var getDayOfWeek = new Date();
     var dayName = new Array(7);
         dayName[0] = "Sunday";
@@ -193,6 +194,30 @@
     var todayDate = dayName[getDayOfWeek.getDay()];
     console.log(todayDate);
 
+    
+    function getDayOfWeek(dateObj) {
+        var dayNumber = dateObj.getDay();
+        var dayName;
+        if(dayNumber == 0) {
+            dayName = "Sunday";
+            }else if(dayNumber == 1) {
+                dayName = "Monday";
+                }else if(dayNumber == 2) {
+                    dayName = "Tuesday";
+                    }else if(dayNumber == 3) {
+                        dayName = "Wednesday";
+                        }else if(dayNumber == 4) {
+                            dayName = "Thursday";
+                            }else if (dayNumber == 5) {
+                                dayName = "Friday";
+                                }else if(dayNumber == 6) {
+                                    dayName = "Saturday";
+                            }
+        return dayName;
+        }
+    alert(getDayOfWeek(today));
+    
+
     //Problem 6
     // Write a function named checkVotingAge() that has one parameter.
     // The parameter show be an object that represents a 'person', like the one shown below. 
@@ -200,13 +225,31 @@
     // Then test the function by invoking it by passing in the 'person' variable that has been created for you below. 
     // In other words, use the 'person' object below as a parameter for invoking the checkVotingAge() function. 
     // HINT: You may want to start by figuring out the difference beteen the current time and the time the person was born
+
+    // Did in class!!!!
     var person = {
         firstName: "Jerry",
         lastName: "Smith",
         birthday: new Date(923763146046)
     };
-    
+    function checkVotingAge(personObj) {
+        msBirthday = personObj.birthday.getTime();
+        var today = new Date();
+        var msAge = today.getTime() - msBirthday;
+        var yrsAge = msAge/1000/60/60/265;
 
+        if(msAge > 18) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    var isOldEnoughToVote = checkVotingAge(person);
+    alert(isOldEnoughToVote);
+
+    alert(person.birthday.toDateString());
+    //Did in Class!!!
     </script>
      <footer>
          &copy; 2018 Niall Kader
