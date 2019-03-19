@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JavaScript Arrays</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="An introduction to arrays in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+  </head>
+  <body>
+    <h1>JavaScript Arrays</h1>
+    <h3>An array is a collection of data.</h3>
+    <p>
+      When we write programs, we often need to work with collections of data.
+      For example, you probably wouldn't write a program to keep track of a single book,
+      instead it would be more useful to keep track of a collection of books 
+      (maybe you are building software for a public library).
+    </p>
+    <p>
+      JavaScript, like many other programming languages, allows us to work with collections of data by using <b>arrays</b>.
+    </p>
+    <p>
+      In previous lessons, we have used variables to store a single piece of data, such as a number, string, or boolean.
+      (although you might argue that we used variables to contain objects that can store multiple properties, these variables still referred to a single object).
+      Arrays allow us to use a single variable to store multiple values, consider this example:
+    </p>    
+    <pre>
+var myTestScores = [96, 85, 89, 77];
+    </pre>
+    <p>
+      This is an array of numbers.
+      Let's take a minute to discuss the syntax used to create this array.
+      Notice that there are square brackets enclosing the array <b>[]</b>. 
+      And notice that the items in the array are separated by commas.
+    </p>
+    <p>
+      The previous code sample demonstrates and array that stores numbers.
+      Here's one that stores strings:
+    </p>
+    <pre>
+var myFriends = ["Joe", "Betty", "Sally"];
+console.log(myFriends);
+    </pre>
+    <p>
+      Some languages require that arrays store values that are the same data type.
+      But JavaScript allows you to mix data types within an array.
+    </p>
+    <pre>
+var mixedArray = [6, "bob", false];
+    </pre>
+    <h3>Array Indices</h3>
+    <p>
+      The values stored in an array are called <b>elements</b> (not to be confused with elements in HTML).
+      The mixed array above stores 3 elements.
+    </p>
+    <p> 
+      Each element in an array has a specific position, which is known as the <b>index</b> of the element.
+      For example, in the mixed array above, the first element (the value 6) has an index of 0
+      Array indexes start at 0 in most programming languages, this is something that can trip up beginners, but with enough practice, you'll quickly get used to this.
+    </p>
+    <p>
+      You can retreive values out of an array by using it's index with bracket notation. 
+    </p>
+    <pre>
+var myTestScores = [96, 85, 89, 77];
+var firstTest = myTestScores[0];
+var secondTest = myTestScores[1];
+var thirdTest = myTestScores[2];
+var fourthTest = myTestScores[3];
+    </pre>
+    <p>
+      Again, be careful to remember that the first element has an index of 0.
+    </p>
+    <p>
+      We can also change values in an array by using bracket notation and an index:
+    </p>
+    <pre>
+var myTestScores = [96, 85, 89, 77];
+console.log(myTestScores);
+
+myTestScores[3] = 100;
+console.log(myTestScores);
+    </pre>
+
+    <p>
+    It's common to start with an empty array and build it up as the program runs.
+    Notice in the code sample below, that we start with an empty array, and then we use indexes and bracket notation to add elements to the array.
+    </p>
+    <pre>
+var testScores = [];
+testScores[0] = prompt("Enter your first test score.");
+testScores[1] = prompt("Enter your second test score.");
+testScores[2] = prompt("Enter your third test score.");
+console.log(testScores);
+    </pre>
+    <h3>Arrays are Objects</h3>
+    <p>
+      Arrays are actually a special type of object, and like other objects, they have properties and methods that we can use.
+      We'll talk more about array methods later, but for now let's go over the <b>length</b> property of an array.
+      The length property will tell us how many elements are in an array.
+      Note that the length will always be one greater than the highest index in an array. 
+      This makes sense when you remember that the index of the first element is 0. 
+    </p>
+    <pre>
+var myTestScores = [96, 85, 89, 77];
+console.log(myTestScores.length);
+    </pre>
+    <p>
+      You can use the length property when you want to add an element to an array. 
+    </p>
+    <pre>
+var myFriends = ["Betty", "Sally", "Bob"];
+myFriends[myFriends.length] = "Pat";
+    </pre>
+    <p>
+      In class we can discuss why this approach can be better than using an index number to add an element to an array.
+      Likewise, we can always get the last element from an array like this:
+    </p>
+    <pre>
+var myFriends = ["Betty", "Sally", "Bob"];
+var myLastFriend = myFriends[myFriends.length - 1];
+console.log(myLastFriend);
+    </pre>
+    <p>
+      In the previous two examples we've put expressions in between the brackets rather than values.
+      These expressions will be evaluated and the result will be used as the index of the array to fetch.
+      For example, the expression <b>myFriends.length - 1</b> evaluates to 2.
+      So myLastFriend will contain the value "Bob".
+    </p>
+    <p>
+      The point is that you can put expressions inside the brackets, and they will be evaluated to an index number.
+      The is a very powerful feature of arrays, as we'll soon see.
+      Can you figure out what the following program does?
+    </p>
+    <pre>
+var myFriends = ["Betty", "Sally", "Bob"];
+
+var x = prompt("Enter a valid index number for the myFriends array");
+var selectedElement = myFriends[x];
+
+if(selectedElement){
+  console.log("The value of the element at index " + x + " is: " + selectedElement);
+}else{
+  console.log("There is no element at index " + x + " in the myFriends array.");
+}
+    </pre>
+    <p>
+      There are different syntaxes that you can use when working with arrays.
+      We'll go over some of them later, when we talk about array methods.
+      But for now I'll just show you another way that you could create an array,
+      because you may see this when you look at other people's code
+    </p>
+    <pre>
+var numberArray = new Array(1,3,5,7);
+
+// this is the same as... 
+var numberArray = [1,3,5,7];
+    </pre>
+    <h3>Arrays of Objects</h3>
+    <p>
+      We have seen that you can put various data types inside of arrays, such as numbers, strings, and booleans.
+      Arrays can also store objects. 
+      This allows us to model collections of real world objects, which is very useful for processing data in our programs.
+      Take a look at this array:
+    </p>
+    <pre>
+var books = [];
+books[0] = {title:"Harvey Porter", author:"Rowlings"};
+books[1] = {title:"The Sun Also Rises", author:"Hemmingway"};
+    </pre>
+    <p>
+      We start out with an empty array, and then we add an object at the first position (index = 0).
+      Then we add another object at the second position (index = 1);
+    </p>
+    <p>
+      This approach required us to write three statements to create and populate the array.
+      But we could do it all in a single statement like this (note that I broke the statement up into separate lines just to make it easier to read).
+    </p>
+    <pre>
+var books = [
+  {title:"Harvey Porter", author:"Rowlings"},
+  {title:"The Sun Also Rises", author:"Hemmingway"}
+];
+    </pre>
+    <p>If you wanted to drill down into this array, and for example, log out the title of the first book, you could do it like this:
+    </p>
+    <pre>
+console.log(books[0].title);
+
+// we could also change the title of the first book like this...
+books[0].title = "Henry Popper";
+    </pre>
+    <p>
+    Another common technique is to pull an item out of an array and store it in a variable, like this:
+    </p>
+    <pre>
+var b = books[0]; 
+console.log(b.title);
+
+b.title = "Harry Potter";
+console.log(books);
+    </pre>
+    <p>
+      We shall soon see that you can write some very powerful programs when you start using arrays of objects!
+    </p>
+
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+
+
+    </script>
+
+    <h1>Questions - JavaScript Arrays</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What is the term for items that are stored in an array?
+    </p>
+    <div class="answer">
+        Items inside of an array are called <i>elements</i>.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        The position number of an item in an array is called what?
+    </p>
+    <div class="answer">
+        It is known as the <i>index</i>.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        What is the index of the first value in an array?
+    </p>
+    <div class="answer">
+        The first index value in an array is always zero.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+        True or False - The length of an array is always one greater than it's highest index.
+    </p>
+    <div class="answer">
+        False, it is always one less.
+    </div>
+
+  <h1>Coding Problems</h1>
+    <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <script>
+//////////////////////
+// Problem 1
+//////////////////////
+
+// Create an array that holds the names of 4 of your friends
+// Assign the array to a variable called 'friends'.
+var friends = ["Zack", "Micheal", "Drew", "Ranon"]
+
+// Log the value of the first element in the array
+console.log(friends[0]);
+// Log the array
+console.log(friends);
+// Log the length of the array
+console.log(friends.length);
+
+
+
+// Use bracket notation to add an element to the end of the array, 
+// the element's value should be 'Buster'
+// Do not use an index number to do this, instead use the length property of the array
+// (in class we should have talked about a way to add an element to an array by using the 'length' property of the array)
+friends[friends.length] = "Buster";
+
+// Change the value of the first element to be "Fido"
+friends[0] = "Fido";
+
+// Log the array (again)
+console.log(friends);
+
+//////////////////////
+// Problem 2
+//////////////////////
+
+// Using a single statement, create an array of 'pizza' objects
+// and assign it to a variable named 'pizzas'.
+// Each object will have the following properties: size, crust, topping.
+// Use the following chart to add data to each object
+/*
+SIZE      CRUST       TOPPING
+-----------------------------
+large     thick       sausage
+small     thin        pepperoni
+medium    thin        mushrooms
+*/
+var pizzas = [
+    {size: "large", crust: "thick", topping: "sausage"},
+    {size: "medium", crust: "thin", topping: "mushrooms"},
+    {size: "small", crust: "thin", topping: "pepperoni"}
+];
+
+// console.log(pizzas);
+// Now retreive the large pizza from the array, and assign it to a variable named 'firstPizza'. 
+var firstpizza = pizzas[0];
+// Then use dot notation to change the 'topping' property of firstPizza to a value of 'onions'.
+firstpizza.topping = "onions";
+
+// SIDE NOTE: Here's another way that you could change a property of one of the pizza objects:
+//
+//      pizzas[0].topping = "onions";
+//
+// You wouldn't need to create the 'firstPizza' variable with this approach
+
+// Finally, log the pizzas variable.
+console.log(pizzas);
+    </script>
+    <footer>
+      &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>

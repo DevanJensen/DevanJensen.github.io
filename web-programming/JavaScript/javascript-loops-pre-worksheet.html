@@ -1,0 +1,51 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/ >
+	<title>Getting Ready For Loops</title>
+	<meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+	<h1>Getting Ready for Loops</h1>
+	<h3>Here are some links...</h3>
+	<ul>
+		<li><a href="http://www.google.com">Google</a></li>
+		<li><a href="http://www.facebook.com">Facebook</a></li>
+		<li><a href="http://www.yahoo.com">Yahoo</a></li>
+	</ul>
+	<h3>Names</h3>
+	<ol id="names-list"></ol>
+	<!--<img src="../images/loops-worksheet.png" alt="loop sample code">-->
+	<footer>
+      &copy; 2018 Niall Kader
+    </footer>
+</body>
+</html>
+<script>
+// Put your code in this script tag
+
+// Problem 1 - loop from 1 to 5
+for(var x = 1; x <= 5; x++) {
+	document.write(" x is " + x);
+}
+
+
+// Problem 2 - get all the 'a' tags from this page and loop through them
+var aTags = document.getElementsByTagName("a");
+
+for(var x = 0; x < aTags.length; x++) {
+	var a = aTags.item(x);
+	console.log(a.textContent);
+}
+
+// Problem 3 - loop through an array and display each element in the DOM
+var names = ["Bob", "Sally", "Jesse"];
+var namesList = document.getElementById("names-list");
+
+for(var x = 0; x < names.length; x++){
+	var li = document.createElement("li");
+	li.textContent = names[x];
+	namesList.appendChild(li);
+}
+
+</script>
