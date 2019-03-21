@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS Selectors, Properties and Values</title>
+    <meta name="description" content="An introduction to XXX in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <style>
+        /*We can paste our css code samples here, inside a style tag*/
+        body{
+    font-family:Verdana;    
+    }
+
+    h1 {
+        color: red;
+        font-size:30px;
+    }
+
+    h2 {
+        color: blue;
+        font-size:24px;
+    }
+
+    h3{
+       color: green;
+       font-size: 20px; 
+    }
+
+    a{
+        color:lightgray;
+    }
+
+
+    #myDiv{
+        background-color:pink;
+        height:80px;
+        width:200px;
+    }
+
+    .blog-title{
+        color: purple;
+        font-size: 140%;
+    }
+
+    .blog-sub-title{
+        color: purple;
+        font-size: 110%;   
+    }
+
+    .warning{
+        color:red;
+        font-weight:bold;
+    }
+    
+
+    div.promo{
+        font-size: 150%;
+        color: red;
+        background-color: lightgray
+    }
+
+    ul li{
+        color:salmon;
+        font-size: 20px;
+        list-style:none;
+        margin:5px;
+        padding:10px;
+    }
+
+
+    a:hover{
+        color:yellow;
+    }
+   
+   h1, h2, h3, p, div.promo{
+    color:green;
+}
+   
+    </style>
+  </head>
+  <body>
+    <h1>CSS Selectors, Properties and Values</h1>
+    <h3>Selectors</h3>
+    <p>
+        The 'selector' for a set of rules determines which tags on the page will have the rules applied to it.
+        Any tags on the page that match the selector will be styled according to the properties and values.
+    </p>
+    <h4>Tag Selectors</h4>
+    <pre>
+body{
+    font-family:Verdana;    
+}
+
+h1 {
+    color: red;
+    font-size:30px;
+}
+
+h2 {
+    color: blue;
+    font-size:24px;
+}
+
+h3{
+   color: green;
+   font-size: 20px; 
+}
+
+a{
+    color:lightgray;
+}
+
+    </pre>
+    <h4>ID Selectors</h4>
+    <p>
+        Note that IDs should be unique, meaning that no two tags on the page should share the same id value.
+    </p>
+    <pre>
+#myDiv{
+    background-color:pink;
+    height:80px;
+    width:200px;
+}
+    </pre>
+    <h4>Class Selectors</h4>
+    <pre>
+.blog-title{
+    color: purple;
+    font-size: 140%;
+}
+
+.blog-sub-title{
+    color: purple;
+    font-size: 110%;   
+}
+
+.warning{
+    color:red;
+    font-weight:bold;
+}
+    </pre>
+    <h4>Mixed Selectors</h4>
+    <p>
+        The various types of selectors can be mixed in different ways.
+        For example, we can target div tags, but only if they have a class of 'promo'.
+    </p>
+    <pre>
+div.promo{
+    font-size: 150%;
+    color: red;
+    background-color: lightgray
+}
+    </pre>
+    <p>
+        We can also use a space between selectors to specifically target tags that are descendants of other tags.
+        The following selector targets 'li' tags, but only ones that are descendant of 'ul' tags (so these rules will not affect li tags that are descendants of ol tags).
+    </p>
+    <pre>
+ul li{
+    color:salmon;
+    font-size: 20px;
+    list-style:none;
+    margin:5px;
+    padding:10px;
+}
+    </pre>
+    <h4>Psuedo Selectors</h4>
+    <p>
+        Psuedo selectors allow us to target tags that are in a specific state.
+        For example, we may want 'a' tags to look different when they are hovered over.
+    </p>
+    <pre>
+a:hover{
+    color:yellow;
+}
+    </pre>
+    <h4>
+        Grouped Selectors
+    </h4>
+    <p>
+        You can apply a set of rules to more than one selector.
+        To do this, put a coma between each selector.
+    </p>
+    <pre>
+h1, h2, h3, p, div.promo{
+    color:green;
+}
+    </pre>
+    <div>This is a div tag!</div>
+    <div>This is another div tag!</div>
+    <h3>Things to do to our divs</h3>
+    <ul>
+        <li>Set the background color</li>
+        <li>Use different units of measure for the height and width (px, %, in, cm, mm, pt)</li>
+        <li>Set the border width, style, and color properties</li>
+        <li>Set the bottom border to a different width</li>
+        <li>Set the font family, font-size, and color</li>
+        <li>Set the text-align property</li>
+        <li>Set the padding and margin</li>
+        <li>Set the padding and margin to be different for the top/bottom and sides</li>
+    </ul>
+    <h1>This is an H1 tag</h1>
+    <h2>This is an H2 tag</h2>
+    <h3>This is an H3 tag</h3>
+    <a href="#">This is an anchor tag ('a' tag)</a>
+    <div id="myDiv">This is myDiv</div>
+    <h2 class="blog-title">This is the title of a blog post</h2>
+    <h3 class="blog-sub-title">This is the sub-title of a blog post</h3>
+    <div class="warning">This is a warning! (in a div tag)</div>
+    <span class="warning">This is also a warning! (in a span tag)</span>
+    <div class="promo">Widgets are on sale this week!</div>
+    <footer>
+      &copy; 2018 Niall Kader
+    </footer>
+  </body>
+</html>
+
+
