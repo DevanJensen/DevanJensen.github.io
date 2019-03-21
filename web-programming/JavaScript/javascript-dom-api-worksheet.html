@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DOM Element API</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="The DOM API">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <style>
+      .dark{
+        background-color: purple;
+        color:white;
+      } 
+
+      .btn-standard{
+        background-color: midnightblue;
+        border-radius: 10px;
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main-header">The DOM API</h1>
+    <p>
+    When we write JavaScript code that interacts with the DOM, we are primarily doing two things.
+    First we <b>select</b> nodes from the dom by 'getting handles' on them.
+    Once we have handles on nodes, we can <b>manipulate</b> them.
+    </p>
+    <b>Here are some useful links for working with the DOM:</b>
+    <br>
+    <a href="https://www.w3schools.com/jsref/dom_obj_all.asp" target="_blank">
+      This is a link to a page that shows the properties and methods of 'node' objects. If you want to be a good web developer, you should learn as much as you can from this page.
+    </a>
+    <br>
+    <br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" target="_blank">
+      Here's another one that has a lot of information, but seems more difficult to read (maybe it's just my opinion)
+    </a>
+    <h3>We can't do all of the samples on this page until we learn about arrays and loops, so we'll come back to this page again after learning about arrays and loops</h3>
+    <p>
+    In the last lesson we saw that node objects have many methods that we can use.
+    Many of these methods are for selecting nodes, and many others are for manipulating nodes.
+    </p>
+    <table border="1">
+      <tr><td colspan="2"><b>DOM SELECTION API</b></td></tr>
+      <tr><td>document.getElementById(id)</td><td>Find an element by element id</td></tr>           
+      <tr><td>document.getElementsByTagName(name)</td><td>Find elements by tag name</td></tr>           
+      <tr><td>document.getElementsByClassName(name)</td><td>Find elements by class name</td></tr>            
+      <tr><td>document.querySelector(selector)</td><td>Selects the first element that matches the selector</td></tr>
+      <tr><td>document.querySelectorAll(selector)</td><td>Selects all elements that match the selector</td></tr>
+      <tr><td colspan="2"><b>DOM MANIPULATION API</b></td></tr>
+      <tr><td>element.innerHTML =  new html content</td><td>Change the inner HTML of an element</td></tr>       
+      <tr><td>element.setAttribute(attribute, value)</td><td>Change the attribute value of an HTML element</td></tr>
+      <tr><td>element.style.property = new style</td><td>Change the style of an HTML element</td></tr>       
+      <tr><td>document.createElement(element)</td><td>Create an HTML element</td></tr>
+      <tr><td>document.removeChild(element)</td><td>Remove an HTML element</td></tr>
+      <tr><td>document.appendChild(element)</td><td>Add an HTML element</td></tr>
+  </table>
+  <p>Note that these API calls return <b>DOM element nodes</b> and <b>node lists</b></p>
+  <h3 class="sub-title">First List</h3>
+  <ul id="person-list">
+    <li>Betty</li>
+    <li>June</li>
+    <li>Jarvis</li>
+  </ul>
+  <br>
+  <br>
+  <h3 class="sub-title">Second List</h3>
+  <ul id="food-list">
+    <li>Pizza</li>
+    <li>Hot Dogs</li>
+    <li>Hamburgers</li>
+  </ul>
+  <br>
+  <br>
+  <div id="myDiv"></div>
+  <div id="sampleDiv"></div>
+  <div id="dateDiv"></div>
+  <h1>Coding Problems</h1>
+  <h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+  <p>
+      <b>Always test your work! Check the console log to make sure there are no errors.</b>
+  </p>
+    
+    <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+
+
+// IMPORTANT NOTE: as we create the following code samples, it might be really helpful to 
+// keep referring to this page, which lists the properties and methods of a node
+// https://www.w3schools.com/jsref/dom_obj_all.asp
+
+// STEP 1
+// Get all LI tags in the entire document (assign them to a variable named 'allListItems')
+// then loop through the array an log the 'innerHTML' property of each one
+var allListItems = document.getElementsByTagName("LI");
+console.log(allListItems);
+for (var x = 0; x < allListItems.length; x++) {
+  console.log(allListItems[x].innerHTML);
+}
+
+
+
+// STEP 2
+// Get a handle on the element in the page that has an 'id' attribute of 'person-list' 
+// (assign it to a variable named 'personList')
+// Log the personList variable
+var personList = document.getElementById("person-list");
+console.log(personList);
+
+
+
+// STEP 3
+// In the previous example we listed all the properties of a UL tag/element on this page.
+// Now we'll get all LI tags that are nested within the personList.
+// Then loop through these LI tags
+// var personListItems = personList.getElementsByTagName("li");
+var personListItems = personList.getElementsByTagName("li");
+for(var x= 0; x < personListItems.length; x++) {
+  console.log(personListItems[x].innerHTML);
+}
+
+
+
+
+
+// STEP 4
+// use getElementsByClassName() to get all the elements that have a 'class' attribute set to 'sub-title'
+// var subTitles = ?????
+var subTitles = document.getElementsByClassName("sub-title");
+// the subTitles variable will contain an array (of DOM objects)
+// loop through the array on console log each element's innerHTML property
+for(var x = 0; x < subTitles.length; x++) {
+  console.log(subTitles[x].innerHTML);
+}
+
+
+
+///////////////////////////////
+// DOM MANIPULATION
+///////////////////////////////
+// Once you 'get a handle' on an element, let the manipulation begin!!!!
+
+
+// STEP 5
+// 'Get a handle' on the h1 tag in this page (it has an id attribute of 'main-header')
+//var h1 = ????;
+var h1 = document.getElementById("main-header");
+// DOM elements have a property called 'style', which is an object that has many properties
+// Use dot notation to change the following properties of the style object:
+// set the fontSize property to "18px"
+// set the color property to "midnightblue"
+// set the backgroundColor property to "red"
+// set the borderRadius property to "10px"
+h1.style.fontsize = "18px";
+h1.style.color = "midnightblue";
+h1.style.backgroundColor = "red";
+h1.style.borderRadius = "10px";
+
+
+// STEP 6
+// Change the color and font-size of all the anchor tags on the page
+// Note that each node has a 'style' property that is an object that
+// represents the style settings for the node. The style object has the same
+// properties that you can set in CSS code, BUT there is one major difference
+// between using JavaScript to apply styles and using CSS to apply styles.
+// In JavaScript we don't use the dash, instead we use camelCase. For example, 
+// backgound-color in CSS code becomes backgroundColor in JavaScript code
+var input = document.createElement("input");
+input.setAttribute("type", "button");
+input.setAttribute("value", "Click me!")
+
+var div = document.getElementById("myDiv");
+div.appendChild(input);
+
+
+// STEP 7
+// create an 'input' element
+// set its 'type' attribute to 'button'
+// set its 'class' attribute to 'btn-standard'
+// set its 'value' attribute to 'CLICK ME'
+// OPTIONAL: assign a function to it's 'onclick' property that simply alerts 'Thank you for clicking me' 
+// (this is a preview to event-handling, which we'll be covering soon) 
+// then use appendChild() to add it to myDiv
+
+
+
+// STEP 8
+// remove the button from myDiv
+
+
+
+//DOM Selection and Manipulation
+// STEP 9
+// Initialize the 'container' variable below by calling document.getElementById()
+// The parameter that you pass in should be 'myDiv'
+//var container = ????;
+
+// STEP 10
+//There are 2 ways to create an element and put it in the DOM
+// one way is to use document.createElement() and then insert the element into the DOM
+// by using the appendChild() method of the container element
+// use document.createElement() to create an h3 element, assign the return value to the variable 'h3Elememnt'
+// var h3Element = ????;
+
+
+// STEP 11
+// Use dot notation to set the 'textContent' property of h3Element to "Hello World!"
+
+
+// STEP 12
+// Insert h3Elememnt into the DOM by calling appendChild() of the container variable.
+
+
+// STEP 13
+// Another way to add elements to a page is by create an html string
+// and then assigning the string to the 'innerHTML' property of the container element
+// Initialize myH3 to a string that looks like this: "<h3>This is my H3 tag</h3>"; 
+//var myH3 = ????;
+
+// STEP 14
+// Assign the string in myH3 to the innerHTML property of the container element
+
+
+
+
+/*************************
+* PROBLEMS
+**************************/
+
+// PROBLEM 1 - Create an element and insert it into the DOM
+// Step 1
+// 'Get a handle' on the div that has it's id attribute set to 'sampleDiv' and assign it to the 'div' variable below
+// var div = ?????;     //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+// Step 2
+// Create an element object, the object should represent an 'a' tag
+// var a = ????;        //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+// Step 3
+// Use dot notation to set the textContent property of 'a' to this string: "Click Here"
+// Use dot notation to set the href property of 'a' to this string: "http://www.google.com"
+
+// Step 4
+// Use dot notation to invoke the appendChild() method of the 'div' variable.
+// The appendChild() method expects a parameter, use the element that you created in step 2
+
+
+// Reload the page, you should see an anchor tag inside of the sample div
+
+
+// PROBLEM 2 - Retreiving multiple elements from the DOM by using document.getElementsByClassName()
+// You are going to get/pull/fetch/extract/retreive some element objects from the DOM!!!
+// You are looking for specific tags, ones that have a 'class' attribute set to 'sub-title'.
+// For example: <h3 class="sub-title"></h3>
+// Note that there are a few of these tags on the page, we'll be fetching all of them at once.
+// You will assign them to this variable:
+var subTitleTags;
+
+// Step 1
+// To initialize subTitleTags, call document.getElementsByClassName(), you will
+// have to pass in a parameter, use this string: "sub-title"
+// Uncomment the next line of code and complete the statment to intialize subTitleTags:
+//subTitleTags = ?????;       //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+
+// Step 2
+// subTitleTags should now be storing all of the elements from the page that have a 'class' attribute that is set to 'sub-title'.
+// Log the variable subTitleTags and explore it in the console tool. Hint: console.log(subTitleTags);
+
+// how many objects are being stored by the variable subTitleTags?
+// PUT YOUR ANSWER HERE (but make sure the line is commented out so that it doesn't cause syntax errors when you run your code)
+
+
+
+
+// PROBLEM 3 - Retrieving multiple elements from the DOM using document.getElementsByTagName()
+// Use Firefox for this problem (the instructions assume that you are using Firefox)
+
+// In this problem you will work with a variable called aTags, here it is:
+var aTags;
+
+
+// Step 1
+// You want to get all the 'a' tags out of the DOM and store them in the aTags variable.
+// Your job is to use document.getElementsByTagName() to get all of the anchor tags on the page.
+// You will  have to pass in a string parameter to specify the type of tags that you want, in this case we want 'a' tags 
+// To initialize the aTags variable, uncomment this next line and complete the statement.
+// aTags = ??????;       //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+
+// Step 2
+// The aTags variable should now be holding an object that represents all anchor tags on this page.
+// Use dot notation to log the 'length' property of the aTags object
+
+
+// Step 3
+// Now log the aTags variable itself: console.log(aTags);
+// Look at the entry in the console, make sure to click on the entry in the log to inspect the object
+
+
+// Step 4
+// By looking at the log, can you tell what type of object is being stored in the aTags variable?
+// PUT YOUR ANSWER HERE (but make sure the line is commented out so that it doesn't cause syntax errors when you run your code)
+
+
+// Step 5
+// Look at the log entry from Step 3. How many 'a' tags are being stored inside aTags object? Put your answer on the next line.
+// PUT YOUR ANSWER HERE (but make sure the line is commented out so that it doesn't cause syntax errors when you run your code)
+
+// Step 6
+// The object held in the aTags variable has a method called item(), which takes a parameter (the parameter should be a number).
+// Use dot notation to invoke the item() method of 'aTags' and pass in 0 (zero) for the parmeter
+// The item() method also returns a value, so assign the return value to a variable called 'firstAnchorTag'
+//var firstAnchorTag = ??????;        //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+
+// Step 7
+// The firstAnchorTag variable should be storing an object that represents a certain tag/element from the DOM.
+// this object (like all DOM element nodes) has a textContent property.
+// Use dot notation to alert the textContent property of the object that is stored in the firstAnchorTag variable
+
+
+
+// PROBLEM 4 - Insert the current date into the DOM
+// Step 1
+// 'Get a handle' on the div that has its id attribute set to 'dateDiv' and assign it to the dateDiv variable below
+// var dateDiv = ?????;       //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+// Step 2
+// Use the Date constructor function to create a date object that represents the current date
+//var today = ????;             //Don't forget to uncomment this line when you replace the ???? with the proper code
+
+// Step 3
+// Set the 'textContent' property of dateDiv so that it displays the current date, which is stored in the 'today' variable.
+
+
+
+// PROBLEM 5 - Exploring the API of DOM elements
+// DOM elements have an API (application programming interface).
+// This is just a fancy way to say that each DOM element has a lot of properties and methods that we can use.
+// For this problem we will be using this 'element' variable:
+var element = document.getElementById("main-header");
+
+// The 'element' variable above is holding a DOM element object.
+// As previously mentioned, DOM element objects have lots of properties and methods that we can use to do all sorts of things on
+// a web page. 
+// Here is a link that lists the properties and methods of DOM elememnts:
+// https://www.w3schools.com/jsref/dom_obj_all.asp
+// Explore this page and choose one method to try out with the 'element' variable
+
+// What method did you choose?
+// PUT YOUR ANSWER HERE (but make sure to leave the line commented out)
+
+// What does the method do?
+// PUT YOUR ANSWER HERE (but make sure to leave the line commented out)
+
+// Does the method take any parameters (do you use parameters when you invoke the method)?
+// PUT YOUR ANSWER HERE (but make sure to leave the line commented out)
+
+// Does the method return a value? If so, describe the return value
+// PUT YOUR ANSWER HERE (but make sure to leave the line commented out)
+
+// Come up with a code sample that demonstrates the method
+
+
+
+    </script>
+    <footer>
+      &copy; 2018 Niall Kader
+    </footer>
+
+  </body>
+</html>
+
+

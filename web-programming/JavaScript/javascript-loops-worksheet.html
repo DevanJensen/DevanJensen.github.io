@@ -263,7 +263,7 @@ for(var x = 0; x < people.length; x++){
     <!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
     <script>
     // JavaScript code goes here, inside a script tag
-
+    
     </script>
 
     <h1>Questions - JavaScript Loops</h1>
@@ -272,28 +272,28 @@ for(var x = 0; x < people.length; x++){
         What is the difference between a while loop and a for loop?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        While loops go until true is returned to it while for loops go for a specific number of times.
     </div>
     <h4>Question 2</h4>
     <p class="question">
         What is an <b>iteration</b>?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        iteration is another name for looping.
     </div>
     <h4>Question 3</h4>
     <p class="question">
         What is a 'counter variable'?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        The counter variable is the number of times a for loop loops, it can be used to interact with arrays.
     </div>
         <h4>Question 4</h4>
     <p class="question">
         What does the <b>break;</b> statement do when used inside a loop?
     </p>
     <div class="answer">
-        Replace this text with the solution to the above question/problem.
+        It stops the loop from finishing or repeating.
     </div>
 
 	  <h1>Coding Problems</h1>
@@ -316,10 +316,12 @@ In the body of the loop do two things:
    1. log numLoops
    2. increment numLoops by 1 (if you forget this, you may have a dreaded 'infinite loop' - a loop that never terminates - it will crash your program!)
 */
-  var numLoops = 0;
-
-
-
+console.log("Problem 1 start");
+var numLoops = 0;
+var totalLoops = 10;
+for(numLoops; numLoops  < totalLoops; numLoops++) {
+  console.log(numLoops);
+}
 /*
 Problem 2 - Loop until the user enters the correct password
 
@@ -329,8 +331,13 @@ Problem 2 - Loop until the user enters the correct password
 4. Inside the body of the loop, use the prompt() function to ask the user to 'Enter the password' and assign the return value to passwordEntered. 
 5. After the loop (after the closing the curly brace that closes the body of the loop), alert this message: "You entered the correct password!"
 */
+var secretPassword = "abc";
+var passwordEntered;
+while(passwordEntered != secretPassword) {
+  passwordEntered = prompt("Enter the password:");
+}
 
-
+alert("You entered the correct password!");
 
 /*
 Problem 3 - A for loop that iterates from 1 to 5
@@ -340,7 +347,10 @@ Use 'x' as the name of the counter variable.
 Inside the body of the loop, simply log x.
 (the console should log 1,2,3,4, and 5 when you run this code).
 */
-
+console.log("Problem 3 start");
+for(x = 1; x <= 5; x++) {
+  console.log(x);
+}
 
 /*
 Problem 4 - A for loop that calculates the sum of an array of numbers
@@ -350,10 +360,14 @@ Inside the body of the loop, add the value of each element to 'total'.
 By the time the loop is done you should have the sum stored in 'total'.
 After the loop, log the 'total' variable.
 */
+console.log("Problem 4 start")
 var numbers = [2,5,3];
 var total = 0;
 
-
+for(var x = 0; x < numbers.length; x++) {
+  total = total + numbers[x];
+}
+console.log(total);
 
 /*
 Problem 5 (this is a tough one!)
@@ -385,19 +399,32 @@ When you are done, test your code by searching for last names that occur in the 
 AND by searching for last names that do not exist in the data.
 */
 var employees = [
-  { id:101, firstName: "Joe", lastName: "Anderson" },
-  { id:102, firstName: "Jenny", lastName: "Beacham" },
-  { id:103, firstName: "Sally", lastName: "Crockford" },
-  { id:104, firstName: "Chester", lastName: "Denning" },
-  { id:105, firstName: "Winnie", lastName: "Frank" },
-  { id:106, firstName: "Patty", lastName: "Mumford" },
-  { id:107, firstName: "Lorraine", lastName: "Oliver" },
-  { id:108, firstName: "Judd", lastName: "Jones" },
-  { id:109, firstName: "Billy", lastName: "Smith" },
-  { id:110, firstName: "Mark", lastName: "Portman" }
+  { id:101, firstName: "Joe", lastName: "Anderson" }, //0
+  { id:102, firstName: "Jenny", lastName: "Beacham" }, //1
+  { id:103, firstName: "Sally", lastName: "Crockford" }, //2
+  { id:104, firstName: "Chester", lastName: "Denning" }, //3
+  { id:105, firstName: "Winnie", lastName: "Frank" }, //4
+  { id:106, firstName: "Patty", lastName: "Mumford" }, //5
+  { id:107, firstName: "Lorraine", lastName: "Oliver" }, //6
+  { id:108, firstName: "Judd", lastName: "Jones" }, //7
+  { id:109, firstName: "Billy", lastName: "Smith" }, //8
+  { id:110, firstName: "Mark", lastName: "Portman" } //9
 ];
 
+var matchingEmployee;
+var lastNameToSearch = prompt("Enter the last name of an employee to search:");
+for(x = 0; x < employees.length; x++) {
+  if(employees[x].lastName == lastNameToSearch) {
+    matchingEmployee = lastNameToSearch;
+    break;
+  }
+}
 
+if(matchingEmployee) {
+  alert("We found " + matchingEmployee);
+}else {
+  alert("Unable to find employee.");
+}
 
     </script>
     <footer>
