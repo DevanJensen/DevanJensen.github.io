@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+				h1 {
+					background-color: rgba(0,0,0,.5);
+					color: white;
+					font-family: 'Lobster';
+					font-style: normal;
+					text-decoration: underline;
+					line-height: 56px;
+					text-align: center;
+					font-size: 40px;
+				}

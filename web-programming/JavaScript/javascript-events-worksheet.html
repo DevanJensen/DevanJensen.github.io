@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <title>Event Driven Programming in Java Script</title>
+	    <meta name="description" content="Working with events in JavaScript">
+	    <meta name="robots" content="noindex, nofollow" />
+	    <meta name="viewport" content="width=device-width">
+	    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+	    <script src="../js/main.js"></script>
+	    <script>
+			// We have been putting our script tags near the bottom of the page
+			// But in the real world, the script tag is usually inside the head tag
+			// Now that we know how to wait until the page loads to run js code, we can put our script tag in the head
+			// 'hook up' the function, so that it will get invoked when the certain event occurs.
+		function setUp() {
+
+		}
+		alert("page not done loading yet")
+		window.addEventListener("load", function() {
+			alert("Page has loaded")
+		});
+
+		</script>
+	    <style>
+	    #someTagId{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: midnightblue;
+	    	color:white;
+	    	border-radius: 10px;
+	    }
+
+	     #myDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: red;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+
+	    #orangeDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: orange;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+
+	    #greenDiv{
+	    	width:200px;
+	    	padding:10px;
+	    	background-color: green;
+	    	color:white;
+	    	border-radius: 10px;
+	    	margin-top: 20px;
+	    }
+	    </style>
+	</head>
+	<body>
+	<h1>Event Driven Programming</h1>
+	<p>
+		Event driven programming in JavaScript allows us to invoke a function when a certain event occurs.
+		An event might be when a user clicks a button, or when the page has finished loading.
+		There are many events that we can 'hook into' (meaning that we can set up functions to be called/invoked when events occur).
+		A very common event is when a button gets clicked.
+		If we want to run some code when a button is clicked, we could first declare a function,
+		and then write code that tells JavaScript to invoke the function when the button is clicked 
+		(we can 'hook into' the button click event).
+	</p>
+	<p>So, to make use of event-driven programming in JavaScript, we do the following:</p>
+	<ol>
+		<li>Define a function that you want to be invoked when a certain event occurs in your web page.</li>
+		<li>Write code that 'hooks up' the function, so that it will get invoked when the certain event occurs.</li>
+		<li>Wait until the event occurs. When it does, the browser will invoke the function that we defined.</li>
+	</ol>
+	<p>
+		Let's say we want a function to be invoked whenever this button is clicked:
+	</p>
+	<input type="button" id="myBtn" value="Click Here!" />
+	<pre>
+// define a function to be invoked when a certain event occurs
+function doSomething(){
+	console.log("doing something.....");
+}
+
+// 'hook up' the function, so that it will get invoked when the certain event occurs.
+	var myBtn = document.getElementById("myBtn");
+	myBtn.addEventListener('click', doSomething);
+	</pre>
+	<p>
+		There are various ways to 'hook up' functions so that they are invoked when events occur.
+		The approach that we will mostly rely on is to use the <b>addEventListener()</b> method. 
+		All DOM objects have this method.
+	</p>
+	<p>
+		Note that the addEventListener() method has two parameters.
+		The first parameter specifies which event we are 'listening' for. 
+		In this case we are waiting for the user to click on the button, but there are many, many other events that we can use (for example, 'mouseover', 'mouseout').
+	</p>
+	<p>	
+		Note that the first parameter is a string.
+	</p>
+	<p>
+		The second parameter is the name of the function that we want to be invoked when the event occurs.
+		These functions are often called <b>event handler</b> functions.
+		Take a good look at the code and you'll notice that are no parenthesis after 'doSomething'
+		(if we had included the parenthesis, the broswer would invoke the function right there on that line).
+	</p>
+	<p>	
+		Remember that when we hook up event handler functions, we do not invoke them ourselves.
+		Instead, the browser will invoke the function when the specified event occurs.
+		So we don't actually know when the the event handler function will be invoked. 
+	</p>
+	<p>
+		Side Note: If you are familiar with another programming language, it might surprise you to see
+		that a function can be used as a parameter (many languages don't allow this). 
+		But in JavaScript it is very common to see functions passed as parameters to other functions.
+	</p>
+	<p>
+		This is <b>event-driven</b> programming - waiting for events to occur and then running code when they do occur.
+		The browser keeps track of all the events that occur in a page (there are many) and it will 
+		trigger function calls for the ones that we've hooked into.
+	</p>
+	<p>
+		<b>
+		It's important to note again that we don't usually write code that invokes the event handler functions.
+		We define/declare them, but the browser invokes them when the event occurs.
+		</b>
+	</p>
+	<p>
+		To give you an idea of just how many events we can hook into, here are a few references on JavaScript events:
+		<ul>
+			<li><a href="http://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">W3C JavaScript Event Reference</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">Mozilla Developer Network - JavaScript Events</a></li>
+		</ul> 
+	</p>
+	<h3>Event Handlers</h3>
+	<p>
+		Functions that get invoked when an event occurs are called <b>event handlers</b>
+		because they 'handle' the event. 
+	</p>
+	<h3>Waiting for the page to load</h3>
+	<p>
+		One very common event that JavaScript developers hook into is the page 'load' event.
+		In many cases, we need to wait until the page completes loading before our JavaScript code can safely run.
+	</p>
+	<p>
+		Paste this code into the script tag at top of the page and see if you can figure out the problem that it presents.
+	</p>
+	<pre>
+var myBtn = document.getElementById("myBtn");
+myBtn.addEventListener('click', doSomething);
+	</pre>
+	<p>
+		Remember that when the browser loads a page, it starts reading it from the top down.
+		When it reaches the JavaScript code it will try to excecute it immediately, and at that time
+		the tag that has the id of myBtn has not yet loaded.
+	</p>
+	<p>
+		This is why we've been careful to put our script tags near the bottom of the page.
+		But in the real world, we often want our JavaScript code to be placed inside the head tag.
+	</p>
+	<p>
+		To deal with this problem, we wait until the page has completed loading before we run our JavaScript code.
+		In this case, we wait for the 'load' event to occur.
+		For some reason, we have to hook up this event to the 'window' object 
+		(you might think that it would get hooked up to the document object, since we are waiting for the document to finish loading).
+	</p>
+	<pre>
+function setUp(){
+	// ALL of your JS code can go here
+}
+
+window.addEventListener("load", setUp);
+	</pre>
+	<p>
+		Now we can put ALL of our JavaScript code inside the setUp function and we can be assured
+		that it will not execute until the page has completed loading. 
+	</p>
+	<h3>Using 'anonymous' functions</h3>
+	<p>
+		In the previous examples when we used addEventListener() we used the name of a function
+		as the second parameter (and we were careful not to include the parenthesis after the name).
+		But it's actually very common to use an 'annonymous' function when hooking up events.
+	</p>
+	<p>
+		Instead of declaring a function first and then hooking it up as an event handler,
+		we can actually do both at the same time like this: 
+	</p>
+	<pre>
+window.addEventListener("load", function(){
+	// Put ALL of your JS code inside this function
+});		
+	</pre>
+	<p>
+		The function that is being used as the second parameter to addEventListner() has no name, which makes it an 'annonymous' function.
+	</p>
+	<p>
+		This syntax may take a little getting used to, especially if you are familiar with other programming languages.
+	</p>
+	<h3>Different Ways to Hook Into Events</h3>
+	<p>
+		There are a few different ways that we can write code to set up event handler functions.
+		I believe that using addEventListener() is the best approach.
+		But you need to be aware of other approaches, because you'll see them being used in ohter peoples' code.
+	</p>
+	<p>
+		Instead of using the addEventListner() method of a DOM element object, you can also set an event handler by
+		assigning a function to a property of the element.
+	</p>
+	<pre>
+var myDiv = document.getElementById("myDiv");
+myDiv.onclick = doSomething;
+	</pre>
+	<div id="myDiv">Click Here!</div>
+	<p>
+		<b>It's important to note that when you use this approach, the property name begins with 'on', but when we use addEventListener() we don't use 'on'!</b>
+	</p>
+	<p>
+		Here's another way to acheive the same effect, this time we're using an anonymous function:
+	</p>
+	<pre>
+var myDiv = document.getElementById("myDiv");
+
+myDiv.onclick = function(){
+	alert("blah!!!");
+};
+	</pre>
+	<p>
+		Finally, you can actually specify event handlers by setting certain attributes of a tag in your html.
+		Note that this approach is out-dated, and not usually recommended.
+	</p>
+	<pre>
+&lt;div onmouseover="doSomething()" onmouseout="doSomethingElse()"&gt;Hover Over Me!&lt;/div&gt;
+	</pre>
+	<div id="someTagId" onmouseover="doSomething()" onmouseout="doSomethingElse()">Hover Over Me!</div>
+	<b>Make sure to have the console log open when you hover!</b>
+	<!--USE THIS SCRIPT TAG TO TRY OUT SOME OF THE CODE-->
+    <script>
+    // JavaScript code goes here, inside a script tag
+    
+    ///////////////////////////////////////////////
+	// these two functions are used in the demo
+	///////////////////////////////////////////////
+	function doSomething(){
+		console.log("doing something.....");
+	}
+
+	function doSomethingElse(){
+		console.log("doing something else...");
+	}
+
+	var myBtn = document.getElementById("myBtn");
+	myBtn.addEventListener('click', doSomething);
+
+    </script>
+    <h1>Questions - Event-Driven JavaScript</h1>
+    <h4>Question 1</h4>
+    <p class="question">
+        What is an 'event handler'?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+    <h4>Question 2</h4>
+    <p class="question">
+        How are event handlers invoked?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+    <h4>Question 3</h4>
+    <p class="question">
+        What is an 'anonymous' function?
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+    <h4>Question 4</h4>
+    <p class="question">
+        Explain what the addEventListener() method of a DOM element is, and explain the purpose of each of it's parameters.
+    </p>
+    <div class="answer">
+        Replace this text with the solution to the above question/problem.
+    </div>
+        
+	<h1>Coding Problems</h1>
+  	<h3>Coding Problems - See the 'script' tag below this h3 tag. You will have to write some JavaScript code in it.</h3>
+    <p>
+        <b>Always test your work! Check the console log to make sure there are no errors.</b>
+    </p>
+    <div id="orangeDiv">Orange</div>
+    <br>
+    <div id="greenDiv">Green</div>
+    <script>
+    // CODING PROBLEMS
+   	// Now that we know about the window/page load event
+   	// we should have for it before we run our JS code.
+    window.addEventListener("load", function(){
+
+
+
+		//STEP 1
+		// First use document.getElementById() to get a handle on the element with an id of 'orangeDiv'
+		// Then use document.getElementById() to get a handle on the element with an id of 'greenDiv'
+		var orangeDiv = document.getElementById("orangeDiv")
+		var greenDiv = document.getElementById("greenDiv")
+
+
+
+
+		//STEP 2
+		// Use the addEventListener() to add an event handler function for when the mouse hovers over orangeDiv
+		// (the event is called 'mouseover')
+		// In the body of the event handler function, change orangeDiv's innerHTML to say 'Hovering'
+		orangeDiv.addEventListener("mouseover", function() {
+			orangeDiv.innerHTML = "Hovering";
+		});
+
+
+
+		//STEP 3
+		// Use addEventListener() to add an event handler function for the 'mouseout' event on orangeDiv.
+		// In the body of the event handler function, change orangeDiv's innerHTML to say 'Not Hovering'
+		orangeDiv.addEventListener("mouseout", function() {
+			orangeDiv.innerHTML = "Not Hovering";
+		});
+
+
+
+		//STEP 4 
+		// Add an event handler for when greenDiv gets clicked.
+		// Make an alert box appear that says "You clicked me!"
+		greenDiv.addEventListener("click", function() {
+			greenDiv.innerHTML = "You clicked me!"
+		})
+
+
+		//STEP 5
+		// Get all the 'div' tags on the page (by using document.getElementsByTagName())
+		// Then write a loop that attaches an event handler function to each div tag.
+		// The event handler should be triggered(invoked) when the user clicks the div tag (the 'click' event).
+		// The code in the body of the event handler function should be this: alert("You clicked on a DIV tag!");
+		var allDivs = document.getElementsByTagName("div");
+
+		for(var x = 0; x < allDivs.length; x++) {
+			var div = allDivs[x];
+			div.addEventListener("click", function() {
+				alert("You clicked on a DIV tag!");
+			});
+		};
+
+
+	});// This is the end of the window 'load' event handler function, it should be the last line of code before the closing script tag.
+
+    </script>
+     <footer>
+         &copy; 2018 Niall Kader
+    </footer>
+	</body>
+</html>
