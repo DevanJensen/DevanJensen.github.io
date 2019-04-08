@@ -2,12 +2,17 @@
 <html>
 	<head>
 		<title>College Zone</title>
+		<link rel="stylesheet" type="text/css" href="styles/reset.css">
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<script src="js/main.js"></script>
+		<meta name="viewport" content="width=device-width">
+		<meta name="discription" content="The web site of a tired college student!">
 	</head>
 	<body>
-		<a href="web-programming/index.html">Tempt Link to Assignments</a>
-		<h1>Welcome to the College Zone!</h1>
-		<nav>
+		<header>
+			<h1>Welcome to my website!</h1>
+		</header>
+		<nav id="main-nav">
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Pictures</a></li>
@@ -15,26 +20,33 @@
 				<li><a href="#">Contact</a></li>
 			</ul>
 		</nav>
-		<div>
+		<div id="content">
 			<main>
 				<h3>About Me</h3>
-				<p>Hello, my name is Devan Jensen, I am a student at Western Techincal College for the Computer Support Specialist program.</p>
-				<aside>
-					<h3>
-						My Hobbies
-					</h3>
-					<ol>
-						<li>TEST</li>
-						<li>TESTTWO</li>
-						<li>TESTTHREE</li>
-					</ol>
-					<img alt="Koala" width="200px" src="web-programming/images/koala.jpg">
-				</aside>
-				<img alt="Red fox in a forest" width="500px" src="web-programming/images/Red-Fox-1.jpg">
+				<p>
+					Hello, my name is Devan Jensen, I am a student at Western Techincal College for the Computer Support Specialist program.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<img alt="Fennec Fox" width="80%" src="images/fennec-fox-1.png">
 			</main>
+			<aside>
+				<h3>My Hobbies</h3>
+				<ol>
+					<li>Playing Video Games</li>
+					<li>Reading Books</li>
+					<li>Looking at images of foxes</li>
+				</ol>
+				<img alt="Knight from Dark Souls 3" width="70%" src="images/dark-souls-3.jpg">
+			</aside>
 		</div>
-		<footer>
-			&copy; Devan Jensen 2019
-		</footer>
+		<footer>&copy; Devan Jensen 2019 <a href="privacy-policy.html">Privacy Policy</a></footer>
+		<div id="mobile-nav-button">&#9776;</div>
 	</body>
 </html>

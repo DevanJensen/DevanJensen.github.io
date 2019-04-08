@@ -1,11 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-				h1 {
-					background-color: rgba(0,0,0,.5);
-					color: white;
-					font-family: 'Lobster';
-					font-style: normal;
-					text-decoration: underline;
-					line-height: 56px;
-					text-align: center;
-					font-size: 40px;
-				}
+
+#mobile-nav-button{
+	position: absolute;
+	top:0px;
+	right:0px;
+	width:44px;
+	height:44px;
+	background-color: red;
+	color:white;
+	font-weight: bold;
+	line-height: 44px;
+	text-align: center;
+	cursor:pointer;
+	display:none;
+}
+
+body {
+	font-family: 'Nanum Myeongjo', serif;
+	font-size: 12px;
+	color: black
+}
+
+header {
+	background-color: black;
+	height: 60px;
+}
+
+header h1 {
+	color: white;
+	font-family: 'Lobster', cursive;
+	line-height: 60px;
+	font-size: 45px;
+	text-align: center;
+}
+
+a {
+	color: blue;
+}
+
+a:hover {
+	color: purple;
+}
+
+#main-nav {
+	background-color: lightblue;
+	margin-bottom: 10px;
+}
+
+#main-nav li {
+	display: inline;
+	list-style: none;
+}
+
+#main-nav li a {
+	display: inline-block;
+	padding: 10px;
+	color: red;
+}
+
+#main-nav li a:hover {
+	background-color: red;
+	color: white;
+}
+
+h3 {
+	color: black;
+	font-size: 140%;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+p {
+	line-height: 16px;
+	margin-bottom: 12px;
+}
+
+footer {
+	background-color: black;
+	color: white;
+	font-size: 85%;
+	padding: 10px;
+}
+
+#content {
+	overflow: auto;
+	position: relative;
+}
+
+main {
+	float: left;
+	width: 70%;
+}
+
+aside {
+	float: left;
+	width: 30%;
+}
+
+aside img {
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width : 800px) {
+	header {
+		height: 44px;
+	}
+
+	header h1 {
+		text-align: left;
+		font-size: 30px;
+		line-height: 45px;
+	}
+
+	main, aside {
+		width: 100%;
+		float: none;
+		position: static;
+	}
+	#main-nav {
+		display: none;
+		height: auto;
+	}
+	#main-nav ul li {
+		display: block;
+	}
+	#mobile-nav-button {
+		display: block;
+	}
+}
