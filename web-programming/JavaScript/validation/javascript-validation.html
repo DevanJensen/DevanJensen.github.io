@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>User Input Validation in JavaScript</title>
+    <meta name="description" content="An introduction to User Input Validation in JavaScript">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <style type="text/css">
+        .validation-message{ color: red; }
+    </style>
+    <script src="js/sample-form-validation.js"></script>
+  </head>
+  <body>
+    <h1>User Input Validation</h1>
+    <p>Note - if you copy/paste some of this code into the contac page of your final project, be aware that there are some differences (for example the ID attributes may be set to different values).</p>
+    <form id="sampleForm" method="POST" action="http://wtc-web.com/form-handler.php">
+        <table border="1">
+            <tr>
+                <td align="right" valign="bottom">Name</td>
+                <td>
+                    <div class="validation-message" id="vName"></div>
+                    <input type="text" id="txtName" name="txtName">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" valign="bottom">Age</td>
+                <td>
+                    <div class="validation-message" id="vAge"></div>
+                    <input type="text" id="txtAge" name="txtAge">
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right" valign="bottom">Email</td>
+                <td>
+                    <div class="validation-message" id="vEmail"></div>
+                    <input type="text" id="txtEmail" name="txtEmail">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" valign="bottom">Comments</td>
+                <td>
+                    <div class="validation-message" id="vComments"></div>
+                    <textarea id="txtComments" name="txtComments" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">&nbsp;</td>
+                <td>
+                    <input type="submit" value="SUBMIT">
+                </td>
+            </tr>
+        
+
+        </table>
+    </form>
+
+  </body>
+</html>
+
+

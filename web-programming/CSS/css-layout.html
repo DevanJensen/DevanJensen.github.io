@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS Layout</title>
+    <meta name="description" content="CSS Layout">
+    <meta name="viewport" content="width=device-width">
+    <link REL=StyleSheet HREF="../styles/style.css" TYPE="text/css">
+    <script src="../js/main.js"></script>
+    <style type="text/css">
+    
+    /*SOME BROWSER RESET RULES*/
+    html,h1,header{
+    	margin:0;
+    	padding:0;
+    }
+	header{
+		position:fixed;
+		height:60px;
+		width: 100%;
+		top:0;
+		left:0;
+		z-index: 500;
+		background-color:lightgray;
+	}
+
+	main{
+		position: relative;
+		top:60px;
+	}
+
+	#game-board{
+	position:relative;
+	width:600px;
+	height:400px;
+	background-color:black;
+	}
+
+	#game-object{
+		position:absolute;
+		width:25px;
+		height:25px;
+		background-color:red;
+		top: 100px;
+		left: 200px;
+	}
+		
+	#outer{
+		width:300px;
+		height:200px;
+		border:1px solid chocolate;
+	}
+
+	#inner{
+		width: 150px;
+		/*height: 100%;*/
+		border: 1px dashed rosybrown;
+		/* float:right; */
+	}
+			
+	#tile-container{
+	border: 1px solid burlywood;
+	width: 300px;
+	height:200px;
+	}
+	.tile{ 
+		width: 30px;
+		height:30px;
+		background-color: tomato;
+		margin: 8px;
+		line-height: 30px;
+		text-align: center;
+		float: left;
+		/*change it to float right*/
+	}
+	
+	#responsive-tiles-container{
+	overflow: auto;
+	}
+
+	.responsive-tile{
+		width:20%;
+		height:200px;
+		background-color: lemonchiffon;
+		margin: 6%;
+		float:left;
+	}
+
+
+	#collapsed-div{
+	border: 1px solid lightsalmon;
+	}
+			
+    </style>
+  </head>
+  <body>
+  	<header>
+		<h1>CSS for Layout</h1>
+	</header>
+	<main>
+		<h3>The 'position' Property</h3>
+		<p>You can set the 'position' of every element on the page. Here are the options you have for setting the position of an element:</p>
+		<ul>
+			<li>
+				<b>static</b> - This is the default position setting for each tag, and you already know that block-level tags position themselves by stacking vertically, and inline tags fall inline and wrap automatically.
+			</li>
+			<li>
+				<b>absolute</b> - You can control the position of an element by setting it's pixel coordinates (top, left, bottom, right)
+			</li>
+			<li>
+				<b>relative</b> - You can control the position of an element relative to the nearest 'positioned' ancestor.
+			</li>
+			<li>
+				<b>fixed</b> - You can 'pin' an element so that it stays 'fixed' at a certain point, regardless of how much the user has scrolled down the page.
+			</li>
+		</ul>
+		<h3>Fixed Positioning</h3>
+		<p>
+			You can 'pin' an element so that it remains in the same position within the browser window (regardles of the scrolling).
+		</p>
+		<pre>
+header{
+	position:fixed;
+	height:60px;
+	width: 100%;
+	top:0;
+	left:0;
+	z-index: 500;
+	background-color:lightgray;
+}
+
+main{
+	position: relative;
+	top:60px;
+}
+		</pre>
+		
+		<h3>Absolute Positioning</h3>
+		<p>
+			You can set up elements so that you can position them based on pixel coordinates.
+			The coordinate system in programming is usually different than what we are accustomed from math.
+			Coordinate 0,0 is at the top left corner of the screen.
+		</p>
+		<p>
+			In order to use 'abolute positioning' for an element, its parent container must be set to position:relative or position:absolute.
+			Then you can set the element's top,left,bottom, or right position.	
+		</p>
+		<div id="game-board">
+			<div id="game-object"></div>
+		</div>
+		<pre>
+#game-board{
+	position:relative;
+	width:600px;
+	height:400px;
+	background-color:black;
+}
+
+#game-object{
+	position:absolute;
+	width:25px;
+	height:25px;
+	background-color:red;
+	top: 100px;
+	left: 200px;
+}
+		</pre>
+		<h3>Floating</h3>
+		<p>
+			By default, block-level elements stack vertically.
+			But we can 'float' them to get them stack horizontally.
+			In order to create various layouts for our pages we need to float elements.
+			This can be a bit messy because there are some strange side affects to floating elements.
+			Luckily, there are some new ways of dealing with layouts that are emerging.
+			But for now, we must learn to deal with floating elements.
+		</p>
+		<div id="outer">
+			<div id="inner">
+				I'm floating;
+			</div>
+		</div>
+		<pre>
+#outer{
+	width:300px;
+	height:200px;
+	border:1px solid chocolate;
+}
+
+#inner{
+	width: 150px;
+	/*height: 100%;*/
+	border: 1px dashed rosybrown;
+	float:right;
+}
+		</pre>
+		More on <a href="http://www.smashingmagazine.com/2007/05/css-float-theory-things-you-should-know/" target="_blank">floats</a>
+		<br>
+		<p>
+			You should always set the width when you float an element. Otherwise, the results can be unpredictable!
+		</p>
+		<h3>Using float to make tiles</h3>
+		<p>Notice that we use class attributes on the inner divs, why?</p>
+		<div id="tile-container">
+			<div class="tile">1</div>
+			<div class="tile">2</div>
+			<div class="tile">3</div>
+			<div class="tile">4</div>
+			<div class="tile">5</div>
+			<div class="tile">6</div>
+			<div class="tile">7</div>
+			<div class="tile">8</div>
+			<div class="tile">9</div>
+			<div class="tile">10</div>
+		</div>
+		<pre>
+#tile-container{
+	border: 1px solid burlywood;
+	width: 300px;
+	height:200px;
+}
+.tile{ 
+	width: 30px;
+	height:30px;
+	background-color: tomato;
+	margin: 8px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+	/*change it to float right*/
+}
+		</pre>
+		<h3>Responsive Tiles</h3>
+		<p>
+			We can combine % width and floats to make a 'repsonsive' tile layout.
+		</p>
+		<div id="responsive-tiles-container">
+			<div class="responsive-tile">1</div>
+			<div class="responsive-tile">2</div>
+			<div class="responsive-tile">3</div>
+		</div>
+		<pre>
+#responsive-tiles-container{
+	overflow: auto;
+}
+
+.responsive-tile{
+	width:20%;
+	height:200px;
+	background-color: lemonchiffon;
+	margin: 6%;
+	float:left;
+}
+		</pre>
+		<h3>The collapsed div phenomenon</h3>
+		<p>
+			One of the problems of using floats is dealing with the 'collapsed div' phenomenon.
+			Add this selector and rule set to see the problem.
+		</p>
+		<pre>
+#collapsed-div{
+	border: 1px solid lightsalmon;
+}
+		</pre>
+		<div id="collapsed-div">
+			hello!
+			<div class="tile">x</div>
+		</div>
+			
+	</main>
+</body>
+</html>

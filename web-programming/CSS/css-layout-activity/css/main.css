@@ -1,0 +1,122 @@
+/*Set some defaults styles for this page*/
+body{font-size:14px;}
+h1{font-size:24px; font-weight: bold; }
+h3{font-size:18px; font-weight: bold; margin-bottom:15px; }
+p{line-height: 20px; margin-bottom: 12px;}
+
+/*We'll talk about this button later, when we make our page responsive*/
+#mobile-nav-button{
+	position: absolute;
+	top:0px;
+	right:0px;
+	width:44px;
+	height:44px;
+	background-color: red;
+	color:white;
+	font-weight: bold;
+	line-height: 44px;
+	text-align: center;
+	cursor:pointer;
+	display:none;
+}
+
+header {
+	height: 80px;
+	background-color: red;
+}
+
+header h1 {
+	color: white;
+}
+
+#main-nav {
+	height: 30px;
+	background-color: orange;
+}
+
+#main-nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+#main-nav ul li {
+	height: 100%;
+	list-style: none;
+	display: inline-block;
+}
+
+#main-nav ul li a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	padding: 0px 20px;
+}
+
+#main-nav ul li a:hover {
+	background-color: pink;
+}
+
+#content {
+	overflow: auto;
+	position: relative;
+}
+
+main {
+	float: left;
+	width: 70%;
+}
+
+aside {
+	float: left;
+	background-color: orange;
+	width: 30%;
+}
+
+.content-frame{
+	padding: 20px;
+	border:1px solid red;
+}
+
+footer {
+	height: 20px;
+	font-size: 10px;
+	background-color: red;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+MEDIA QUERY FOR A RESPONSIVE WEBSITE
+THESE CSS RULES WILL KICK IN WHEN THE SCREEN SIZE
+FALLS TO 800PX OR LESS
+*/
+@media all and (max-width : 800px) {
+	header {
+		height: 44px;
+	}
+
+	main, aiside {
+		width: 100%;
+		float: none;
+		position: static;
+	}
+	#main-nav {
+		display: none;
+		height: auto;
+	}
+	#main-nav ul li {
+		display: block;
+	}
+	#mobile-nav-button {
+		display: block;
+	}
+}
