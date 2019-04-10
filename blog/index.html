@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<title>College Zone: Home Page</title>
-		<link rel="shortcut icon" type="text/css" href="../favicon.ico">
+		<link rel="icon" type="text/css" href="../images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
 		<link rel="stylesheet" type="text/css" href="../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../styles/blog.css">
+
 		<script src="../js/main.js"></script>
 		<meta name="viewport" content="width=device-width">
 		<meta name="discription" content="The web site of a tired college student!">
@@ -15,16 +17,18 @@
 		</header>
 		<nav id="main-nav">
 			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li><a href="../photos.html">Photos</a></li>
+				<li><a id="selectable-nav" href="../index.html">Home</a></li>
+				<li><a id="selectable-nav" href="../photos.html">Photos</a></li>
 				<li><a id="currentTab" href="index.html">Blog</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a id="selectable-nav" href="../contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		<div id="content">
 			<main>
 				<div id="content-frame">
-					<ol>
+					<h1>PAGE UNDER CONSTRUCTION</h1>
+					<h3>Current Blog Post</h3>
+					<ol id="blogList">
 						<li><a href="css-selectors.html">CSS Selectors</a></li>
 						<li><a href="bass-guitars.html">Bass Guitars</a></li>
 					</ol>
@@ -33,12 +37,12 @@
 			<aside>
 				<div id="content-frame">
 					<h3>My Hobbies</h3>
-					<ol>
+					<ol id="myHobby" >
 						<li>Playing Video Games</li>
 						<li>Reading Books</li>
 						<li>Looking at images of foxes</li>
 					</ol>
-					<img alt="Knight from Dark Souls 3" width="70%" src="../images/dark-souls-3.jpg">
+					<img alt="Knight from Dark Souls 3"src="../images/dark-souls-3.jpg">
 				</div>
 			</aside>
 		</div>

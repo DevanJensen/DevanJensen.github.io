@@ -2,7 +2,7 @@
 <html>
 	<head>
 	  <title>College Zone: Blog</title>
-	  <link rel="shortcut icon" type="text/css" href="favicon.ico">
+	  <link rel="icon" type="text/css" href="images/favicon.ico">
 	  <link rel="stylesheet" type="text/css" href="styles/reset.css">
 	  <link rel="stylesheet" type="text/css" href="styles/photo-gallery.css">
 	  <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -17,18 +17,21 @@
 		</header>
 		<nav id="main-nav">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a id="selectable-nav" href="index.html">Home</a></li>
 				<li><a id="currentTab" href="photos.html">Photos</a></li>
-				<li><a href="blog/index.html">Blog</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a id="selectable-nav" href="blog/index.html">Blog</a></li>
+				<li><a id="selectable-nav" href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		<h1>Photo Gallery</h1>
+		<br>
+		<div>
+	  		<input type="button" id="btnPrev" value="Prev" />&nbsp;<input type="button" id="btnNext" value="Next" />
+	  	</div>
 	  	<div id="Photo-gallery">
 	    	<img id="mainPhto" src="" />
 	  	</div>
 	  	<br>
-	  	<input type="button" id="btnPrev" value="Prev" />&nbsp;<input type="button" id="btnNext" value="Next" />
 	  	<footer>&copy; Devan Jensen 2019 <a href="privacy-policy.html">Privacy Policy</a></footer>
 	  	<div id="mobile-nav-button">&#9776;</div>
 	</body>

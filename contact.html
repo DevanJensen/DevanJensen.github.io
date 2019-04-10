@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Temp</title>
-</head>
-<body>
-<h3></h3>
+	<head>
+		<title>College Zone: Contact</title>
+		<link rel="icon" type="text/css" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<script src="js/main.js"></script>
+		<meta name="viewport" content="width=device-width">
+		<meta name="discription" content="Contact page for the College Zone">
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to my website!</h1>
+		</header>
+		<nav id="main-nav">
+			<ul>
+				<li><a id="selectable-nav" href="index.html">Home</a></li>
+				<li><a id="selectable-nav" href="photos.html">Photos</a></li>
+				<li><a id="selectable-nav" href="blog/index.html">Blog</a></li>
+				<li><a  id="currentTab" href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="content">
+			<main>
+				<div id="content-frame">
+				<h1>PAGE UNDER CONSTRUCTION</h1>
+				<h3>Contact me!</h3>
+				<form id="sampleForm" method="POST" action="http://wtc-web.com/form-handler.php">
+        <table border="1">
+            <tr>
+                <td align="right" valign="bottom">Name</td>
+                <td>
+                    <div class="validation-message" id="vName"></div>
+                    <input type="text" id="txtName" name="txtName">
+                </td>
+            </tr>
 
-</body>
+            <tr>
+                <td align="right" valign="bottom">Age</td>
+                <td>
+                    <div class="validation-message" id="vAge"></div>
+                    <input type="text" id="txtAge" name="txtAge">
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="right" valign="bottom">Email</td>
+                <td>
+                    <div class="validation-message" id="vEmail"></div>
+                    <input type="text" id="txtEmail" name="txtEmail">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" valign="bottom">Comments</td>
+                <td>
+                    <div class="validation-message" id="vComments"></div>
+                    <textarea id="txtComments" name="txtComments" ></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">&nbsp;</td>
+                <td>
+                    <input type="submit" value="SUBMIT">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+				</div>
+			</main>
+			<aside>
+				<div id="content-frame">
+					
+				</div>
+			</aside>
+		</div>
+		<footer>&copy; Devan Jensen 2019 <a href="privacy-policy.html">Privacy Policy</a></footer>
+		<div id="mobile-nav-button">&#9776;</div>
+	</body>
 </html>

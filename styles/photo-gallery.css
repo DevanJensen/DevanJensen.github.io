@@ -1,17 +1,26 @@
 input[type=button]{
-      border:2px solid gray;
-      background-color: #333333;
-      border-radius: 4px;
-      padding:10px;
-      color:gray;
-      font-weight: bold;
-    }
+  border:4px solid black;
+  background-color: gray;
+  border-radius: 4px;
+  padding:10px;
+  color: white;
+  font-weight: bold;
+}
 
-    #Photo-gallery{
-      width:50%;
-    }
+div {
+  text-align: center;
+}
 
-    #Photo-gallery #mainPhto{
-      width:100%;
-      border: 2px solid #333333;
-    }
+#Photo-gallery{
+  width:50%;
+  margin: auto;
+}
+
+#Photo-gallery #mainPhto{
+  width:100%;
+  border: 8px solid black;
+}
+
+h1 {
+  text-align: center;
+}

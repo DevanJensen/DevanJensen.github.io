@@ -33,6 +33,8 @@ header h1 {
 	line-height: 60px;
 	font-size: 45px;
 	text-align: center;
+	margin-top: 0px;
+	margin-left: 0px;
 }
 
 a {
@@ -59,13 +61,20 @@ a:hover {
 	color: red;
 }
 
-#main-nav li a:hover {
+#selectable-nav:hover {
 	background-color: red;
 	color: white;
+	transform:scale(1.2);
+	-webkit-transition: all 0.2s ease;
 }
 
 #currentTab {
 	background-color: white;
+}
+
+#myHobby li {
+	text-align: center;
+	padding: 2px;
 }
 
 h3 {
@@ -73,15 +82,20 @@ h3 {
 	font-size: 140%;
 	font-weight: bold;
 	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-top: 20px;
 }
 
 h1 {
 	font-size: 300%;
+	margin-top: 20px;
+	margin-left: 10px;
 }
 
 p {
 	line-height: 16px;
 	margin-bottom: 12px;
+	margin-left: 10px;
 }
 
 footer {
@@ -106,8 +120,16 @@ aside {
 	width: 30%;
 }
 
+img {
+	margin: 10px
+}
+
 aside img {
-	margin-top: 10px;
+	width: 75%;
+}
+
+main img {
+	width: 85%;
 }
 
 
