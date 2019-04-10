@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Temp</title>
-</head>
-<body>
-<h3></h3>
-
-</body>
+	<head>
+	  <title>College Zone: Blog</title>
+	  <link rel="shortcut icon" type="text/css" href="favicon.ico">
+	  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+	  <link rel="stylesheet" type="text/css" href="styles/photo-gallery.css">
+	  <link rel="stylesheet" type="text/css" href="styles/main.css">
+	  <script src="js/photo-gallery.js"></script>
+	  <script src="js/main.js"></script>
+	  <meta name="viewport" content="width=device-width">
+	  <meta name="description" content="Image Gallery">
+	</head>
+	<body>
+		<header>
+				<h1>Welcome to my website!</h1>
+		</header>
+		<nav id="main-nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a id="currentTab" href="photos.html">Photos</a></li>
+				<li><a href="blog/index.html">Blog</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<h1>Photo Gallery</h1>
+	  	<div id="Photo-gallery">
+	    	<img id="mainPhto" src="" />
+	  	</div>
+	  	<br>
+	  	<input type="button" id="btnPrev" value="Prev" />&nbsp;<input type="button" id="btnNext" value="Next" />
+	  	<footer>&copy; Devan Jensen 2019 <a href="privacy-policy.html">Privacy Policy</a></footer>
+	  	<div id="mobile-nav-button">&#9776;</div>
+	</body>
 </html>

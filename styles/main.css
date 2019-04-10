@@ -64,11 +64,19 @@ a:hover {
 	color: white;
 }
 
+#currentTab {
+	background-color: white;
+}
+
 h3 {
 	color: black;
 	font-size: 140%;
 	font-weight: bold;
 	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 300%;
 }
 
 p {
@@ -138,4 +146,5 @@ aside img {
 	#mobile-nav-button {
 		display: block;
 	}
+
 }
