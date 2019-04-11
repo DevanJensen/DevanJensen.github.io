@@ -6,13 +6,13 @@ window.addEventListener('load', function(){
     // troubleshoot javascript errors when working with forms
 
 
-    var sampleForm = document.getElementById("sampleForm");
+    var contactForm = document.getElementById("contactForm");
     
 
     // form inputs
-    var txtName = document.getElementById("txtName");
+    var txtFirstName = document.getElementById("txtFirstName");
+    var txtLastName = document.getElementById("txtLastName");
     var txtComments = document.getElementById("txtComments");
-    var txtAge = document.getElementById("txtAge");
     var txtEmail = document.getElementById("txtEmail");
 
 
@@ -24,7 +24,7 @@ window.addEventListener('load', function(){
 
 
     // event handler for when the form is submitted
-    sampleForm.addEventListener("submit", function(eventObj){
+    contactForm.addEventListener("submit", function(eventObj){
         if(validateSampleForm() == false){
             eventObj.preventDefault();
         }
@@ -35,31 +35,28 @@ window.addEventListener('load', function(){
     function validateSampleForm(){
         var formIsValid = true;
         clearValidationMessages();
-        //validate name
-        if(txtName.value == "") {
+        //validate first name
+        if(txtFirstName.value == "") {
             formIsValid = false;
-            vName.innerHTML = "Please enter your name";
+            vFirstName.innerHTML = "<h6>Please enter your first name</h6>";
         }
-        //validate age
-        if(txtAge.value == "") {
+        //validate last name
+        if(txtLastName.value == "") {
             formIsValid = false;
-            vAge.innerHTML = "Please enter your age";
-        }else if(txtAge.value > 0 == false) {
-            formIsValid = false;
-            vAge.innerHTML = "Your age must be an number greater than 0";
+            vLastName.innerHTML = "<h6>Please enter your last name</h6>";
         }
         //validate email
         if(txtEmail.value == "") {
             formIsValid = false;
-            vEmail.innerHTML = "Please enter your Email address";
+            vEmail.innerHTML = "<h6>Please enter your Email address</h6>";
         }else if(validateEmailAddress(txtEmail.value) == false) {
             formIsValid = false;
-            vEmail.innerHTML = "Please enter a valid Email address"
+            vEmail.innerHTML = "<h6>Please enter a valid Email address</h6>";
         }
         //validate comment
         if(txtComments.value == "") {
             formIsValid = false;
-            vComments.innerHTML = "Please enter a comment";
+            vComments.innerHTML = "<h6>Please enter a comment</h6>";
         }
         return formIsValid;
     }

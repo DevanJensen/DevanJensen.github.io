@@ -92,6 +92,15 @@ h1 {
 	margin-left: 10px;
 }
 
+h6 {
+	color: red;
+	font-size: 15px;
+}
+
+table {
+	margin-left: 10px;
+}
+
 p {
 	line-height: 16px;
 	margin-bottom: 12px;
