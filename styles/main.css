@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
-@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 #mobile-nav-button{
 	position: absolute;
@@ -17,7 +16,7 @@
 }
 
 body {
-	font-family: 'Nanum Myeongjo', serif;
+	font-family: Times New Roman;
 	font-size: 12px;
 	color: black;
 }
@@ -46,7 +45,7 @@ a:hover {
 }
 
 #main-nav {
-	background-color: lightblue;
+	background-color: gray;
 	margin-bottom: 10px;
 }
 
@@ -58,7 +57,7 @@ a:hover {
 #main-nav li a {
 	display: inline-block;
 	padding: 10px;
-	color: red;
+	color: yellow;
 }
 
 #selectable-nav:hover {
@@ -70,6 +69,10 @@ a:hover {
 
 #currentTab {
 	background-color: white;
+}
+
+#main-nav li #currentTab {
+	color: black;
 }
 
 #myHobbyH3 {

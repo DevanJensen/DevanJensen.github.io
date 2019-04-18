@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Firedev: Using Javascript Blog</title>
+		<link rel="icon" type="text/css" href="../images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../styles/reset.css">
+		<link rel="stylesheet" type="text/css" href="../styles/main.css">
+		<link rel="stylesheet" type="text/css" href="../styles/javascript-blog.css">
+		<script src="../js/main.js"></script>
+		<script src="../js/javascript-blog.js"></script>
+		<meta name="viewport" content="width=device-width">
+		<meta name="discription" content="Using javascript blog By Firedev">
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to my website!</h1>
+		</header>
+		<nav id="main-nav">
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../photos.html">Photos</a></li>
+				<li><a id="currentTab" href="index.html">Blog</a></li>
+				<li><a href="../contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="content">
+			<main>
+				<div id="content-frame">
+					<h1>Using Javascript</h1>
+					<br>
+					<pre id="instructionsPre">
+	Javascript can be used for many things, one of which is directly editing and changing the elements inside of the web page. Maybe you want to completely change the h1 tag, 
+	mayble you want certain text to only appear if you click on a button, chances are is that javascript can do it for you. you can link a page to a js file using this code
+	inside the head tag:
+	&lt;script src="[insert link to file here]"&gt;&lt;/script&gt;
+
+	In order to get a handle(attach) on to an element, the element MUST have an ID assigned to it. Like CSS, it's best to store javascript into a seperate file, this time it's
+	called a .js file. A easy way to test this out is by starting the js file with window.addEventListener('load', function(){}); as this will make the code automatically
+	execute once the page loads, this can also be used to load up code if you plan to make buttons change the code. You can also use javascript to make things interactable,
+	like an image changes to another image if clicked on or it display an alert upon click.
+
+	Below is a code example of handling a div tag with nothing in it, this assumes the page is linked to the js file. The first line of code tells the page to execute the code 
+	inside of it once it loads, if the code requires further attention such as a click, it just loads the code into ram to be executed later. The second line of code gets a
+	handle on the div tag with an ID of "hiddenDiv". The third line inserts a h5 element with "Hello" inside of it. The fourth line of code applies a background color while
+	the fifth applies a font size.
+					</pre>
+					<pre id="codeExample">
+	window.addEventListener('load', function(){
+
+	var div = document.getElementById("hiddenDiv");
+	div.innerHTML = "&lt;h5&gt;hello&lt;/h5&gt;";
+	div.style.backgroundColor = "red";
+	div.style.fontSize = "40px";
+
+	});
+					</pre>	
+					<h3>The button below activates the code example.</h3>
+					<input id="revealDiv" type="button" value="Reveal DIV">
+					<br>
+					<div id="hiddenDiv"></div>
+					<h3>The image below executes this code sample when clicked.</h3>
+					<pre id="codeExample">
+	var petFox = document.getElementById("jsBlog")
+
+	petFox.addEventListener("click", function() {
+	alert("You have petted the fox with a pointer, not the wisest decision I'd say.");
+	});
+					</pre>
+					<img id="jsBlog" alt="Alaskan Red Fox" src="../images/alaska-red-fox.jpg">
+				</div>
+			</main>
+			<aside>
+				<div id="content-frame">
+				</div>
+			</aside>
+		</div>
+		<footer>&copy; Devan Jensen 2019</footer>
+		<div id="mobile-nav-button">&#9776;</div>
+	</body>
+</html>

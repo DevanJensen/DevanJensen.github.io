@@ -14,25 +14,6 @@
 	font-size: 14px;
 }
 
-#vocabPre {
-	font-size: 14px;
-	color: red;
-}
-
-h4 {
-	margin-left: 10px;
-}
-
-#changedMeOne {
-	font-size: 15px;
-	font-family: comic Sans MS;
-	padding: 10px;
-	margin-left:100px;
-	background-color: red;
-	color: white;
-	border: 5px solid black;
-}
-
 input {
 	border:2px solid red;
   	background-color: black;
@@ -42,4 +23,8 @@ input {
   	color: white;
   	margin-left: 10px;
   	margin-bottom: 10px;
+}
+
+#jsBlog {
+	width: 40%;
 }
