@@ -1,3 +1,31 @@
+#blogList {
+	margin-left: 10px;
+}
+
 #blogList li {
-	margin: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 20px;
+}
+
+#blogList li a {
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding: 4px;
+	background-color: red;
+	color: white;
+	display: inline-block;
+}
+
+#blogList li a:hover {
+	background-color: blue;
+}
+
+h3 {
+	margin-left: 0px;
+}
+
+h1 {
+	margin-bottom: 10px;
 }

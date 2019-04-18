@@ -1,0 +1,47 @@
+#codeExample {
+	background-color: black;
+	color: yellow;
+	font-size: 15px;
+	padding: 10px;
+	border-radius: 20px;
+	margin-left: 10px;
+	margin-right: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px
+}
+
+#instructionsPre {
+	font-size: 13px;
+}
+
+#vocabPre {
+	font-size: 14px;
+	color: red;
+}
+
+h4 {
+	margin-left: 10px;
+	background-color: orange;
+	color: black;
+}
+
+#changedMeOne {
+	font-size: 15px;
+	font-family: comic Sans MS;
+	padding: 10px;
+	margin-left:100px;
+	background-color: red;
+	color: white;
+	border: 5px solid black;
+}
+
+input {
+	border:2px solid red;
+  	background-color: black;
+  	color: white;
+  	border-radius: 4px;
+  	padding: 5px;
+  	color: white;
+  	margin-left: 10px;
+  	margin-bottom: 10px;
+}

@@ -19,7 +19,7 @@
 body {
 	font-family: 'Nanum Myeongjo', serif;
 	font-size: 12px;
-	color: black
+	color: black;
 }
 
 header {
@@ -72,9 +72,16 @@ a:hover {
 	background-color: white;
 }
 
+#myHobbyH3 {
+	text-align: center;
+	margin-left: 0px;
+	text-decoration: underline;
+}
+
 #myHobby li {
 	text-align: center;
 	padding: 2px;
+	font-size: 13px;
 }
 
 h3 {
@@ -105,6 +112,7 @@ p {
 	line-height: 16px;
 	margin-bottom: 12px;
 	margin-left: 10px;
+	font-size: 13px;
 }
 
 footer {
@@ -160,6 +168,10 @@ main img {
 		text-align: left;
 		font-size: 30px;
 		line-height: 45px;
+	}
+
+	body h3 {
+		text-align: center;
 	}
 
 	main, aside {
