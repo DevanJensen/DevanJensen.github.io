@@ -27,7 +27,7 @@ h4 {
 	font-size: 15px;
 	font-family: comic Sans MS;
 	padding: 10px;
-	margin-left:100px;
+	margin-left: 100px;
 	background-color: red;
 	color: white;
 	border: 5px solid black;
@@ -42,4 +42,19 @@ input {
   	color: white;
   	margin-left: 10px;
   	margin-bottom: 10px;
+}
+
+
+/* I removed the background as it broke in mobile mode */
+@media all and (max-width : 800px) {
+
+#codeExample {
+background-color: white;
+color: black;
+font-size: 15px;
+padding: 10px;
+	
+}
+
+
 }

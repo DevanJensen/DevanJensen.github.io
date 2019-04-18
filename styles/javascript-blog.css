@@ -28,3 +28,16 @@ input {
 #jsBlog {
 	width: 40%;
 }
+
+/* I removed the background as it broke in mobile mode */
+@media all and (max-width : 800px) {
+
+#codeExample {
+background-color: white;
+color: black;
+font-size: 15px;
+padding: 10px;
+	
+}
+
+}

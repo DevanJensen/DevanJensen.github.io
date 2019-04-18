@@ -193,4 +193,12 @@ main img {
 		display: block;
 	}
 
+	#codeExample {
+	background-color: black;
+	color: yellow;
+	font-size: 15px;
+	padding: 10px;
+	border-radius: 20px;
+	margin-left: 10px;
+
 }
