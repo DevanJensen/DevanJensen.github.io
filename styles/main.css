@@ -27,8 +27,7 @@ header {
 }
 
 header h1 {
-	color: white;
-	font-family: 'Lobster', cursive;
+	color: red;
 	line-height: 60px;
 	font-size: 45px;
 	text-align: center;
